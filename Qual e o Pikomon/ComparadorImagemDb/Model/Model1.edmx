@@ -35,7 +35,7 @@
           <Property Name="Vantagem" Type="String" MaxLength="30" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="Fraqueza" Type="String" MaxLength="30" FixedLength="false" Unicode="true" Nullable="false" />
         </EntityType>
-        <EntityContainer Name="ArmazenaPikomonEntities1" annotation:LazyLoadingEnabled="true">
+        <EntityContainer Name="ArmazenaPikomonEntities2" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="Pikomon" EntityType="Self.Pikomon" />
         </EntityContainer>
       </Schema>
@@ -43,7 +43,7 @@
     <!-- C-S mapping content -->
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-        <EntityContainerMapping StorageEntityContainer="ArmazenaPikomonModelStoreContainer" CdmEntityContainer="ArmazenaPikomonEntities1">
+        <EntityContainerMapping StorageEntityContainer="ArmazenaPikomonModelStoreContainer" CdmEntityContainer="ArmazenaPikomonEntities2">
           <EntitySetMapping Name="Pikomon">
             <EntityTypeMapping TypeName="ArmazenaPikomonModel.Pikomon">
               <MappingFragment StoreEntitySet="Pikomon">

@@ -16,7 +16,7 @@ namespace ComparadorImagemDb
 {
     public partial class cadastro : Form
     {
-        ArmazenaPikomonEntities1 pik = new ArmazenaPikomonEntities1();
+        ArmazenaPikomonEntities2 pik = new ArmazenaPikomonEntities2();
 
         byte[] pikomonBytes;
         bool fotoPikomonCarregada = false;
@@ -71,7 +71,7 @@ namespace ComparadorImagemDb
 
             else
             {
-                Model.Pikomon usas = new Model.Pikomon();
+                Pikomon usas = new  Pikomon();
                 usas.Foto = pikomonBytes;
                 usas.Nome = txtNome.Text;
                 usas.tipo = txtTipo.Text;

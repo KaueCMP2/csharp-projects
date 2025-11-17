@@ -13,10 +13,10 @@ namespace ComparadorImagemDb.Model
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
     
-    public partial class ArmazenaPikomonEntities1 : DbContext
+    public partial class ArmazenaPikomonEntities2 : DbContext
     {
-        public ArmazenaPikomonEntities1()
-            : base("name=ArmazenaPikomonEntities1")
+        public ArmazenaPikomonEntities2()
+            : base("name=ArmazenaPikomonEntities2")
         {
         }
     

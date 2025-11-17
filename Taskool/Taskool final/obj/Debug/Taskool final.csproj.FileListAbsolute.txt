@@ -1,0 +1,14 @@
+C:\Users\KaueCMP2\Desktop\Provas Treinamento\Taskool final\Taskool final\bin\Debug\Taskool final.exe.config
+C:\Users\KaueCMP2\Desktop\Provas Treinamento\Taskool final\Taskool final\bin\Debug\Taskool final.exe
+C:\Users\KaueCMP2\Desktop\Provas Treinamento\Taskool final\Taskool final\bin\Debug\Taskool final.pdb
+C:\Users\KaueCMP2\Desktop\Provas Treinamento\Taskool final\Taskool final\bin\Debug\EntityFramework.dll
+C:\Users\KaueCMP2\Desktop\Provas Treinamento\Taskool final\Taskool final\bin\Debug\EntityFramework.xml
+C:\Users\KaueCMP2\Desktop\Provas Treinamento\Taskool final\Taskool final\obj\Debug\Taskool final.csproj.AssemblyReference.cache
+C:\Users\KaueCMP2\Desktop\Provas Treinamento\Taskool final\Taskool final\obj\Debug\Taskool_final.FormAutentica.resources
+C:\Users\KaueCMP2\Desktop\Provas Treinamento\Taskool final\Taskool final\obj\Debug\Taskool_final.Properties.Resources.resources
+C:\Users\KaueCMP2\Desktop\Provas Treinamento\Taskool final\Taskool final\obj\Debug\Taskool final.csproj.GenerateResource.cache
+C:\Users\KaueCMP2\Desktop\Provas Treinamento\Taskool final\Taskool final\obj\Debug\Taskool final.csproj.CoreCompileInputs.cache
+C:\Users\KaueCMP2\Desktop\Provas Treinamento\Taskool final\Taskool final\obj\Debug\Taskool .ADA74905.Up2Date
+C:\Users\KaueCMP2\Desktop\Provas Treinamento\Taskool final\Taskool final\obj\Debug\Taskool final.exe
+C:\Users\KaueCMP2\Desktop\Provas Treinamento\Taskool final\Taskool final\obj\Debug\Taskool final.pdb
+C:\Users\KaueCMP2\Desktop\Provas Treinamento\Taskool final\Taskool final\obj\Debug\Taskool final.exe.config

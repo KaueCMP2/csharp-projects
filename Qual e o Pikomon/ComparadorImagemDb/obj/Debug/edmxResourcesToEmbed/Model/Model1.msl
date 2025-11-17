@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-  <EntityContainerMapping StorageEntityContainer="ArmazenaPikomonModelStoreContainer" CdmEntityContainer="ArmazenaPikomonEntities1">
+  <EntityContainerMapping StorageEntityContainer="ArmazenaPikomonModelStoreContainer" CdmEntityContainer="ArmazenaPikomonEntities2">
     <EntitySetMapping Name="Pikomon">
       <EntityTypeMapping TypeName="ArmazenaPikomonModel.Pikomon">
         <MappingFragment StoreEntitySet="Pikomon">

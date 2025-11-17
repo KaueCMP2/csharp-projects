@@ -25,3 +25,29 @@ C:\Users\KaueCMP2\Desktop\Em C#\Documents\Projetos c#\ComparadorImagemDb\Compara
 C:\Users\KaueCMP2\Desktop\Em C#\Documents\Projetos c#\ComparadorImagemDb\ComparadorImagemDb\obj\Debug\ComparadorImagemDb.exe
 C:\Users\KaueCMP2\Desktop\Em C#\Documents\Projetos c#\ComparadorImagemDb\ComparadorImagemDb\obj\Debug\ComparadorImagemDb.pdb
 C:\Users\KaueCMP2\Desktop\Em C#\Documents\Projetos c#\ComparadorImagemDb\ComparadorImagemDb\obj\Debug\ComparadorImagemDb.Form2.resources
+C:\Users\artur\Documents\Projetos-CSharp-main\Qual e o Pikomon\ComparadorImagemDb\obj\Debug\ComparadorImagemDb.csproj.AssemblyReference.cache
+C:\Users\artur\Documents\Projetos-CSharp-main\Qual e o Pikomon\ComparadorImagemDb\obj\Debug\ComparadorImagemDb.exe.config
+C:\Users\artur\Documents\Projetos-CSharp-main\Qual e o Pikomon\ComparadorImagemDb\obj\Debug\ComparadorImagemDb.cadastro.resources
+C:\Users\artur\Documents\Projetos-CSharp-main\Qual e o Pikomon\ComparadorImagemDb\obj\Debug\ComparadorImagemDb.Form1.resources
+C:\Users\artur\Documents\Projetos-CSharp-main\Qual e o Pikomon\ComparadorImagemDb\obj\Debug\ComparadorImagemDb.Form2.resources
+C:\Users\artur\Documents\Projetos-CSharp-main\Qual e o Pikomon\ComparadorImagemDb\obj\Debug\ComparadorImagemDb.Properties.Resources.resources
+C:\Users\artur\Documents\Projetos-CSharp-main\Qual e o Pikomon\ComparadorImagemDb\obj\Debug\ComparadorImagemDb.csproj.GenerateResource.cache
+C:\Users\artur\Documents\Projetos-CSharp-main\Qual e o Pikomon\ComparadorImagemDb\obj\Debug\ComparadorImagemDb.csproj.CoreCompileInputs.cache
+C:\Users\artur\Documents\Projetos-CSharp-main\Qual e o Pikomon\ComparadorImagemDb\obj\Debug\ComparadorImagemDb.exe
+C:\Users\artur\Documents\Projetos-CSharp-main\Qual e o Pikomon\ComparadorImagemDb\obj\Debug\ComparadorImagemDb.pdb
+C:\Users\artur\Documents\Projetos-CSharp-main\Qual e o Pikomon\ComparadorImagemDb\bin\Debug\ComparadorImagemDb.exe.config
+C:\Users\artur\Documents\Projetos-CSharp-main\Qual e o Pikomon\ComparadorImagemDb\bin\Debug\ComparadorImagemDb.exe
+C:\Users\artur\Documents\Projetos-CSharp-main\Qual e o Pikomon\ComparadorImagemDb\bin\Debug\ComparadorImagemDb.pdb
+C:\Users\artur\Documents\Projetos-CSharp-main\Qual e o Pikomon\ComparadorImagemDb\bin\Debug\EntityFramework.dll
+C:\Users\artur\Documents\Projetos-CSharp-main\Qual e o Pikomon\ComparadorImagemDb\bin\Debug\EntityFramework.xml
+C:\Users\artur\Documents\Projetos-CSharp-main\Qual e o Pikomon\ComparadorImagemDb\obj\Debug\Comparad.F0983580.Up2Date
+C:\Users\KaueCMP2\Documents\Projetos C#\Qual e o Pikomon\ComparadorImagemDb\obj\Debug\ComparadorImagemDb.csproj.AssemblyReference.cache
+C:\Users\KaueCMP2\Documents\Projetos C#\Qual e o Pikomon\ComparadorImagemDb\obj\Debug\ComparadorImagemDb.exe.config
+C:\Users\KaueCMP2\Documents\Projetos C#\Qual e o Pikomon\ComparadorImagemDb\obj\Debug\ComparadorImagemDb.cadastro.resources
+C:\Users\KaueCMP2\Documents\Projetos C#\Qual e o Pikomon\ComparadorImagemDb\obj\Debug\ComparadorImagemDb.Form1.resources
+C:\Users\KaueCMP2\Documents\Projetos C#\Qual e o Pikomon\ComparadorImagemDb\obj\Debug\ComparadorImagemDb.Form2.resources
+C:\Users\KaueCMP2\Documents\Projetos C#\Qual e o Pikomon\ComparadorImagemDb\obj\Debug\ComparadorImagemDb.Properties.Resources.resources
+C:\Users\KaueCMP2\Documents\Projetos C#\Qual e o Pikomon\ComparadorImagemDb\obj\Debug\ComparadorImagemDb.csproj.GenerateResource.cache
+C:\Users\KaueCMP2\Documents\Projetos C#\Qual e o Pikomon\ComparadorImagemDb\obj\Debug\ComparadorImagemDb.csproj.CoreCompileInputs.cache
+C:\Users\KaueCMP2\Documents\Projetos C#\Qual e o Pikomon\ComparadorImagemDb\obj\Debug\ComparadorImagemDb.exe
+C:\Users\KaueCMP2\Documents\Projetos C#\Qual e o Pikomon\ComparadorImagemDb\obj\Debug\ComparadorImagemDb.pdb

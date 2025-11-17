@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="loginCad1ModelStoreContainer" CdmEntityContainer="loginCad1Entities">
+    <EntitySetMapping Name="User1">
+      <EntityTypeMapping TypeName="loginCad1Model.User1">
+        <MappingFragment StoreEntitySet="User1">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Apelido" ColumnName="Apelido" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="Senha" ColumnName="Senha" />
+          <ScalarProperty Name="Foto" ColumnName="Foto" />
+          <ScalarProperty Name="TimeFavorito" ColumnName="TimeFavorito" />
+          <ScalarProperty Name="CorFavorita" ColumnName="CorFavorita" />
+          <ScalarProperty Name="DatNascimento" ColumnName="DatNascimento" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

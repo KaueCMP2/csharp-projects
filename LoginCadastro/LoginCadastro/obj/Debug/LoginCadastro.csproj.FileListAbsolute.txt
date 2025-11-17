@@ -1,0 +1,16 @@
+C:\Users\KaueCMP2\Documents\Projetos C#\LoginCadastro\LoginCadastro\obj\Debug\LoginCadastro.csproj.AssemblyReference.cache
+C:\Users\KaueCMP2\Documents\Projetos C#\LoginCadastro\LoginCadastro\obj\Debug\LoginCadastro.Cadastro.resources
+C:\Users\KaueCMP2\Documents\Projetos C#\LoginCadastro\LoginCadastro\obj\Debug\LoginCadastro.Form1.resources
+C:\Users\KaueCMP2\Documents\Projetos C#\LoginCadastro\LoginCadastro\obj\Debug\LoginCadastro.Properties.Resources.resources
+C:\Users\KaueCMP2\Documents\Projetos C#\LoginCadastro\LoginCadastro\obj\Debug\LoginCadastro.csproj.GenerateResource.cache
+C:\Users\KaueCMP2\Documents\Projetos C#\LoginCadastro\LoginCadastro\obj\Debug\LoginCadastro.csproj.CoreCompileInputs.cache
+C:\Users\KaueCMP2\Documents\Projetos C#\LoginCadastro\LoginCadastro\bin\Debug\LoginCadastro.exe.config
+C:\Users\KaueCMP2\Documents\Projetos C#\LoginCadastro\LoginCadastro\bin\Debug\LoginCadastro.exe
+C:\Users\KaueCMP2\Documents\Projetos C#\LoginCadastro\LoginCadastro\bin\Debug\LoginCadastro.pdb
+C:\Users\KaueCMP2\Documents\Projetos C#\LoginCadastro\LoginCadastro\bin\Debug\EntityFramework.dll
+C:\Users\KaueCMP2\Documents\Projetos C#\LoginCadastro\LoginCadastro\bin\Debug\EntityFramework.xml
+C:\Users\KaueCMP2\Documents\Projetos C#\LoginCadastro\LoginCadastro\obj\Debug\LoginCad.57C74C24.Up2Date
+C:\Users\KaueCMP2\Documents\Projetos C#\LoginCadastro\LoginCadastro\obj\Debug\LoginCadastro.exe
+C:\Users\KaueCMP2\Documents\Projetos C#\LoginCadastro\LoginCadastro\obj\Debug\LoginCadastro.pdb
+C:\Users\KaueCMP2\Documents\Projetos C#\LoginCadastro\LoginCadastro\obj\Debug\LoginCadastro.exe.config
+C:\Users\KaueCMP2\Documents\Projetos C#\LoginCadastro\LoginCadastro\obj\Debug\LoginCadastro.Form3.resources

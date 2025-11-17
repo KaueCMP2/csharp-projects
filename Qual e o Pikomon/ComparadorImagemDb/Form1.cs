@@ -18,7 +18,7 @@ namespace ComparadorImagemDb
 
         CPikomon cpik = new CPikomon();
 
-        ArmazenaPikomonEntities1 pik = new ArmazenaPikomonEntities1();
+        ArmazenaPikomonEntities2 pik = new ArmazenaPikomonEntities2();
         bool imagemSelecionada = false;
         byte[] imagemBytes;
         private Image SelecionarImagem()
@@ -31,7 +31,7 @@ namespace ComparadorImagemDb
             if (opf.ShowDialog() == DialogResult.OK)
             {
                 imagemSelecionada = true;
-                imagemBytes = File.ReadAllBytes(opf.FileName);                
+                imagemBytes = File.ReadAllBytes(opf.FileName);
                 return Image.FromFile(opf.FileName);
             }
 
@@ -53,22 +53,22 @@ namespace ComparadorImagemDb
                 MessageBox.Show("Selecione uma imagem");
                 imagemEscolhida = SelecionarImagem();
             }
-                btSelecionarImg.BackgroundImage = imagemEscolhida;
-                btSelecionarImg.BackgroundImageLayout = ImageLayout.Stretch;
+            btSelecionarImg.BackgroundImage = imagemEscolhida;
+            btSelecionarImg.BackgroundImageLayout = ImageLayout.Stretch;
         }
 
         private void btEncontrar_Click(object sender, EventArgs e)
         {
             var pikomonBuscado = pik.Pikomon.FirstOrDefault(p => p.Foto == imagemBytes);
 
-            if (imagemSelecionada == true)
+            if (pikomonBuscado != null)
             {
-
                 cpik.Nome = pikomonBuscado.Nome;
                 cpik.Tipo = pikomonBuscado.tipo;
                 cpik.Vantagem = pikomonBuscado.Vantagem;
                 cpik.Fraqueza = pikomonBuscado.Fraqueza;
-                cpik.FotoPik = pikomonBuscado.Foto;
+                cpik.FotoPik = ;
+
                 cpik.pikemonPesquisado = true;
 
                 if (cpik.pikemonPesquisado != false)
@@ -76,6 +76,18 @@ namespace ComparadorImagemDb
                     SystemSounds.Beep.Play();
                     MessageBox.Show($"O pikemon é: {cpik.Nome}");
                     new Form2().Show();
+                    this.Hide();
+                }
+            }
+
+            else
+            {
+                SystemSounds.Beep.Play();
+                var pergunta = MessageBox.Show("Pikomon da foto nao foi encontado... Cadastrar descoberta?");
+
+                if (pergunta == DialogResult.OK)
+                {
+                    new cadastro().Show();
                     this.Hide();
                 }
             }

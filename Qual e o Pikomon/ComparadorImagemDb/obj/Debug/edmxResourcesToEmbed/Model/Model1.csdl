@@ -11,7 +11,7 @@
     <Property Name="Vantagem" Type="String" MaxLength="30" FixedLength="false" Unicode="true" Nullable="false" />
     <Property Name="Fraqueza" Type="String" MaxLength="30" FixedLength="false" Unicode="true" Nullable="false" />
   </EntityType>
-  <EntityContainer Name="ArmazenaPikomonEntities1" annotation:LazyLoadingEnabled="true">
+  <EntityContainer Name="ArmazenaPikomonEntities2" annotation:LazyLoadingEnabled="true">
     <EntitySet Name="Pikomon" EntityType="Self.Pikomon" />
   </EntityContainer>
 </Schema>

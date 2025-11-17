@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="loginCad1Model" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="User1">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Apelido" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Email" Type="String" MaxLength="255" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Senha" Type="String" MaxLength="12" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Foto" Type="Binary" MaxLength="Max" FixedLength="false" />
+    <Property Name="TimeFavorito" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+    <Property Name="CorFavorita" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+    <Property Name="DatNascimento" Type="DateTime" Precision="3" />
+  </EntityType>
+  <EntityContainer Name="loginCad1Entities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="User1" EntityType="Self.User1" />
+  </EntityContainer>
+</Schema>

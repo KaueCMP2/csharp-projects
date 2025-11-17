@@ -4,7 +4,7 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="70cb394d6550468e9a7bb6d5f95e466c" Name="Diagram1">
+      <Diagram DiagramId="7c09c53e164c4da8a0267e95cf771ecd" Name="Diagram1">
         <EntityTypeShape EntityType="ArmazenaPikomonModel.Pikomon" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
       </Diagram>
     </edmx:Diagrams>

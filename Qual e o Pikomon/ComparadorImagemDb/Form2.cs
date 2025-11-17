@@ -17,13 +17,11 @@ namespace ComparadorImagemDb
         {
             InitializeComponent();
 
-            if(cpik.pikemonPesquisado == true)
-            {
-                txtNome.Text = cpik.Nome;
-                txtTipo.Text = cpik.Tipo;
-                txtVant.Text = cpik.Vantagem;
-                txtFraq.Text = cpik.Fraqueza;
-            }
+            txtNome.Text = cpik.Nome;
+            txtTipo.Text = cpik.Tipo;
+            txtVant.Text = cpik.Vantagem;
+            txtFraq.Text = cpik.Fraqueza;
+            imgPik.BackgroundImage = cpik.FotoPik;
         }
 
         private void btOp_Click(object sender, EventArgs e)
