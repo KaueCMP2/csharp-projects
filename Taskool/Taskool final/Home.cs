@@ -100,5 +100,10 @@ namespace Taskool_final
             public string Mensagem { get; set; }
             public string Autor { get; set; }
         }
+
+        private void panel1_DoubleClick(object sender, EventArgs e)
+        {
+
+        }
     }
 }

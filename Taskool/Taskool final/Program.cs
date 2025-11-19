@@ -16,7 +16,7 @@ namespace Taskool_final
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new FormAutentica());
+            Application.Run(new FormConfgColor());
         }
     }
 }

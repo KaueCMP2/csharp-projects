@@ -92,6 +92,12 @@
     <Compile Include="FormAutentica.Designer.cs">
       <DependentUpon>FormAutentica.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormConfgColor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormConfgColor.Designer.cs">
+      <DependentUpon>FormConfgColor.cs</DependentUpon>
+    </Compile>
     <Compile Include="Home.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -130,6 +136,9 @@
     <EmbeddedResource Include="FormAutentica.resx">
       <DependentUpon>FormAutentica.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FormConfgColor.resx">
+      <DependentUpon>FormConfgColor.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Home.resx">
       <DependentUpon>Home.cs</DependentUpon>
     </EmbeddedResource>
@@ -165,21 +174,23 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Resources\mensagens.json" />
+    <None Include="Resources\user.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
     <Content Include="Model\Model1.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <LastGenOutput>Model1.Context.cs</LastGenOutput>
       <DependentUpon>Model1.edmx</DependentUpon>
+      <LastGenOutput>Model1.Context.cs</LastGenOutput>
     </Content>
     <Content Include="Model\Model1.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <DependentUpon>Model1.edmx</DependentUpon>
       <LastGenOutput>Model1.cs</LastGenOutput>
     </Content>
-    <None Include="Resources\mensagens.json" />
-    <None Include="Resources\user.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

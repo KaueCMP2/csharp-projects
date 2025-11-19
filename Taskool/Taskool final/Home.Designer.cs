@@ -37,7 +37,7 @@
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.panel1 = new System.Windows.Forms.Panel();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.groupBox2.SuspendLayout();
             this.SuspendLayout();
@@ -118,26 +118,25 @@
             this.label4.TabIndex = 1;
             this.label4.Text = "Editar";
             // 
-            // groupBox1
+            // panel1
             // 
-            this.groupBox1.Location = new System.Drawing.Point(0, -19);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(200, 479);
-            this.groupBox1.TabIndex = 0;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "groupBox1";
+            this.panel1.Location = new System.Drawing.Point(0, -5);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(200, 459);
+            this.panel1.TabIndex = 4;
+            this.panel1.DoubleClick += new System.EventHandler(this.panel1_DoubleClick);
             // 
             // Home
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.panel1);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.groupBox2);
-            this.Controls.Add(this.groupBox1);
             this.Name = "Home";
             this.Text = "Home";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Home_FormClosing);
@@ -151,8 +150,6 @@
         }
 
         #endregion
-
-        private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Button button1;
@@ -161,5 +158,6 @@
         private System.Windows.Forms.Timer timer1;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Panel panel1;
     }
 }
