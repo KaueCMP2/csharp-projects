@@ -20,6 +20,7 @@ namespace Taskool_final
         public Cadastro(Form formAnterior)
         {
             InitializeComponent();
+            this.Text = "Cadastro | Taskool";
             _formAnterior = formAnterior;
         }
 

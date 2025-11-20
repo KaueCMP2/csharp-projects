@@ -21,11 +21,8 @@ namespace Taskool_final
         public FormAutentica()
         {
             InitializeComponent();
-        }
-
-        private void label2_Click(object sender, EventArgs e)
-        {
-
+            this.Text = "Autenticação | Taskool";
+            textBox1.ShortcutsEnabled = false;
         }
 
         private void linkLabel2_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
@@ -44,7 +41,7 @@ namespace Taskool_final
             if (textBox1 == null)
                 return;
 
-            var usas = ctx.Usuario.FirstOrDefault(u => u.Email == textBox1.Text);
+            var usas = ctx.Usuario.FirstOrDefault(u => u.Usuario1 == textBox1.Text);
 
             if (usas == null)
             {
@@ -52,19 +49,21 @@ namespace Taskool_final
                 return;
             }
 
-            else if (usas.Usuario1 == textBox1.Text || usas.Email == textBox1.Text)
+            else if (usas.Usuario1 == textBox1.Text)
             {
                 byte[] imagemBanco = usas.Foto;
                 if (imagemBanco.SequenceEqual(imagemBytes))
                 {
-                    Home pagInicial = new Home(this, usas.Nome, usas.Foto);
+                    User.id = usas.Codigo;
+                    User.senha = usas.Senha;
+                    User.Nome = usas.Nome;
+
+                    Home pagInicial = new Home(this);
                     pagInicial.Show();
                     this.Hide();
                     return;
                 }
             }
-
-            gerarPasta();
         }
 
         private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
@@ -102,9 +101,9 @@ namespace Taskool_final
             }
         }
 
-        private void groupBox1_Enter(object sender, EventArgs e)
+        private void FormAutentica_Activated(object sender, EventArgs e)
         {
-
+            button1.BackgroundImage = null;
         }
     }
 }

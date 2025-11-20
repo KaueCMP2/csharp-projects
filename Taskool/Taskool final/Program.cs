@@ -16,7 +16,22 @@ namespace Taskool_final
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new FormConfgColor());
+            Application.Run(new FormAutentica());
+        }
+    }
+    public static class me
+    {
+        public static DialogResult Alert(this string message)
+        {
+            return MessageBox.Show(message, "Alerta", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+        }
+        public static DialogResult Conf(this string message)
+        {
+            return MessageBox.Show(message, "Confirmação", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+        }
+        public static DialogResult Info(this string message)
+        {
+            return MessageBox.Show(message, "informação", MessageBoxButtons.OK, MessageBoxIcon.Warning);
         }
     }
 }
