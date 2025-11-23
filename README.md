@@ -23,5 +23,7 @@
 - **QualOPikomon** o basico.
 - **LoginCadastro** um padrao.
 
+---
+
 - Badicamente é isso. **Feito por Kaue Sergio para o Kaue Sergio**.
 
