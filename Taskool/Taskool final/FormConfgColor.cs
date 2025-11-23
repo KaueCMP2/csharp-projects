@@ -54,13 +54,9 @@ namespace Taskool_final
                 // guardar em p, o texto da makedTextBox1 sem RGB() e dividido apartir dos (.)
                 string[] p = maskedTextBox1.Text.Replace("RGB(", "").Replace(")", "").Trim().Split('.');
 
-                // guarda em r se o for > 0 e p[0] sem espaco for igual a 3 caracteres... se for verdadeiro guarda o p[0] se nao retorna 0
+
                 int r = p.Length > 0 && p[0].Trim().Length == 3 ? int.Parse(p[0]) : 0;
-
-                // guarda em g se o for > 0 e p[1] sem espaco for igual a 3 caracteres... se for verdadeiro guarda o p[1] se nao retorna 0
                 int g = p.Length > 1 && p[1].Trim().Length == 3 ? int.Parse(p[1]) : 0;
-
-                // guarda em b se o for > 0 e p[2] sem espaco for igual a 3 caracteres... se for verdadeiro guarda o p[2] se nao retorna 0
                 int b = p.Length > 2 && p[2].Trim().Length == 3 ? int.Parse(p[2]) : 0;
 
                 this.BackColor = Color.FromArgb(r, g, b); // muda a cor do fundo para a cor escrita na maskedTextBox1

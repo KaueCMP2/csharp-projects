@@ -1,0 +1,1688 @@
+Como as frases são desserializadas a partir de um JSON e exibidas aleatoriamente?;"using MediaPlayer;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data.Entity.Infrastructure;
+using System.Data;
+using System.Diagnostics;
+using System.Drawing;
+using System.IO;
+using System.Linq;
+using System.Net;
+using System.Reflection.Emit;
+using System.Runtime.Serialization.Json;
+using System.Text.Json.Serialization;
+using System.Text.Json;
+using System.Text;
+using System.Threading.Tasks;
+using System.Web.Script.Serialization;
+using System.Windows.Forms;
+using System;
+using Taskool_final.Model;
+using WMPLib;
+using static System.Net.Mime.MediaTypeNames;";Taskool auto Misc
+Como as frases são desserializadas a partir de um JSON e exibidas aleatoriamente?;"using MediaPlayer;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data.Entity.Infrastructure;
+using System.Data;
+using System.Diagnostics;
+using System.Drawing;
+using System.IO;
+using System.Linq;
+using System.Net;
+using System.Reflection.Emit;
+using System.Runtime.Serialization.Json;
+using System.Text.Json.Serialization;
+using System.Text.Json;
+using System.Text;
+using System.Threading.Tasks;
+using System.Web.Script.Serialization;
+using System.Windows.Forms;
+using System;
+using Taskool_final.Model;
+using WMPLib;
+using static System.Net.Mime.MediaTypeNames;";Taskool auto Misc Cloze
+O que faz este trecho: Snippet0;"using System.Collections.Generic;";Taskool auto Misc SnippetLine
+O que faz o método `linkLabel2_LinkClicked`? (retorne o código);"private void linkLabel2_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            Process.Start(""osk.exe"");
+            textBox1.Focus();
+        }";Taskool auto linkLabel2_LinkClicked
+Complete o trecho: linkLabel2_LinkClicked;"private void {{c1::linkLabel2_LinkClicked}}(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            Process.Start(""osk.exe"");
+            textBox1.Focus();
+        }";Taskool auto linkLabel2_LinkClicked Cloze
+O que faz este trecho: linkLabel2_LinkClicked;private void linkLabel2_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e);Taskool auto linkLabel2_LinkClicked SnippetLine
+Como o projeto trata/seleciona/convete imagens do usuário?;"private void button1_Click(object sender, EventArgs e)
+        {
+            imagemBytes = TrataImagem.SelecionarImagem(imagemBytes, button1);
+        }";Taskool auto button1_Click
+Como o projeto trata/seleciona/convete imagens do usuário?;"private void {{c1::button1_Click}}(object sender, EventArgs e)
+        {
+            imagemBytes = TrataImagem.SelecionarImagem(imagemBytes, button1);
+        }";Taskool auto button1_Click Cloze
+O que faz este trecho: button1_Click;private void button1_Click(object sender, EventArgs e);Taskool auto button1_Click SnippetLine
+Como o sistema compara arrays/bytes para validar igualdade (ex.: imagem)?;"private void button2_Click(object sender, EventArgs e)
+        {
+            if (textBox1 == null)
+                return;
+
+            var usas = ctx.Usuario.FirstOrDefault(u => u.Usuario1 == textBox1.Text);
+
+            if (usas == null)
+            {
+                gerarPasta();
+                return;
+            }
+
+            else if (usas.Usuario1 == textBox1.Text)
+            {
+                if (imagemBytes == null)
+                {
+                    ""Imagem invalida"".Alert();
+                    return;
+
+
+
+                }
+                else if (!usas.Foto.SequenceEqual(imagemBytes))
+                {
+                    ""Dados Incorretos"".Alert();
+
+                    return;
+                }
+
+                byte[] imagemBanco = usas.Foto;
+                if (imagemBanco.SequenceEqual(imagemBytes))
+                {
+                    User.id = usas.Codigo;
+                    User.senha = usas.Senha;
+                    User.Nome = usas.Nome;
+
+                    Home pagInicial = new Home(this);
+                    pagInicial.Show();
+                    this.Hide();
+                    return;
+                }
+            }
+        }";Taskool auto button2_Click
+Como o sistema compara arrays/bytes para validar igualdade (ex.: imagem)?;"private void button2_Click(object sender, EventArgs e)
+        {
+            {{c1::if (textBox1 == null)}}
+                return;
+
+            var usas = ctx.Usuario.FirstOrDefault(u => u.Usuario1 == textBox1.Text);
+
+            if (usas == null)
+            {
+                gerarPasta();
+                return;
+            }
+
+            else if (usas.Usuario1 == textBox1.Text)
+            {
+                if (imagemBytes == null)
+                {
+                    ""Imagem invalida"".Alert();
+                    return;
+
+
+
+                }
+                else if (!usas.Foto.SequenceEqual(imagemBytes))
+                {
+                    ""Dados Incorretos"".Alert();
+
+                    return;
+                }
+
+                byte[] imagemBanco = usas.Foto;
+                if (imagemBanco.SequenceEqual(imagemBytes))
+                {
+                    User.id = usas.Codigo;
+                    User.senha = usas.Senha;
+                    User.Nome = usas.Nome;
+
+                    Home pagInicial = new Home(this);
+                    pagInicial.Show();
+                    this.Hide();
+                    return;
+                }
+            }
+        }";Taskool auto button2_Click Cloze
+O que faz este trecho: button2_Click;if (textBox1 == null);Taskool auto button2_Click SnippetLine
+Como uma nova instância de form/objeto é criada e exibida?;"private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            Cadastro paginaCadastro = new Cadastro(this);
+            paginaCadastro.Show();
+            this.Hide();
+        }";Taskool auto linkLabel1_LinkClicked
+Como uma nova instância de form/objeto é criada e exibida?;"private void {{c1::linkLabel1_LinkClicked}}(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            Cadastro paginaCadastro = new Cadastro(this);
+            paginaCadastro.Show();
+            this.Hide();
+        }";Taskool auto linkLabel1_LinkClicked Cloze
+O que faz este trecho: linkLabel1_LinkClicked;"paginaCadastro.Show();";Taskool auto linkLabel1_LinkClicked SnippetLine
+Como o código obtém o IP local da máquina?;"public string pegarIp()
+        {
+            string ip = Dns.GetHostAddresses(Dns.GetHostName())
+                .First(i => i.AddressFamily == System.Net.Sockets.AddressFamily.InterNetwork)
+                .ToString();
+            return ip.ToString();
+        }";Taskool auto pegarIp
+Como o código obtém o IP local da máquina?;"public string pegarIp()
+        {
+            string ip = Dns.GetHostAddresses(Dns.GetHostName())
+                .First(i => i.AddressFamily == System.Net.Sockets.AddressFamily.InterNetwork)
+                .ToString();
+            {{c1::return ip.ToString();}}
+        }";Taskool auto pegarIp Cloze
+O que faz este trecho: pegarIp;"return ip.ToString();";Taskool auto pegarIp SnippetLine
+Como o sistema grava logs ou arquivos no disco?;"public void gerarPasta()
+        {
+            Random random = new Random();
+            int id = random.Next(0, 1000);
+
+            string pasta = @""C:\USER_LOG"";
+            if (!Directory.Exists(pasta))
+                Directory.CreateDirectory(pasta);
+
+            string caminhoArquivo = Path.Combine(pasta, $""{textBox1.Text}{id}.txt"");
+            bool novoArquivo = !File.Exists(caminhoArquivo);
+
+            using (StreamWriter sw = new StreamWriter(caminhoArquivo, true))
+            {
+                sw.WriteLine(""Data;Hora;Usuario;IP "");
+
+                sw.WriteLine($""{DateTime.Now.ToString(""dd/MM/yyyy"")};{DateTime.Now.ToString(""hh:mm"")};{textBox1.Text};{pegarIp()}"");
+            }
+        }";Taskool auto gerarPasta
+Como o sistema grava logs ou arquivos no disco?;"public void gerarPasta()
+        {
+            Random random = new Random();
+            int id = random.Next(0, 1000);
+
+            string pasta = @""C:\USER_LOG"";
+            {{c1::if (!Directory.Exists(pasta))}}
+                Directory.CreateDirectory(pasta);
+
+            string caminhoArquivo = Path.Combine(pasta, $""{textBox1.Text}{id}.txt"");
+            bool novoArquivo = !File.Exists(caminhoArquivo);
+
+            using (StreamWriter sw = new StreamWriter(caminhoArquivo, true))
+            {
+                sw.WriteLine(""Data;Hora;Usuario;IP "");
+
+                sw.WriteLine($""{DateTime.Now.ToString(""dd/MM/yyyy"")};{DateTime.Now.ToString(""hh:mm"")};{textBox1.Text};{pegarIp()}"");
+            }
+        }";Taskool auto gerarPasta Cloze
+Como o código escolhe um índice aleatório para músicas/itens?;"Random random = new Random();";Taskool auto gerarPasta SnippetLine
+O que faz o método `FormAutentica_Activated`? (retorne o código);"private void FormAutentica_Activated(object sender, EventArgs e)
+        {
+            button1.BackgroundImage = null;
+        }";Taskool auto FormAutentica_Activated
+Complete o trecho: FormAutentica_Activated;"private void {{c1::FormAutentica_Activated}}(object sender, EventArgs e)
+        {
+            button1.BackgroundImage = null;
+        }";Taskool auto FormAutentica_Activated Cloze
+O que faz este trecho: FormAutentica_Activated;private void FormAutentica_Activated(object sender, EventArgs e);Taskool auto FormAutentica_Activated SnippetLine
+Como o sistema detecta CapsLock e reage no campo de senha?;"private void textBox1_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (Console.CapsLock)
+            {
+                label4.Visible = true;
+                return;
+            }
+
+            label4.Visible = false;
+        }";Taskool auto textBox1_KeyDown
+Como o sistema detecta CapsLock e reage no campo de senha?;"private void textBox1_KeyDown(object sender, KeyEventArgs e)
+        {
+            {{c1::if (Console.CapsLock)}}
+            {
+                label4.Visible = true;
+                return;
+            }
+
+            label4.Visible = false;
+        }";Taskool auto textBox1_KeyDown Cloze
+Como o sistema detecta CapsLock e reage no campo de senha?;if (Console.CapsLock);Taskool auto textBox1_KeyDown SnippetLine
+O que faz o método `linkLabel1_LinkClicked`? (retorne o código);"private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+
+        }";Taskool auto linkLabel1_LinkClicked
+Complete o trecho: linkLabel1_LinkClicked;"private void {{c1::linkLabel1_LinkClicked}}(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+
+        }";Taskool auto linkLabel1_LinkClicked Cloze
+O que faz este trecho: linkLabel1_LinkClicked;private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e);Taskool auto linkLabel1_LinkClicked SnippetLine
+O que valida se o campo de texto (textBox1) está vazio ou nulo?;"private void button3_Click(object sender, EventArgs e)
+        {
+
+            if (string.IsNullOrEmpty(textBox1.Text))
+            {
+                MessageBox.Show(""Adicione seu nome e sobreno"");
+                return;
+            }
+
+            string[] partesNome = textBox1.Text.Split(' ');
+
+            if (partesNome.Length > 1)
+            {
+                string nickname = $""{partesNome[0]}.{partesNome[partesNome.Length - 1]}{dateTimePicker1.Value.ToString(""yy"")}"";
+
+                if (partesNome.Length < 2)
+                {
+                    MessageBox.Show(""Erro ao gerar"");
+                    return;
+                }
+
+                else if (ctx.Usuario.Any(n => n.Usuario1 == nickname))
+                {
+                    nickname = $""{partesNome[0]}.{partesNome[partesNome.Length - 2]}{dateTimePicker1.Value.ToString(""yy"")}"";
+                }
+                textBox4.Text = nickname.ToLower();
+                return;
+            }
+                MessageBox.Show(""Adicione seu nome e sobreno"");
+                return;
+        }";Taskool auto button3_Click
+O que valida se o campo de texto (textBox1) está vazio ou nulo?;"private void button3_Click(object sender, EventArgs e)
+        {
+
+            {{c1::if (string.IsNullOrEmpty(textBox1.Text))}}
+            {
+                MessageBox.Show(""Adicione seu nome e sobreno"");
+                return;
+            }
+
+            string[] partesNome = textBox1.Text.Split(' ');
+
+            if (partesNome.Length > 1)
+            {
+                string nickname = $""{partesNome[0]}.{partesNome[partesNome.Length - 1]}{dateTimePicker1.Value.ToString(""yy"")}"";
+
+                if (partesNome.Length < 2)
+                {
+                    MessageBox.Show(""Erro ao gerar"");
+                    return;
+                }
+
+                else if (ctx.Usuario.Any(n => n.Usuario1 == nickname))
+                {
+                    nickname = $""{partesNome[0]}.{partesNome[partesNome.Length - 2]}{dateTimePicker1.Value.ToString(""yy"")}"";
+                }
+                textBox4.Text = nickname.ToLower();
+                return;
+            }
+                MessageBox.Show(""Adicione seu nome e sobreno"");
+                return;
+        }";Taskool auto button3_Click Cloze
+O que valida se o campo de texto (textBox1) está vazio ou nulo?;if (string.IsNullOrEmpty(textBox1.Text));Taskool auto button3_Click SnippetLine
+Em que ponto o contexto salva alterações no banco?;"private void button2_Click(object sender, EventArgs e)
+        {
+            if (string.IsNullOrEmpty(textBox1.Text) || string.IsNullOrEmpty(textBox2.Text)
+               || string.IsNullOrEmpty(textBox2.Text) || string.IsNullOrEmpty(textBox3.Text)
+               || string.IsNullOrEmpty(textBox4.Text) || imagemBytes == null) return;
+
+            else if (ctx.Usuario.Any(n => n.Usuario1 == textBox4.Text))
+                return;
+
+            Usuario usas = new Usuario();
+            usas.Nome = textBox1.Text;
+            usas.Email = textBox2.Text;
+            usas.Telefone = textBox3.Text;
+            usas.Usuario1 = textBox4.Text;
+            usas.Foto = imagemBytes;
+
+            ctx.Usuario.Add(usas);
+            ctx.SaveChanges();
+
+            _formAnterior.Show();
+            this.Close();
+        }";Taskool auto button2_Click
+Em que ponto o contexto salva alterações no banco?;"private void button2_Click(object sender, EventArgs e)
+        {
+            {{c1::if (string.IsNullOrEmpty(textBox1.Text) || string.IsNullOrEmpty(textBox2.Text)}}
+               || string.IsNullOrEmpty(textBox2.Text) || string.IsNullOrEmpty(textBox3.Text)
+               || string.IsNullOrEmpty(textBox4.Text) || imagemBytes == null) return;
+
+            else if (ctx.Usuario.Any(n => n.Usuario1 == textBox4.Text))
+                return;
+
+            Usuario usas = new Usuario();
+            usas.Nome = textBox1.Text;
+            usas.Email = textBox2.Text;
+            usas.Telefone = textBox3.Text;
+            usas.Usuario1 = textBox4.Text;
+            usas.Foto = imagemBytes;
+
+            ctx.Usuario.Add(usas);
+            ctx.SaveChanges();
+
+            _formAnterior.Show();
+            this.Close();
+        }";Taskool auto button2_Click Cloze
+O que faz este trecho: button2_Click;if (string.IsNullOrEmpty(textBox1.Text) || string.IsNullOrEmpty(textBox2.Text);Taskool auto button2_Click SnippetLine
+Como o projeto trata/seleciona/convete imagens do usuário?;"private void button1_Click(object sender, EventArgs e)
+        {
+            imagemBytes = TrataImagem.SelecionarImagem(imagemBytes, button1);
+        }";Taskool auto button1_Click
+Como o projeto trata/seleciona/convete imagens do usuário?;"private void {{c1::button1_Click}}(object sender, EventArgs e)
+        {
+            imagemBytes = TrataImagem.SelecionarImagem(imagemBytes, button1);
+        }";Taskool auto button1_Click Cloze
+O que faz este trecho: button1_Click;private void button1_Click(object sender, EventArgs e);Taskool auto button1_Click SnippetLine
+O que faz o método `Cadastro_FormClosing`? (retorne o código);"private void Cadastro_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            _formAnterior.Show();
+        }";Taskool auto Cadastro_FormClosing
+Complete o trecho: Cadastro_FormClosing;"private void {{c1::Cadastro_FormClosing}}(object sender, FormClosingEventArgs e)
+        {
+            _formAnterior.Show();
+        }";Taskool auto Cadastro_FormClosing Cloze
+O que faz este trecho: Cadastro_FormClosing;"_formAnterior.Show();";Taskool auto Cadastro_FormClosing SnippetLine
+O que faz o método `timer1_Tick`? (retorne o código);"private void timer1_Tick(object sender, EventArgs e)
+        {
+            label1.Text = DateTime.Now.ToString(""HH:mm"");
+        }";Taskool auto timer1_Tick
+Complete o trecho: timer1_Tick;"private void {{c1::timer1_Tick}}(object sender, EventArgs e)
+        {
+            label1.Text = DateTime.Now.ToString(""HH:mm"");
+        }";Taskool auto timer1_Tick Cloze
+O que faz este trecho: timer1_Tick;private void timer1_Tick(object sender, EventArgs e);Taskool auto timer1_Tick SnippetLine
+O que faz o método `pictureBox1_DoubleClick`? (retorne o código);"private void pictureBox1_DoubleClick(object sender, EventArgs e)
+        {
+            groupBox2.Visible = true;
+        }";Taskool auto pictureBox1_DoubleClick
+Complete o trecho: pictureBox1_DoubleClick;"private void {{c1::pictureBox1_DoubleClick}}(object sender, EventArgs e)
+        {
+            groupBox2.Visible = true;
+        }";Taskool auto pictureBox1_DoubleClick Cloze
+O que faz este trecho: pictureBox1_DoubleClick;private void pictureBox1_DoubleClick(object sender, EventArgs e);Taskool auto pictureBox1_DoubleClick SnippetLine
+Como uma nova instância de form/objeto é criada e exibida?;"private void panel1_DoubleClick(object sender, EventArgs e)
+        {
+            FormConfgColor configColor = new FormConfgColor(this);
+            configColor.Show();
+        }";Taskool auto panel1_DoubleClick
+Como uma nova instância de form/objeto é criada e exibida?;"private void {{c1::panel1_DoubleClick}}(object sender, EventArgs e)
+        {
+            FormConfgColor configColor = new FormConfgColor(this);
+            configColor.Show();
+        }";Taskool auto panel1_DoubleClick Cloze
+O que faz este trecho: panel1_DoubleClick;"configColor.Show();";Taskool auto panel1_DoubleClick SnippetLine
+O que faz o método `label5_Click`? (retorne o código);"private void label5_Click(object sender, EventArgs e)
+        {
+            _formAnterior.Show();
+            this.Close();
+        }";Taskool auto label5_Click
+Complete o trecho: label5_Click;"private void {{c1::label5_Click}}(object sender, EventArgs e)
+        {
+            _formAnterior.Show();
+            this.Close();
+        }";Taskool auto label5_Click Cloze
+O que faz este trecho: label5_Click;"_formAnterior.Show();";Taskool auto label5_Click SnippetLine
+O que faz o método `Home_Click`? (retorne o código);"private void Home_Click(object sender, EventArgs e)
+        {
+            groupBox2.Visible = false;
+        }";Taskool auto Home_Click
+Complete o trecho: Home_Click;"private void {{c1::Home_Click}}(object sender, EventArgs e)
+        {
+            groupBox2.Visible = false;
+        }";Taskool auto Home_Click Cloze
+O que faz este trecho: Home_Click;private void Home_Click(object sender, EventArgs e);Taskool auto Home_Click SnippetLine
+Como o código busca um registro no banco (ex.: usuário) usando FirstOrDefault?;"private void Home_Load(object sender, EventArgs e)
+        {
+            musicas = Directory.GetFiles(""musicas"").ToList(); // A lista musicas recebe o conteudo da pasta musicas
+            posicao = new Random().Next(musicas.Count); // posicao agora recebe um valor aleatorio da lista de musicas
+
+            media.URL = musicas[posicao]; // indica que o local da musica é o valor da variavel posicao dentro da lista de musicas
+            label7.Text = Path.GetFileName(musicas[posicao]); // O nome da musica aparece naa label7
+
+            media.PlayStateChange += media_playstateChange; // se o estado de media mudar... chama o metodo media_playstatechange
+                                                            // que eu criei usando o (ctrl + .)
+            media.controls.stop(); // inicia como stop, para a musica nao comecar ja tocando.
+
+            //--------------------------------------------------------------------------------------------------------------------
+            //tratamento Configurar inicio de hora e idioma
+            //--------------------------------------------------------------------------------------------------------------------
+
+            label1.Text = DateTime.Now.ToString(""HH:mm""); // Ja  inicia a label1 com a hora para nao ter delay.
+            saudaPt(); // Por padrao a saudacao ja vem em portugues
+
+            //--------------------------------------------------------------------------------------------------------------------
+
+            //--------------------------------------------------------------------------------------------------------------------
+            // tratamento foto de perfil
+            //--------------------------------------------------------------------------------------------------------------------
+
+            var usas = ctx.Usuario.FirstOrDefault(u => u.Codigo == User.id); // guarda na variavel usuario os dados do usuario
+                                                                             // cadastrado no banco cujo o codigo e igual ao user.id
+
+            pictureBox1.BackgroundImage = TrataImagem.ConverterImagem(usas.Foto); // A imagem do icone do perfil e a mesma que esta                                                                                  // no banco de dados
+            pictureBox1.BackgroundImageLayout = ImageLayout.Stretch; // Arruma o formato da foto para caber na box.
+
+            //--------------------------------------------------------------------------------------------------------------------
+        }";Taskool auto Home_Load
+Como o código busca um registro no banco (ex.: usuário) usando FirstOrDefault?;"private void Home_Load(object sender, EventArgs e)
+        {
+            musicas = Directory.GetFiles(""musicas"").ToList(); // A lista musicas recebe o conteudo da pasta musicas
+            posicao = new Random().Next(musicas.Count); // posicao agora recebe um valor aleatorio da lista de musicas
+
+            media.URL = musicas[posicao]; // indica que o local da musica é o valor da variavel posicao dentro da lista de musicas
+            label7.Text = Path.GetFileName(musicas[posicao]); // O nome da musica aparece naa label7
+
+            media.PlayStateChange += media_playstateChange; // se o estado de media mudar... chama o metodo media_playstatechange
+                                                            // que eu criei usando o (ctrl + .)
+            media.controls.stop(); // inicia como stop, para a musica nao comecar ja tocando.
+
+            //--------------------------------------------------------------------------------------------------------------------
+            //tratamento Configurar inicio de hora e idioma
+            //--------------------------------------------------------------------------------------------------------------------
+
+            label1.Text = DateTime.Now.ToString(""HH:mm""); // Ja  inicia a label1 com a hora para nao ter delay.
+            saudaPt(); // Por padrao a saudacao ja vem em portugues
+
+            //--------------------------------------------------------------------------------------------------------------------
+
+            //--------------------------------------------------------------------------------------------------------------------
+            // tratamento foto de perfil
+            //--------------------------------------------------------------------------------------------------------------------
+
+            {{c1::var usas = ctx.Usuario.FirstOrDefault(u => u.Codigo == User.id); // guarda na variavel usuario os dados do usuario}}
+                                                                             // cadastrado no banco cujo o codigo e igual ao user.id
+
+            pictureBox1.BackgroundImage = TrataImagem.ConverterImagem(usas.Foto); // A imagem do icone do perfil e a mesma que esta                                                                                  // no banco de dados
+            pictureBox1.BackgroundImageLayout = ImageLayout.Stretch; // Arruma o formato da foto para caber na box.
+
+            //--------------------------------------------------------------------------------------------------------------------
+        }";Taskool auto Home_Load Cloze
+Como o código escolhe um índice aleatório para músicas/itens?;"posicao = new Random().Next(musicas.Count); // posicao agora recebe um valor aleatorio da lista de musicas";Taskool auto Home_Load SnippetLine
+Como funciona o carregamento/controle de reprodução de música?;"private void media_playstateChange(int NewState)
+        {
+            if (NewState == 8) // se o novo estado for 8 ou seja, que a musica acabou
+            {
+                posicao = (posicao + 1) % musicas.Count; // E incrementado 1 na posicao e logo depois pega o resto da divisao pelo total de musicas.
+                                                         // Que faz o indice voltar a 0 quando chega no final.
+
+                media.URL = musicas[posicao]; // a musica que toca agora e igual a posicao que a variavel posica se encontra
+                label7.Text = Path.GetFileName(musicas[posicao]); // O nome da musica que a posicao esta e escrita na label 7
+
+            }
+        }";Taskool auto media_playstateChange
+Como funciona o carregamento/controle de reprodução de música?;"private void media_playstateChange(int NewState)
+        {
+            {{c1::if (NewState == 8) // se o novo estado for 8 ou seja, que a musica acabou}}
+            {
+                posicao = (posicao + 1) % musicas.Count; // E incrementado 1 na posicao e logo depois pega o resto da divisao pelo total de musicas.
+                                                         // Que faz o indice voltar a 0 quando chega no final.
+
+                media.URL = musicas[posicao]; // a musica que toca agora e igual a posicao que a variavel posica se encontra
+                label7.Text = Path.GetFileName(musicas[posicao]); // O nome da musica que a posicao esta e escrita na label 7
+
+            }
+        }";Taskool auto media_playstateChange Cloze
+O que faz este trecho: media_playstateChange;private void media_playstateChange(int NewState);Taskool auto media_playstateChange SnippetLine
+Como funciona o carregamento/controle de reprodução de música?;"private void button3_Click(object sender, EventArgs e)
+        {
+            if (button3.Text == ""Play"") // if o texto do botao for play
+            {
+                button3.Text = ""Pause""; // o texto vira pause e...
+                media.controls.play(); // da play na musica
+                return; // retorna para nao precisar escrever else
+            }
+
+            // se nao, no caso se for Pause
+            button3.Text = ""Play""; // o texto vira play e...
+            media.controls.pause(); // a musica pausa
+            return;
+        }";Taskool auto button3_Click
+Como funciona o carregamento/controle de reprodução de música?;"private void button3_Click(object sender, EventArgs e)
+        {
+            {{c1::if (button3.Text == ""Play"") // if o texto do botao for play}}
+            {
+                button3.Text = ""Pause""; // o texto vira pause e...
+                media.controls.play(); // da play na musica
+                return; // retorna para nao precisar escrever else
+            }
+
+            // se nao, no caso se for Pause
+            button3.Text = ""Play""; // o texto vira play e...
+            media.controls.pause(); // a musica pausa
+            return;
+        }";Taskool auto button3_Click Cloze
+O que faz este trecho: button3_Click;"if (button3.Text == ""Play"") // if o texto do botao for play";Taskool auto button3_Click SnippetLine
+Como o sistema grava logs ou arquivos no disco?;"private void Home_Activated(object sender, EventArgs e)
+        {
+            // esse metodo eu coloquei para que quando eu mudasse a cor de fundo e saisse do ConfCollors, a cor desse form mudaria...
+            Color bckColor = ColorTranslator.FromHtml(User.senha);  // converte string em cor...
+            this.BackColor = bckColor; // aplica a cor no fundo do form
+
+            //  em apenas uma linha, desserializa e guarda como lista na classe frase as mensagens e autores,
+            //  de todo o texto do arquivo mensagens.json
+            var frases = new JavaScriptSerializer().Deserialize<Frase[]>(File.ReadAllText(""mensagens.json""));
+
+            if (frases.Length > 0) // if basico so para nao quebrar a aplicacao
+            {
+                var f = frases[new Random().Next(frases.Length)]; // seleciona aleatoriamente uma frase e seu autor e guarda em f...
+                label2.Text = $""\"" {f.Mensagem} \"""";
+                label3.Text = f.Autor;
+            }
+        }";Taskool auto Home_Activated
+Como o sistema grava logs ou arquivos no disco?;"private void Home_Activated(object sender, EventArgs e)
+        {
+            // esse metodo eu coloquei para que quando eu mudasse a cor de fundo e saisse do ConfCollors, a cor desse form mudaria...
+            Color bckColor = ColorTranslator.FromHtml(User.senha);  // converte string em cor...
+            this.BackColor = bckColor; // aplica a cor no fundo do form
+
+            //  em apenas uma linha, desserializa e guarda como lista na classe frase as mensagens e autores,
+            //  de todo o texto do arquivo mensagens.json
+            var frases = new JavaScriptSerializer().Deserialize<Frase[]>(File.ReadAllText(""mensagens.json""));
+
+            {{c1::if (frases.Length > 0) // if basico so para nao quebrar a aplicacao}}
+            {
+                var f = frases[new Random().Next(frases.Length)]; // seleciona aleatoriamente uma frase e seu autor e guarda em f...
+                label2.Text = $""\"" {f.Mensagem} \"""";
+                label3.Text = f.Autor;
+            }
+        }";Taskool auto Home_Activated Cloze
+O que faz este trecho: Home_Activated;if (frases.Length > 0) // if basico so para nao quebrar a aplicacao;Taskool auto Home_Activated SnippetLine
+O que faz o método `button1_Click_1`? (retorne o código);"private void button1_Click_1(object sender, EventArgs e)
+        {
+            saudaIng();
+        }";Taskool auto button1_Click_1
+Complete o trecho: button1_Click_1;"private void {{c1::button1_Click_1}}(object sender, EventArgs e)
+        {
+            saudaIng();
+        }";Taskool auto button1_Click_1 Cloze
+O que faz este trecho: button1_Click_1;private void button1_Click_1(object sender, EventArgs e);Taskool auto button1_Click_1 SnippetLine
+O que faz o método `button2_Click`? (retorne o código);"private void button2_Click(object sender, EventArgs e)
+        {
+            saudaPt();
+
+        }";Taskool auto button2_Click
+Complete o trecho: button2_Click;"private void {{c1::button2_Click}}(object sender, EventArgs e)
+        {
+            saudaPt();
+
+        }";Taskool auto button2_Click Cloze
+O que faz este trecho: button2_Click;private void button2_Click(object sender, EventArgs e);Taskool auto button2_Click SnippetLine
+Como funciona o carregamento/controle de reprodução de música?;"private void Home_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            _formAnterior.Show(); // volta ao anterior
+            User.id = 0; // sem id na classe user
+            User.senha = null; // sem senha na classe user
+            media.controls.stop(); // para a musica ao fechar o form.
+        }";Taskool auto Home_FormClosing
+Como funciona o carregamento/controle de reprodução de música?;"private void {{c1::Home_FormClosing}}(object sender, FormClosingEventArgs e)
+        {
+            _formAnterior.Show(); // volta ao anterior
+            User.id = 0; // sem id na classe user
+            User.senha = null; // sem senha na classe user
+            media.controls.stop(); // para a musica ao fechar o form.
+        }";Taskool auto Home_FormClosing Cloze
+O que faz este trecho: Home_FormClosing;"_formAnterior.Show(); // volta ao anterior";Taskool auto Home_FormClosing SnippetLine
+O que faz o método `saudaPt`? (retorne o código);"public void saudaPt()
+        {
+            if (DateTime.Now.Hour >= 12 && DateTime.Now.Hour < 18)
+            {
+                label6.Text = $""Boa Tarde {User.Nome}"";
+                return;
+            }
+            else if (DateTime.Now.Hour >= 18 && DateTime.Now.Hour <= 24)
+            {
+                label6.Text = $""Boa noite {User.Nome}"";
+                return;
+            }
+            else if (DateTime.Now.Hour >= 4 && DateTime.Now.Hour < 12)
+            {
+                label6.Text = $""Bom dia {User.Nome}"";
+                return;
+            }
+
+            label6.Text = $""Boa madrugada {User.Nome}"";
+            return;
+        }";Taskool auto saudaPt
+Complete o trecho: saudaPt;"public void saudaPt()
+        {
+            {{c1::if (DateTime.Now.Hour >= 12 && DateTime.Now.Hour < 18)}}
+            {
+                label6.Text = $""Boa Tarde {User.Nome}"";
+                return;
+            }
+            else if (DateTime.Now.Hour >= 18 && DateTime.Now.Hour <= 24)
+            {
+                label6.Text = $""Boa noite {User.Nome}"";
+                return;
+            }
+            else if (DateTime.Now.Hour >= 4 && DateTime.Now.Hour < 12)
+            {
+                label6.Text = $""Bom dia {User.Nome}"";
+                return;
+            }
+
+            label6.Text = $""Boa madrugada {User.Nome}"";
+            return;
+        }";Taskool auto saudaPt Cloze
+O que faz este trecho: saudaPt;if (DateTime.Now.Hour >= 12 && DateTime.Now.Hour < 18);Taskool auto saudaPt SnippetLine
+O que faz o método `saudaIng`? (retorne o código);"public void saudaIng()
+        {
+            if (DateTime.Now.Hour >= 12 && DateTime.Now.Hour < 18)
+            {
+                label6.Text = $""Good Afternoon {User.Nome}"";
+                return;
+            }
+            else if (DateTime.Now.Hour >= 18 && DateTime.Now.Hour <= 24)
+            {
+                label6.Text = $""Good Evening {User.Nome}"";
+                return;
+            }
+            else if (DateTime.Now.Hour >= 4 && DateTime.Now.Hour < 12)
+            {
+                label6.Text = $""Good Morning {User.Nome}"";
+                return;
+            }
+
+            label6.Text = $""Good Morning {User.Nome}"";
+            return;
+        }";Taskool auto saudaIng
+Complete o trecho: saudaIng;"public void saudaIng()
+        {
+            {{c1::if (DateTime.Now.Hour >= 12 && DateTime.Now.Hour < 18)}}
+            {
+                label6.Text = $""Good Afternoon {User.Nome}"";
+                return;
+            }
+            else if (DateTime.Now.Hour >= 18 && DateTime.Now.Hour <= 24)
+            {
+                label6.Text = $""Good Evening {User.Nome}"";
+                return;
+            }
+            else if (DateTime.Now.Hour >= 4 && DateTime.Now.Hour < 12)
+            {
+                label6.Text = $""Good Morning {User.Nome}"";
+                return;
+            }
+
+            label6.Text = $""Good Morning {User.Nome}"";
+            return;
+        }";Taskool auto saudaIng Cloze
+O que faz este trecho: saudaIng;if (DateTime.Now.Hour >= 12 && DateTime.Now.Hour < 18);Taskool auto saudaIng SnippetLine
+Como a cor selecionada é convertida e aplicada (RGB ⇄ HEX)?;"private void button2_Click(object sender, EventArgs e)
+        {
+            using (ColorDialog dlg = new ColorDialog())
+            {
+                if (dlg.ShowDialog() == DialogResult.OK)
+                {
+                    Color corSelecionada = dlg.Color;
+
+                    int r = corSelecionada.R;
+                    int g = corSelecionada.G;
+                    int b = corSelecionada.B;
+
+                    Color c = Color.FromArgb(r, g, b);
+
+                    textBox1.Text = ColorTranslator.ToHtml(c);
+                    maskedTextBox1.Text = $""{r:d3}{g:d3}{b:d3}"";
+                    this.BackColor = c;
+
+                    return;
+                }
+            }
+        }";Taskool auto button2_Click
+Como a cor selecionada é convertida e aplicada (RGB ⇄ HEX)?;"private void button2_Click(object sender, EventArgs e)
+        {
+            using (ColorDialog dlg = new ColorDialog())
+            {
+                {{c1::if (dlg.ShowDialog() == DialogResult.OK)}}
+                {
+                    Color corSelecionada = dlg.Color;
+
+                    int r = corSelecionada.R;
+                    int g = corSelecionada.G;
+                    int b = corSelecionada.B;
+
+                    Color c = Color.FromArgb(r, g, b);
+
+                    textBox1.Text = ColorTranslator.ToHtml(c);
+                    maskedTextBox1.Text = $""{r:d3}{g:d3}{b:d3}"";
+                    this.BackColor = c;
+
+                    return;
+                }
+            }
+        }";Taskool auto button2_Click Cloze
+O que faz este trecho: button2_Click;if (dlg.ShowDialog() == DialogResult.OK);Taskool auto button2_Click SnippetLine
+Como a cor selecionada é convertida e aplicada (RGB ⇄ HEX)?;"private void maskedTextBox1_TextChanged(object sender, EventArgs e)
+        {
+            try // tenta
+            {
+                // guardar em p, o texto da makedTextBox1 sem RGB() e dividido apartir dos (.)
+                string[] p = maskedTextBox1.Text.Replace(""RGB("", """").Replace("")"", """").Trim().Split('.');
+
+                // guarda em r se o for > 0 e p[0] sem espaco for igual a 3 caracteres... se for verdadeiro guarda o p[0] se nao retorna 0
+                int r = p.Length > 0 && p[0].Trim().Length == 3 ? int.Parse(p[0]) : 0;
+
+                // guarda em g se o for > 0 e p[1] sem espaco for igual a 3 caracteres... se for verdadeiro guarda o p[1] se nao retorna 0
+                int g = p.Length > 1 && p[1].Trim().Length == 3 ? int.Parse(p[1]) : 0;
+
+                // guarda em b se o for > 0 e p[2] sem espaco for igual a 3 caracteres... se for verdadeiro guarda o p[2] se nao retorna 0
+                int b = p.Length > 2 && p[2].Trim().Length == 3 ? int.Parse(p[2]) : 0;
+
+                this.BackColor = Color.FromArgb(r, g, b); // muda a cor do fundo para a cor escrita na maskedTextBox1
+                textBox1.Text = ColorTranslator.ToHtml(BackColor); // escreve em Hex, a cor que esta no fundo
+            }
+            catch { } // execao nao faz nada.
+        }";Taskool auto maskedTextBox1_TextChanged
+Como a cor selecionada é convertida e aplicada (RGB ⇄ HEX)?;"private void {{c1::maskedTextBox1_TextChanged}}(object sender, EventArgs e)
+        {
+            try // tenta
+            {
+                // guardar em p, o texto da makedTextBox1 sem RGB() e dividido apartir dos (.)
+                string[] p = maskedTextBox1.Text.Replace(""RGB("", """").Replace("")"", """").Trim().Split('.');
+
+                // guarda em r se o for > 0 e p[0] sem espaco for igual a 3 caracteres... se for verdadeiro guarda o p[0] se nao retorna 0
+                int r = p.Length > 0 && p[0].Trim().Length == 3 ? int.Parse(p[0]) : 0;
+
+                // guarda em g se o for > 0 e p[1] sem espaco for igual a 3 caracteres... se for verdadeiro guarda o p[1] se nao retorna 0
+                int g = p.Length > 1 && p[1].Trim().Length == 3 ? int.Parse(p[1]) : 0;
+
+                // guarda em b se o for > 0 e p[2] sem espaco for igual a 3 caracteres... se for verdadeiro guarda o p[2] se nao retorna 0
+                int b = p.Length > 2 && p[2].Trim().Length == 3 ? int.Parse(p[2]) : 0;
+
+                this.BackColor = Color.FromArgb(r, g, b); // muda a cor do fundo para a cor escrita na maskedTextBox1
+                textBox1.Text = ColorTranslator.ToHtml(BackColor); // escreve em Hex, a cor que esta no fundo
+            }
+            catch { } // execao nao faz nada.
+        }";Taskool auto maskedTextBox1_TextChanged Cloze
+Como a máscara RGB é interpretada para obter R,G,B?;private void maskedTextBox1_TextChanged(object sender, EventArgs e);Taskool auto maskedTextBox1_TextChanged SnippetLine
+Como o código busca um registro no banco (ex.: usuário) usando FirstOrDefault?;"private void button1_Click(object sender, EventArgs e)
+        {
+            // carrega o usuario do banco pelo id
+            var usas = ctx.Usuario.FirstOrDefault(u => u.Codigo == User.id);
+
+            // se usuario for null
+            if (usas == null)
+            {
+                ""Erro ao encontrar usuario"".Alert();
+                return;
+            }
+
+            // se nao verifica se tem algo na textbox1 e se e menor ou igual a 7, maximo de caracteres para um hex de cor
+            else if (!string.IsNullOrEmpty(textBox1.Text) && textBox1.Text.Length <= 7)
+            {
+                string cor = textBox1.Text.ToString();
+                User.senha = cor; // Atualiza a senha da classe User
+                usas.Senha = $""{cor}""; // defini a senha do usuario cadastrada no banco como o conteudo da text box em string (cor)
+
+                // Confirma as alteracoes
+                var pergunta = $""{usas.Nome} quer mesmo salvar essa cor?"".Conf();
+                if (pergunta == DialogResult.Yes)
+                {
+                    ctx.SaveChanges(); // salva no banco
+                    Close(); // fecha o form;
+                    return;
+                }
+
+                return;
+            }
+
+            // se algo der errado:
+            else
+            {
+                ""nao foi possivel salvar a cor"".Alert();
+                return;
+            }
+        }";Taskool auto button1_Click
+Como o código busca um registro no banco (ex.: usuário) usando FirstOrDefault?;"private void button1_Click(object sender, EventArgs e)
+        {
+            // carrega o usuario do banco pelo id
+            {{c1::var usas = ctx.Usuario.FirstOrDefault(u => u.Codigo == User.id);}}
+
+            // se usuario for null
+            if (usas == null)
+            {
+                ""Erro ao encontrar usuario"".Alert();
+                return;
+            }
+
+            // se nao verifica se tem algo na textbox1 e se e menor ou igual a 7, maximo de caracteres para um hex de cor
+            else if (!string.IsNullOrEmpty(textBox1.Text) && textBox1.Text.Length <= 7)
+            {
+                string cor = textBox1.Text.ToString();
+                User.senha = cor; // Atualiza a senha da classe User
+                usas.Senha = $""{cor}""; // defini a senha do usuario cadastrada no banco como o conteudo da text box em string (cor)
+
+                // Confirma as alteracoes
+                var pergunta = $""{usas.Nome} quer mesmo salvar essa cor?"".Conf();
+                if (pergunta == DialogResult.Yes)
+                {
+                    ctx.SaveChanges(); // salva no banco
+                    Close(); // fecha o form;
+                    return;
+                }
+
+                return;
+            }
+
+            // se algo der errado:
+            else
+            {
+                ""nao foi possivel salvar a cor"".Alert();
+                return;
+            }
+        }";Taskool auto button1_Click Cloze
+O que faz este trecho: button1_Click;if (usas == null);Taskool auto button1_Click SnippetLine
+O que faz a classe `User`?;"public static class User
+    {
+        public static int id { get; set; }
+        public static string senha { get; set; }
+        public static string Nome { get; set; }
+    }";Taskool auto User
+Complete o trecho: User;"public static class User
+    {
+        public static int id { get; set; }
+        public static string senha { get; set; }
+        public static string Nome { get; set; }
+    }";Taskool auto User Cloze
+O que faz este trecho: User;public static class User;Taskool auto User SnippetLine
+O que faz este trecho de código? (mostrar código como resposta);"Taskool.apkg
+Arquivo
+quais perguntas tem nesse baralho do anki??
+Você disse:
+Taskool.txt
+Documento
+quais perguntas tem ai?? 
+Você disse:
+agora, com oque tem ai... vou mandar alguns codigos de algumas telas, como a home que possui a foto de perfil do banco convertida em imagem, um botao sair, musica que toca, abre um sistema de troca de cores, e por ai vai... para voce fazer as perguntas e respostas, para fechar esse baralho, nao vai precisar criar o baralho, somente me dar todas as perguntas e respostas reformuladas e melhoradas, com base no novo codigo que vou mandar... Ok?
+Você disse:
+vai precisar criar muitas mais perguntas alem das 43
+Você disse:
+classe user";Taskool auto Misc
+Complete o trecho: Snippet32;"Taskool.apkg
+Arquivo
+quais perguntas tem nesse baralho do anki??
+Você disse:
+Taskool.txt
+Documento
+quais perguntas tem ai?? 
+Você disse:
+agora, com oque tem ai... vou mandar alguns codigos de algumas telas, como a home que possui a foto de perfil do banco convertida em imagem, um botao sair, musica que toca, abre um sistema de troca de cores, e por ai vai... para voce fazer as perguntas e respostas, para fechar esse baralho, nao vai precisar criar o baralho, somente me dar todas as perguntas e respostas reformuladas e melhoradas, com base no novo codigo que vou mandar... Ok?
+Você disse:
+vai precisar criar muitas mais perguntas alem das 43
+Você disse:
+classe user";Taskool auto Misc Cloze
+O que faz este trecho: Snippet32;quais perguntas tem nesse baralho do anki??;Taskool auto Misc SnippetLine
+O que faz este trecho de código? (mostrar código como resposta);"using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;";Taskool auto Misc
+Complete o trecho: Snippet33;"using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;";Taskool auto Misc Cloze
+O que faz este trecho: Snippet33;"using System.Collections.Generic;";Taskool auto Misc SnippetLine
+O que faz a classe `User`?;"namespace Taskool_final
+{
+    public static class User
+    {
+        public static int id { get; set; }
+        public static string senha { get; set; }
+        public static string Nome { get; set; }
+    }
+}";Taskool auto Taskool_final
+Complete o trecho: Taskool_final;"namespace Taskool_final
+{
+    public static class User
+    {
+        public static int id { get; set; }
+        public static string senha { get; set; }
+        public static string Nome { get; set; }
+    }
+}";Taskool auto Taskool_final Cloze
+O que faz este trecho: Taskool_final;namespace Taskool_final;Taskool auto Taskool_final SnippetLine
+O que faz este trecho de código? (mostrar código como resposta);"using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Diagnostics;
+using System.Drawing;
+using System.IO;
+using System.Linq;
+using System.Net;
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows.Forms;
+using Taskool_final.Model;";Taskool auto Misc
+Complete o trecho: Snippet35;"using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Diagnostics;
+using System.Drawing;
+using System.IO;
+using System.Linq;
+using System.Net;
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows.Forms;
+using Taskool_final.Model;";Taskool auto Misc Cloze
+O que faz este trecho: Snippet35;"using System.Collections.Generic;";Taskool auto Misc SnippetLine
+Como uma nova instância de form/objeto é criada e exibida?;"namespace Taskool_final
+{
+    public partial class FormAutentica : Parent
+    {
+        dbTarefasEntities ctx = new dbTarefasEntities();
+        byte[] imagemBytes;
+        public FormAutentica()
+        {
+            InitializeComponent();
+            this.Text = ""Autenticação | Taskool"";
+            textBox1.ShortcutsEnabled = false;";Taskool auto Taskool_final
+Como uma nova instância de form/objeto é criada e exibida?;"namespace Taskool_final
+{
+    public partial class FormAutentica : Parent
+    {
+        {{c1::dbTarefasEntities}} ctx = new dbTarefasEntities();
+        byte[] imagemBytes;
+        public FormAutentica()
+        {
+            InitializeComponent();
+            this.Text = ""Autenticação | Taskool"";
+            textBox1.ShortcutsEnabled = false;";Taskool auto Taskool_final Cloze
+O que faz este trecho: Taskool_final;namespace Taskool_final;Taskool auto Taskool_final SnippetLine
+Como o sistema detecta CapsLock e reage no campo de senha?;"            if (Console.CapsLock)
+            {    
+                label4.Visible = true;
+                return;
+            }";Taskool auto Misc
+Como o sistema detecta CapsLock e reage no campo de senha?;"            {{c1::if (Console.CapsLock)}}
+            {    
+                label4.Visible = true;
+                return;
+            }";Taskool auto Misc Cloze
+Como o sistema detecta CapsLock e reage no campo de senha?;if (Console.CapsLock);Taskool auto Misc SnippetLine
+O que faz o método `linkLabel2_LinkClicked`? (retorne o código);"        private void linkLabel2_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            Process.Start(""osk.exe"");
+            textBox1.Focus();
+        }";Taskool auto linkLabel2_LinkClicked
+Complete o trecho: linkLabel2_LinkClicked;"        private void {{c1::linkLabel2_LinkClicked}}(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            Process.Start(""osk.exe"");
+            textBox1.Focus();
+        }";Taskool auto linkLabel2_LinkClicked Cloze
+O que faz este trecho: linkLabel2_LinkClicked;private void linkLabel2_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e);Taskool auto linkLabel2_LinkClicked SnippetLine
+Como o projeto trata/seleciona/convete imagens do usuário?;"        private void button1_Click(object sender, EventArgs e)
+        {
+            imagemBytes = TrataImagem.SelecionarImagem(imagemBytes, button1);
+        }";Taskool auto button1_Click
+Como o projeto trata/seleciona/convete imagens do usuário?;"        private void {{c1::button1_Click}}(object sender, EventArgs e)
+        {
+            imagemBytes = TrataImagem.SelecionarImagem(imagemBytes, button1);
+        }";Taskool auto button1_Click Cloze
+O que faz este trecho: button1_Click;private void button1_Click(object sender, EventArgs e);Taskool auto button1_Click SnippetLine
+O que faz o método `button2_Click`? (retorne o código);"        private void button2_Click(object sender, EventArgs e)
+        {
+            if (textBox1 == null)
+                return;";Taskool auto button2_Click
+Complete o trecho: button2_Click;"        private void button2_Click(object sender, EventArgs e)
+        {
+            {{c1::if (textBox1 == null)}}
+                return;";Taskool auto button2_Click Cloze
+O que faz este trecho: button2_Click;if (textBox1 == null);Taskool auto button2_Click SnippetLine
+Como o código busca um registro no banco (ex.: usuário) usando FirstOrDefault?;"            var usas = ctx.Usuario.FirstOrDefault(u => u.Usuario1 == textBox1.Text);";Taskool auto Misc
+Como o código busca um registro no banco (ex.: usuário) usando FirstOrDefault?;"            {{c1::var usas = ctx.Usuario.FirstOrDefault(u => u.Usuario1 == textBox1.Text);}}";Taskool auto Misc Cloze
+Como o código busca um registro no banco (ex.: usuário) usando FirstOrDefault?;"var usas = ctx.Usuario.FirstOrDefault(u => u.Usuario1 == textBox1.Text);";Taskool auto Misc SnippetLine
+O que faz este trecho de código? (mostrar código como resposta);"            if (usas == null)
+            {
+                gerarPasta();
+                return;
+            }";Taskool auto Misc
+Complete o trecho: Snippet42;"            {{c1::if (usas == null)}}
+            {
+                gerarPasta();
+                return;
+            }";Taskool auto Misc Cloze
+O que faz este trecho: Snippet42;if (usas == null);Taskool auto Misc SnippetLine
+Como o sistema exibe caixas de diálogo (alerta/confirmação/informação)?;"            else if (usas.Usuario1 == textBox1.Text)
+            {
+                if (imagemBytes == null)
+                {
+                    ""Imagem invalida"".Alert();
+                    return;";Taskool auto Misc
+Como o sistema exibe caixas de diálogo (alerta/confirmação/informação)?;"            {{c1::else if (usas.Usuario1 == textBox1.Text)}}
+            {
+                if (imagemBytes == null)
+                {
+                    ""Imagem invalida"".Alert();
+                    return;";Taskool auto Misc Cloze
+Quais campos são preenchidos ao criar um usuário?;else if (usas.Usuario1 == textBox1.Text);Taskool auto Misc SnippetLine
+Como o sistema compara arrays/bytes para validar igualdade (ex.: imagem)?;"                }
+                else if (!usas.Foto.SequenceEqual(imagemBytes))
+                {
+                    ""Dados Incorretos"".Alert();";Taskool auto Misc
+Como o sistema compara arrays/bytes para validar igualdade (ex.: imagem)?;"                }
+                {{c1::else if (!usas.Foto.SequenceEqual(imagemBytes))}}
+                {
+                    ""Dados Incorretos"".Alert();";Taskool auto Misc Cloze
+Como o sistema compara arrays/bytes para validar igualdade (ex.: imagem)?;else if (!usas.Foto.SequenceEqual(imagemBytes));Taskool auto Misc SnippetLine
+Como o sistema compara arrays/bytes para validar igualdade (ex.: imagem)?;"                byte[] imagemBanco = usas.Foto;
+                if (imagemBanco.SequenceEqual(imagemBytes))
+                {
+                    User.id = usas.Codigo;
+                    User.senha = usas.Senha;
+                    User.Nome = usas.Nome;";Taskool auto Misc
+Como o sistema compara arrays/bytes para validar igualdade (ex.: imagem)?;"                byte[] imagemBanco = usas.Foto;
+                {{c1::if (imagemBanco.SequenceEqual(imagemBytes))}}
+                {
+                    User.id = usas.Codigo;
+                    User.senha = usas.Senha;
+                    User.Nome = usas.Nome;";Taskool auto Misc Cloze
+Como o sistema compara arrays/bytes para validar igualdade (ex.: imagem)?;if (imagemBanco.SequenceEqual(imagemBytes));Taskool auto Misc SnippetLine
+Como uma nova instância de form/objeto é criada e exibida?;"                    Home pagInicial = new Home(this);
+                    pagInicial.Show();
+                    this.Hide();
+                    return;
+                }
+            }
+        }";Taskool auto Misc
+Como uma nova instância de form/objeto é criada e exibida?;"                    Home pagInicial = new Home(this);
+                    pagInicial.Show();
+                    this.Hide();
+                    {{c1::return;}}
+                }
+            }
+        }";Taskool auto Misc Cloze
+O que faz este trecho: Snippet46;"pagInicial.Show();";Taskool auto Misc SnippetLine
+Como uma nova instância de form/objeto é criada e exibida?;"        private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            Cadastro paginaCadastro = new Cadastro(this);
+            paginaCadastro.Show();
+            this.Hide();
+        }";Taskool auto linkLabel1_LinkClicked
+Como uma nova instância de form/objeto é criada e exibida?;"        private void {{c1::linkLabel1_LinkClicked}}(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            Cadastro paginaCadastro = new Cadastro(this);
+            paginaCadastro.Show();
+            this.Hide();
+        }";Taskool auto linkLabel1_LinkClicked Cloze
+O que faz este trecho: linkLabel1_LinkClicked;"paginaCadastro.Show();";Taskool auto linkLabel1_LinkClicked SnippetLine
+Como o código obtém o IP local da máquina?;"        public string pegarIp()
+        {
+            string ip = Dns.GetHostAddresses(Dns.GetHostName())
+                .First(i => i.AddressFamily == System.Net.Sockets.AddressFamily.InterNetwork)
+                .ToString();
+            return ip.ToString();
+        }";Taskool auto pegarIp
+Como o código obtém o IP local da máquina?;"        public string pegarIp()
+        {
+            string ip = Dns.GetHostAddresses(Dns.GetHostName())
+                .First(i => i.AddressFamily == System.Net.Sockets.AddressFamily.InterNetwork)
+                .ToString();
+            {{c1::return ip.ToString();}}
+        }";Taskool auto pegarIp Cloze
+O que faz este trecho: pegarIp;"return ip.ToString();";Taskool auto pegarIp SnippetLine
+Como o código escolhe um índice aleatório para músicas/itens?;"        public void gerarPasta()
+        {
+            Random random = new Random();
+            int id = random.Next(0, 1000);";Taskool auto gerarPasta
+Como o código escolhe um índice aleatório para músicas/itens?;"        public void {{c1::gerarPasta}}()
+        {
+            Random random = new Random();
+            int id = random.Next(0, 1000);";Taskool auto gerarPasta Cloze
+Como o código escolhe um índice aleatório para músicas/itens?;"Random random = new Random();";Taskool auto gerarPasta SnippetLine
+Como o sistema cria/verifica pastas (ex.: pasta de logs)?;"            string pasta = @""C:\USER_LOG"";
+            if (!Directory.Exists(pasta))
+                Directory.CreateDirectory(pasta);";Taskool auto Misc
+Como o sistema cria/verifica pastas (ex.: pasta de logs)?;"            string pasta = @""C:\USER_LOG"";
+            {{c1::if (!Directory.Exists(pasta))}}
+                Directory.CreateDirectory(pasta);";Taskool auto Misc Cloze
+Como o sistema cria/verifica pastas (ex.: pasta de logs)?;if (!Directory.Exists(pasta));Taskool auto Misc SnippetLine
+Como o sistema grava logs ou arquivos no disco?;"            string caminhoArquivo = Path.Combine(pasta, $""{textBox1.Text}{id}.txt"");
+            bool novoArquivo = !File.Exists(caminhoArquivo);";Taskool auto Misc
+Como o sistema grava logs ou arquivos no disco?;"            string caminhoArquivo = Path.{{c1::Combine}}(pasta, $""{textBox1.Text}{id}.txt"");
+            bool novoArquivo = !File.Exists(caminhoArquivo);";Taskool auto Misc Cloze
+O que faz este trecho: Snippet51;"string caminhoArquivo = Path.Combine(pasta, $""{textBox1.Text}{id}.txt"");";Taskool auto Misc SnippetLine
+Como o sistema grava logs ou arquivos no disco?;"            using (StreamWriter sw = new StreamWriter(caminhoArquivo, true))
+            {
+                sw.WriteLine(""Data;Hora;Usuario;IP "");";Taskool auto Misc
+Como o sistema grava logs ou arquivos no disco?;"            {{c1::using}} (StreamWriter sw = new StreamWriter(caminhoArquivo, true))
+            {
+                sw.WriteLine(""Data;Hora;Usuario;IP "");";Taskool auto Misc Cloze
+Como o sistema grava logs ou arquivos no disco?;using (StreamWriter sw = new StreamWriter(caminhoArquivo, true));Taskool auto Misc SnippetLine
+Como o código obtém o IP local da máquina?;"                sw.WriteLine($""{DateTime.Now.ToString(""dd/MM/yyyy"")};{DateTime.Now.ToString(""hh:mm"")};{textBox1.Text};{pegarIp()}"");
+            }
+        }";Taskool auto Misc
+Como o código obtém o IP local da máquina?;"                sw.{{c1::WriteLine}}($""{DateTime.Now.ToString(""dd/MM/yyyy"")};{DateTime.Now.ToString(""hh:mm"")};{textBox1.Text};{pegarIp()}"");
+            }
+        }";Taskool auto Misc Cloze
+Como o código obtém o IP local da máquina?;"sw.WriteLine($""{DateTime.Now.ToString(""dd/MM/yyyy"")};{DateTime.Now.ToString(""hh:mm"")};{textBox1.Text};{pegarIp()}"");";Taskool auto Misc SnippetLine
+O que faz o método `FormAutentica_Activated`? (retorne o código);"        private void FormAutentica_Activated(object sender, EventArgs e)
+        {
+            button1.BackgroundImage = null;
+        }";Taskool auto FormAutentica_Activated
+Complete o trecho: FormAutentica_Activated;"        private void {{c1::FormAutentica_Activated}}(object sender, EventArgs e)
+        {
+            button1.BackgroundImage = null;
+        }";Taskool auto FormAutentica_Activated Cloze
+O que faz este trecho: FormAutentica_Activated;private void FormAutentica_Activated(object sender, EventArgs e);Taskool auto FormAutentica_Activated SnippetLine
+Como o sistema detecta CapsLock e reage no campo de senha?;"        private void textBox1_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (Console.CapsLock)
+            {
+                label4.Visible = true;
+                return;
+            }";Taskool auto textBox1_KeyDown
+Como o sistema detecta CapsLock e reage no campo de senha?;"        private void textBox1_KeyDown(object sender, KeyEventArgs e)
+        {
+            {{c1::if (Console.CapsLock)}}
+            {
+                label4.Visible = true;
+                return;
+            }";Taskool auto textBox1_KeyDown Cloze
+Como o sistema detecta CapsLock e reage no campo de senha?;if (Console.CapsLock);Taskool auto textBox1_KeyDown SnippetLine
+O que faz este trecho de código? (mostrar código como resposta);"using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Data.Entity.Infrastructure;
+using System.Drawing;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows.Forms;
+using Taskool_final.Model;";Taskool auto Misc
+Complete o trecho: Snippet56;"using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Data.Entity.Infrastructure;
+using System.Drawing;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows.Forms;
+using Taskool_final.Model;";Taskool auto Misc Cloze
+O que faz este trecho: Snippet56;"using System.Collections.Generic;";Taskool auto Misc SnippetLine
+Como uma nova instância de form/objeto é criada e exibida?;"namespace Taskool_final
+{
+    public partial class Cadastro : Parent
+    {
+        dbTarefasEntities ctx = new dbTarefasEntities();
+        Form _formAnterior;
+        byte[] imagemBytes;
+        public Cadastro(Form formAnterior)
+        {
+            InitializeComponent();
+            this.Text = ""Cadastro | Taskool"";
+            _formAnterior = formAnterior;
+        }";Taskool auto Taskool_final
+Como uma nova instância de form/objeto é criada e exibida?;"namespace Taskool_final
+{
+    public partial class Cadastro : Parent
+    {
+        {{c1::dbTarefasEntities}} ctx = new dbTarefasEntities();
+        Form _formAnterior;
+        byte[] imagemBytes;
+        public Cadastro(Form formAnterior)
+        {
+            InitializeComponent();
+            this.Text = ""Cadastro | Taskool"";
+            _formAnterior = formAnterior;
+        }";Taskool auto Taskool_final Cloze
+O que faz este trecho: Taskool_final;namespace Taskool_final;Taskool auto Taskool_final SnippetLine
+O que faz o método `linkLabel1_LinkClicked`? (retorne o código);"        private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {";Taskool auto linkLabel1_LinkClicked
+Complete o trecho: linkLabel1_LinkClicked;"        private void {{c1::linkLabel1_LinkClicked}}(object sender, LinkLabelLinkClickedEventArgs e)
+        {";Taskool auto linkLabel1_LinkClicked Cloze
+O que faz este trecho: linkLabel1_LinkClicked;private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e);Taskool auto linkLabel1_LinkClicked SnippetLine
+O que faz o método `button3_Click`? (retorne o código);"        private void button3_Click(object sender, EventArgs e)
+        {";Taskool auto button3_Click
+Complete o trecho: button3_Click;"        private void {{c1::button3_Click}}(object sender, EventArgs e)
+        {";Taskool auto button3_Click Cloze
+O que faz este trecho: button3_Click;private void button3_Click(object sender, EventArgs e);Taskool auto button3_Click SnippetLine
+O que valida se o campo de texto (textBox1) está vazio ou nulo?;"            if (string.IsNullOrEmpty(textBox1.Text))
+            {
+                MessageBox.Show(""Adicione seu nome e sobreno"");
+                return;
+            }";Taskool auto Misc
+O que valida se o campo de texto (textBox1) está vazio ou nulo?;"            {{c1::if (string.IsNullOrEmpty(textBox1.Text))}}
+            {
+                MessageBox.Show(""Adicione seu nome e sobreno"");
+                return;
+            }";Taskool auto Misc Cloze
+O que valida se o campo de texto (textBox1) está vazio ou nulo?;if (string.IsNullOrEmpty(textBox1.Text));Taskool auto Misc SnippetLine
+O que faz este trecho de código? (mostrar código como resposta);"            if (partesNome.Length > 1)
+            {
+                string nickname = $""{partesNome[0]}.{partesNome[partesNome.Length - 1]}{dateTimePicker1.Value.ToString(""yy"")}"";";Taskool auto Misc
+Complete o trecho: Snippet61;"            {{c1::if (partesNome.Length > 1)}}
+            {
+                string nickname = $""{partesNome[0]}.{partesNome[partesNome.Length - 1]}{dateTimePicker1.Value.ToString(""yy"")}"";";Taskool auto Misc Cloze
+O que faz este trecho: Snippet61;if (partesNome.Length > 1);Taskool auto Misc SnippetLine
+Como o sistema exibe caixas de diálogo (alerta/confirmação/informação)?;"                if (partesNome.Length < 2)
+                {
+                    MessageBox.Show(""Erro ao gerar"");
+                    return;
+                }";Taskool auto Misc
+Como o sistema exibe caixas de diálogo (alerta/confirmação/informação)?;"                {{c1::if (partesNome.Length < 2)}}
+                {
+                    MessageBox.Show(""Erro ao gerar"");
+                    return;
+                }";Taskool auto Misc Cloze
+O que faz este trecho: Snippet62;if (partesNome.Length < 2);Taskool auto Misc SnippetLine
+Como o sistema exibe caixas de diálogo (alerta/confirmação/informação)?;"                else if (ctx.Usuario.Any(n => n.Usuario1 == nickname))
+                {
+                    nickname = $""{partesNome[0]}.{partesNome[partesNome.Length - 2]}{dateTimePicker1.Value.ToString(""yy"")}"";
+                }
+                textBox4.Text = nickname.ToLower();
+                return;
+            }
+                MessageBox.Show(""Adicione seu nome e sobreno"");
+                return;            
+        }";Taskool auto Misc
+Como o sistema exibe caixas de diálogo (alerta/confirmação/informação)?;"                {{c1::else if (ctx.Usuario.Any(n => n.Usuario1 == nickname))}}
+                {
+                    nickname = $""{partesNome[0]}.{partesNome[partesNome.Length - 2]}{dateTimePicker1.Value.ToString(""yy"")}"";
+                }
+                textBox4.Text = nickname.ToLower();
+                return;
+            }
+                MessageBox.Show(""Adicione seu nome e sobreno"");
+                return;            
+        }";Taskool auto Misc Cloze
+Quais campos são preenchidos ao criar um usuário?;else if (ctx.Usuario.Any(n => n.Usuario1 == nickname));Taskool auto Misc SnippetLine
+O que faz o método `button2_Click`? (retorne o código);"        private void button2_Click(object sender, EventArgs e)
+        {
+            if (string.IsNullOrEmpty(textBox1.Text) || string.IsNullOrEmpty(textBox2.Text)
+               || string.IsNullOrEmpty(textBox2.Text) || string.IsNullOrEmpty(textBox3.Text)
+               || string.IsNullOrEmpty(textBox4.Text) || imagemBytes == null) return;";Taskool auto button2_Click
+Complete o trecho: button2_Click;"        private void button2_Click(object sender, EventArgs e)
+        {
+            {{c1::if (string.IsNullOrEmpty(textBox1.Text) || string.IsNullOrEmpty(textBox2.Text)}}
+               || string.IsNullOrEmpty(textBox2.Text) || string.IsNullOrEmpty(textBox3.Text)
+               || string.IsNullOrEmpty(textBox4.Text) || imagemBytes == null) return;";Taskool auto button2_Click Cloze
+O que faz este trecho: button2_Click;if (string.IsNullOrEmpty(textBox1.Text) || string.IsNullOrEmpty(textBox2.Text);Taskool auto button2_Click SnippetLine
+Quais campos são preenchidos ao criar um usuário?;"            else if (ctx.Usuario.Any(n => n.Usuario1 == textBox4.Text))
+                return;";Taskool auto Misc
+Quais campos são preenchidos ao criar um usuário?;"            {{c1::else if (ctx.Usuario.Any(n => n.Usuario1 == textBox4.Text))}}
+                return;";Taskool auto Misc Cloze
+Quais campos são preenchidos ao criar um usuário?;else if (ctx.Usuario.Any(n => n.Usuario1 == textBox4.Text));Taskool auto Misc SnippetLine
+Como uma nova instância de form/objeto é criada e exibida?;"            Usuario usas = new Usuario();
+            usas.Nome = textBox1.Text;
+            usas.Email = textBox2.Text;
+            usas.Telefone = textBox3.Text;
+            usas.Usuario1 = textBox4.Text;
+            usas.Foto = imagemBytes;";Taskool auto Misc
+Como uma nova instância de form/objeto é criada e exibida?;"            {{c1::Usuario}} usas = new Usuario();
+            usas.Nome = textBox1.Text;
+            usas.Email = textBox2.Text;
+            usas.Telefone = textBox3.Text;
+            usas.Usuario1 = textBox4.Text;
+            usas.Foto = imagemBytes;";Taskool auto Misc Cloze
+Como uma nova instância de form/objeto é criada e exibida?;"Usuario usas = new Usuario();";Taskool auto Misc SnippetLine
+Em que ponto o contexto salva alterações no banco?;"            ctx.Usuario.Add(usas);
+            ctx.SaveChanges();";Taskool auto Misc
+Em que ponto o contexto salva alterações no banco?;"            ctx.Usuario.Add(usas);
+            {{c1::ctx.SaveChanges();}}";Taskool auto Misc Cloze
+Em que ponto o contexto salva alterações no banco?;"ctx.SaveChanges();";Taskool auto Misc SnippetLine
+O que faz este trecho de código? (mostrar código como resposta);"            _formAnterior.Show();
+            this.Close();
+        }";Taskool auto Misc
+Complete o trecho: Snippet68;"            _formAnterior.{{c1::Show}}();
+            this.Close();
+        }";Taskool auto Misc Cloze
+O que faz este trecho: Snippet68;"_formAnterior.Show();";Taskool auto Misc SnippetLine
+O que faz o método `Cadastro_FormClosing`? (retorne o código);"        private void Cadastro_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            _formAnterior.Show();
+        }
+    }
+}";Taskool auto Cadastro_FormClosing
+Complete o trecho: Cadastro_FormClosing;"        private void {{c1::Cadastro_FormClosing}}(object sender, FormClosingEventArgs e)
+        {
+            _formAnterior.Show();
+        }
+    }
+}";Taskool auto Cadastro_FormClosing Cloze
+O que faz este trecho: Cadastro_FormClosing;"_formAnterior.Show();";Taskool auto Cadastro_FormClosing SnippetLine
+Como as frases são desserializadas a partir de um JSON e exibidas aleatoriamente?;"using MediaPlayer;
+using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
+using System.IO;
+using System.Linq;
+using System.Reflection.Emit;
+using System.Runtime.Serialization.Json;
+using System.Text;
+using System.Text.Json;
+using System.Text.Json.Serialization;
+using System.Threading.Tasks;
+using System.Web.Script.Serialization;
+using System.Windows.Forms;
+using Taskool_final.Model;
+using WMPLib;
+using static System.Net.Mime.MediaTypeNames;";Taskool auto Misc
+Como as frases são desserializadas a partir de um JSON e exibidas aleatoriamente?;"using MediaPlayer;
+using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
+using System.IO;
+using System.Linq;
+using System.Reflection.Emit;
+using System.Runtime.Serialization.Json;
+using System.Text;
+using System.Text.Json;
+using System.Text.Json.Serialization;
+using System.Threading.Tasks;
+using System.Web.Script.Serialization;
+using System.Windows.Forms;
+using Taskool_final.Model;
+using WMPLib;
+using static System.Net.Mime.MediaTypeNames;";Taskool auto Misc Cloze
+O que faz este trecho: Snippet70;"using System.Collections.Generic;";Taskool auto Misc SnippetLine
+Como funciona o carregamento/controle de reprodução de música?;"namespace Taskool_final
+{
+    public partial class Home : Parent
+    {
+        // instanciar objeto do wmp...
+        WindowsMediaPlayer media = new WindowsMediaPlayer();";Taskool auto Taskool_final
+Como funciona o carregamento/controle de reprodução de música?;"namespace Taskool_final
+{
+    public partial class Home : Parent
+    {
+        // instanciar objeto do wmp...
+        {{c1::WindowsMediaPlayer}} media = new WindowsMediaPlayer();";Taskool auto Taskool_final Cloze
+Como funciona o carregamento/controle de reprodução de música?;"WindowsMediaPlayer media = new WindowsMediaPlayer();";Taskool auto Taskool_final SnippetLine
+Como uma nova instância de form/objeto é criada e exibida?;"        Form _formAnterior;
+        dbTarefasEntities ctx = new dbTarefasEntities();
+        public Home(Form formAnterior)
+        {
+            InitializeComponent();
+            this.Text = ""Pagina Principal | Taskool"";
+            _formAnterior = formAnterior;
+        }";Taskool auto Misc
+Como uma nova instância de form/objeto é criada e exibida?;"        Form _formAnterior;
+        {{c1::dbTarefasEntities}} ctx = new dbTarefasEntities();
+        public Home(Form formAnterior)
+        {
+            InitializeComponent();
+            this.Text = ""Pagina Principal | Taskool"";
+            _formAnterior = formAnterior;
+        }";Taskool auto Misc Cloze
+Como uma nova instância de form/objeto é criada e exibida?;"dbTarefasEntities ctx = new dbTarefasEntities();";Taskool auto Misc SnippetLine
+O que faz o método `timer1_Tick`? (retorne o código);"        //--------------------------------------------------------------------------------------------------------------------
+        // tratamento hora na label
+        //--------------------------------------------------------------------------------------------------------------------
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            label1.Text = DateTime.Now.ToString(""HH:mm"");
+        }
+        //--------------------------------------------------------------------------------------------------------------------";Taskool auto timer1_Tick
+Complete o trecho: timer1_Tick;"        //--------------------------------------------------------------------------------------------------------------------
+        // tratamento hora na label
+        //--------------------------------------------------------------------------------------------------------------------
+        private void {{c1::timer1_Tick}}(object sender, EventArgs e)
+        {
+            label1.Text = DateTime.Now.ToString(""HH:mm"");
+        }
+        //--------------------------------------------------------------------------------------------------------------------";Taskool auto timer1_Tick Cloze
+O que faz este trecho: timer1_Tick;//--------------------------------------------------------------------------------------------------------------------;Taskool auto timer1_Tick SnippetLine
+O que faz o método `pictureBox1_DoubleClick`? (retorne o código);"        //--------------------------------------------------------------------------------------------------------------------
+        // Tratamento foto perfil...
+        //--------------------------------------------------------------------------------------------------------------------
+        private void pictureBox1_DoubleClick(object sender, EventArgs e)
+        {
+            groupBox2.Visible = true;
+        }
+        //--------------------------------------------------------------------------------------------------------------------";Taskool auto pictureBox1_DoubleClick
+Complete o trecho: pictureBox1_DoubleClick;"        //--------------------------------------------------------------------------------------------------------------------
+        // Tratamento foto perfil...
+        //--------------------------------------------------------------------------------------------------------------------
+        private void {{c1::pictureBox1_DoubleClick}}(object sender, EventArgs e)
+        {
+            groupBox2.Visible = true;
+        }
+        //--------------------------------------------------------------------------------------------------------------------";Taskool auto pictureBox1_DoubleClick Cloze
+O que faz este trecho: pictureBox1_DoubleClick;//--------------------------------------------------------------------------------------------------------------------;Taskool auto pictureBox1_DoubleClick SnippetLine
+Como uma nova instância de form/objeto é criada e exibida?;"        // Abre o gpBox com as opcoes
+        private void panel1_DoubleClick(object sender, EventArgs e)
+        {
+            FormConfgColor configColor = new FormConfgColor(this);
+            configColor.Show();
+        }";Taskool auto panel1_DoubleClick
+Como uma nova instância de form/objeto é criada e exibida?;"        // Abre o gpBox com as opcoes
+        private void {{c1::panel1_DoubleClick}}(object sender, EventArgs e)
+        {
+            FormConfgColor configColor = new FormConfgColor(this);
+            configColor.Show();
+        }";Taskool auto panel1_DoubleClick Cloze
+O que faz este trecho: panel1_DoubleClick;"configColor.Show();";Taskool auto panel1_DoubleClick SnippetLine
+O que faz o método `label5_Click`? (retorne o código);"        // label sair do gp...
+        private void label5_Click(object sender, EventArgs e)
+        {
+            _formAnterior.Show();
+            this.Close();
+        }";Taskool auto label5_Click
+Complete o trecho: label5_Click;"        // label sair do gp...
+        private void {{c1::label5_Click}}(object sender, EventArgs e)
+        {
+            _formAnterior.Show();
+            this.Close();
+        }";Taskool auto label5_Click Cloze
+O que faz este trecho: label5_Click;"_formAnterior.Show();";Taskool auto label5_Click SnippetLine
+O que faz o método `Home_Click`? (retorne o código);"        // Fecha o gpBox que abre ao clicar na foto de perfil
+        private void Home_Click(object sender, EventArgs e)
+        {
+            groupBox2.Visible = false;
+        }";Taskool auto Home_Click
+Complete o trecho: Home_Click;"        // Fecha o gpBox que abre ao clicar na foto de perfil
+        private void {{c1::Home_Click}}(object sender, EventArgs e)
+        {
+            groupBox2.Visible = false;
+        }";Taskool auto Home_Click Cloze
+O que faz este trecho: Home_Click;// Fecha o gpBox que abre ao clicar na foto de perfil;Taskool auto Home_Click SnippetLine
+Como as frases são desserializadas a partir de um JSON e exibidas aleatoriamente?;"        //--------------------------------------------------------------------------------------------------------------------
+        // Inicia o tratamente para desserializar e imprimir as imagens
+        //--------------------------------------------------------------------------------------------------------------------
+        public class Frase // classe para guardar as mensagens e autores do json mensagens
+        {
+            public string Mensagem { get; set; }
+            public string Autor { get; set; }
+        }
+        //--------------------------------------------------------------------------------------------------------------------";Taskool auto Frase
+Como as frases são desserializadas a partir de um JSON e exibidas aleatoriamente?;"        //--------------------------------------------------------------------------------------------------------------------
+        // Inicia o tratamente para desserializar e imprimir as imagens
+        //--------------------------------------------------------------------------------------------------------------------
+        public class Frase // classe para guardar as mensagens e autores do json mensagens
+        {
+            public string Mensagem { get; set; }
+            public string Autor { get; set; }
+        }
+        //--------------------------------------------------------------------------------------------------------------------";Taskool auto Frase Cloze
+O que faz este trecho: Frase;//--------------------------------------------------------------------------------------------------------------------;Taskool auto Frase SnippetLine
+O que faz este trecho de código? (mostrar código como resposta);"        //--------------------------------------------------------------------------------------------------------------------
+        // Tratamenot musica inicial
+        //--------------------------------------------------------------------------------------------------------------------";Taskool auto Misc
+Complete o trecho: Snippet79;"        //--------------------------------------------------------------------------------------------------------------------
+        // Tratamenot musica inicial
+        //--------------------------------------------------------------------------------------------------------------------";Taskool auto Misc Cloze
+O que faz este trecho: Snippet79;//--------------------------------------------------------------------------------------------------------------------;Taskool auto Misc SnippetLine
+Como o código escolhe um índice aleatório para músicas/itens?;"        List<string> musicas = new List<string>(); // Instancia uma lista de string com nome musica
+        int posicao = 0; // Cria variavel posicao que incia como 0
+        private void Home_Load(object sender, EventArgs e)
+        {
+            musicas = Directory.GetFiles(""musicas"").ToList(); // A lista musicas recebe o conteudo da pasta musicas
+            posicao = new Random().Next(musicas.Count); // posicao agora recebe um valor aleatorio da lista de musicas";Taskool auto Home_Load
+Como o código escolhe um índice aleatório para músicas/itens?;"        List<string> musicas = new List<string>(); // Instancia uma lista de string com nome musica
+        int posicao = 0; // Cria variavel posicao que incia como 0
+        private void {{c1::Home_Load}}(object sender, EventArgs e)
+        {
+            musicas = Directory.GetFiles(""musicas"").ToList(); // A lista musicas recebe o conteudo da pasta musicas
+            posicao = new Random().Next(musicas.Count); // posicao agora recebe um valor aleatorio da lista de musicas";Taskool auto Home_Load Cloze
+Como o código escolhe um índice aleatório para músicas/itens?;"posicao = new Random().Next(musicas.Count); // posicao agora recebe um valor aleatorio da lista de musicas";Taskool auto Home_Load SnippetLine
+Como funciona o carregamento/controle de reprodução de música?;"            media.URL = musicas[posicao]; // indica que o local da musica é o valor da variavel posicao dentro da lista de musicas
+            label7.Text = Path.GetFileName(musicas[posicao]); // O nome da musica aparece naa label7";Taskool auto Misc
+Como funciona o carregamento/controle de reprodução de música?;"            media.URL = musicas[posicao]; // indica que o local da musica é o valor da variavel posicao dentro da lista de musicas
+            label7.Text = Path.{{c1::GetFileName}}(musicas[posicao]); // O nome da musica aparece naa label7";Taskool auto Misc Cloze
+Como funciona o carregamento/controle de reprodução de música?;"media.URL = musicas[posicao]; // indica que o local da musica é o valor da variavel posicao dentro da lista de musicas";Taskool auto Misc SnippetLine
+Como funciona o carregamento/controle de reprodução de música?;"            media.PlayStateChange += media_playstateChange; // se o estado de media mudar... chama o metodo media_playstatechange
+                                                            // que eu criei usando o (ctrl + .)
+            media.controls.stop(); // inicia como stop, para a musica nao comecar ja tocando.";Taskool auto Misc
+Como funciona o carregamento/controle de reprodução de música?;"            media.PlayStateChange += media_playstateChange; // se {{c1::o}} estado de media mudar... chama o metodo media_playstatechange
+                                                            // que eu criei usando o (ctrl + .)
+            media.controls.stop(); // inicia como stop, para a musica nao comecar ja tocando.";Taskool auto Misc Cloze
+O que faz este trecho: Snippet82;"media.PlayStateChange += media_playstateChange; // se o estado de media mudar... chama o metodo media_playstatechange";Taskool auto Misc SnippetLine
+O que faz este trecho de código? (mostrar código como resposta);"            //--------------------------------------------------------------------------------------------------------------------
+            //tratamento Configurar inicio de hora e idioma
+            //--------------------------------------------------------------------------------------------------------------------";Taskool auto Misc
+Complete o trecho: Snippet83;"            //--------------------------------------------------------------------------------------------------------------------
+            //tratamento Configurar inicio de hora e idioma
+            //--------------------------------------------------------------------------------------------------------------------";Taskool auto Misc Cloze
+O que faz este trecho: Snippet83;//--------------------------------------------------------------------------------------------------------------------;Taskool auto Misc SnippetLine
+O que faz este trecho de código? (mostrar código como resposta);"            label1.Text = DateTime.Now.ToString(""HH:mm""); // Ja  inicia a label1 com a hora para nao ter delay.
+            saudaPt(); // Por padrao a saudacao ja vem em portugues";Taskool auto Misc
+Complete o trecho: Snippet84;"            label1.Text = DateTime.Now.{{c1::ToString}}(""HH:mm""); // Ja  inicia a label1 com a hora para nao ter delay.
+            saudaPt(); // Por padrao a saudacao ja vem em portugues";Taskool auto Misc Cloze
+O que faz este trecho: Snippet84;"label1.Text = DateTime.Now.ToString(""HH:mm""); // Ja  inicia a label1 com a hora para nao ter delay.";Taskool auto Misc SnippetLine
+O que faz este trecho de código? (mostrar código como resposta);            //--------------------------------------------------------------------------------------------------------------------;Taskool auto Misc
+Complete o trecho: Snippet85;            //--------------------------------------------------------------------------------------------------------------------;Taskool auto Misc Cloze
+O que faz este trecho: Snippet85;//--------------------------------------------------------------------------------------------------------------------;Taskool auto Misc SnippetLine
+O que faz este trecho de código? (mostrar código como resposta);"            //--------------------------------------------------------------------------------------------------------------------
+            // tratamento foto de perfil
+            //--------------------------------------------------------------------------------------------------------------------";Taskool auto Misc
+Complete o trecho: Snippet86;"            //--------------------------------------------------------------------------------------------------------------------
+            // tratamento foto de perfil
+            //--------------------------------------------------------------------------------------------------------------------";Taskool auto Misc Cloze
+O que faz este trecho: Snippet86;//--------------------------------------------------------------------------------------------------------------------;Taskool auto Misc SnippetLine
+Como o código busca um registro no banco (ex.: usuário) usando FirstOrDefault?;"            var usas = ctx.Usuario.FirstOrDefault(u => u.Codigo == User.id); // guarda na variavel usuario os dados do usuario
+                                                                             // cadastrado no banco cujo o codigo e igual ao user.id";Taskool auto Misc
+Como o código busca um registro no banco (ex.: usuário) usando FirstOrDefault?;"            {{c1::var usas = ctx.Usuario.FirstOrDefault(u => u.Codigo == User.id); // guarda na variavel usuario os dados do usuario}}
+                                                                             // cadastrado no banco cujo o codigo e igual ao user.id";Taskool auto Misc Cloze
+Como o código busca um registro no banco (ex.: usuário) usando FirstOrDefault?;"var usas = ctx.Usuario.FirstOrDefault(u => u.Codigo == User.id); // guarda na variavel usuario os dados do usuario";Taskool auto Misc SnippetLine
+Como o projeto trata/seleciona/convete imagens do usuário?;"            pictureBox1.BackgroundImage = TrataImagem.ConverterImagem(usas.Foto); // A imagem do icone do perfil e a mesma que esta                                                                                  // no banco de dados
+            pictureBox1.BackgroundImageLayout = ImageLayout.Stretch; // Arruma o formato da foto para caber na box.";Taskool auto Misc
+Como o projeto trata/seleciona/convete imagens do usuário?;"            {{c1::pictureBox1.BackgroundImage = TrataImagem.ConverterImagem(usas.Foto); // A imagem do icone do perfil e a mesma que esta                                                                                  // no banco de dados}}
+            pictureBox1.BackgroundImageLayout = ImageLayout.Stretch; // Arruma o formato da foto para caber na box.";Taskool auto Misc Cloze
+Como a foto de perfil é carregada no PictureBox?;"pictureBox1.BackgroundImageLayout = ImageLayout.Stretch; // Arruma o formato da foto para caber na box.";Taskool auto Misc SnippetLine
+O que faz este trecho de código? (mostrar código como resposta);"            //--------------------------------------------------------------------------------------------------------------------                       
+        }";Taskool auto Misc
+Complete o trecho: Snippet89;"            //--------------------------------------------------------------------------------------------------------------------                       
+        }";Taskool auto Misc Cloze
+O que faz este trecho: Snippet89;//--------------------------------------------------------------------------------------------------------------------;Taskool auto Misc SnippetLine
+O que faz o método `media_playstateChange`? (retorne o código);"        // Metodo que é chamado quando o media muda de estado
+        private void media_playstateChange(int NewState)
+        {
+            if (NewState == 8) // se o novo estado for 8 ou seja, que a musica acabou
+            {
+                posicao = (posicao + 1) % musicas.Count; // E incrementado 1 na posicao e logo depois pega o resto da divisao pelo total de musicas.
+                                                         // Que faz o indice voltar a 0 quando chega no final.              ";Taskool auto media_playstateChange
+Complete o trecho: media_playstateChange;"        // Metodo que é chamado quando o media muda de estado
+        private void media_playstateChange(int NewState)
+        {
+            {{c1::if (NewState == 8) // se o novo estado for 8 ou seja, que a musica acabou}}
+            {
+                posicao = (posicao + 1) % musicas.Count; // E incrementado 1 na posicao e logo depois pega o resto da divisao pelo total de musicas.
+                                                         // Que faz o indice voltar a 0 quando chega no final.              ";Taskool auto media_playstateChange Cloze
+O que faz este trecho: media_playstateChange;// Metodo que é chamado quando o media muda de estado;Taskool auto media_playstateChange SnippetLine
+Como funciona o carregamento/controle de reprodução de música?;"                media.URL = musicas[posicao]; // a musica que toca agora e igual a posicao que a variavel posica se encontra
+                label7.Text = Path.GetFileName(musicas[posicao]); // O nome da musica que a posicao esta e escrita na label 7";Taskool auto Misc
+Como funciona o carregamento/controle de reprodução de música?;"                media.URL = musicas[posicao]; // a musica que toca agora e igual a posicao que a variavel posica se encontra
+                label7.Text = Path.{{c1::GetFileName}}(musicas[posicao]); // O nome da musica que a posicao esta e escrita na label 7";Taskool auto Misc Cloze
+Como funciona o carregamento/controle de reprodução de música?;"media.URL = musicas[posicao]; // a musica que toca agora e igual a posicao que a variavel posica se encontra";Taskool auto Misc SnippetLine
+Como funciona o carregamento/controle de reprodução de música?;"        // bt play
+        private void button3_Click(object sender, EventArgs e)
+        {
+            if (button3.Text == ""Play"") // if o texto do botao for play
+            {
+                button3.Text = ""Pause""; // o texto vira pause e...
+                media.controls.play(); // da play na musica
+                return; // retorna para nao precisar escrever else
+            }";Taskool auto button3_Click
+Como funciona o carregamento/controle de reprodução de música?;"        // bt play
+        private void button3_Click(object sender, EventArgs e)
+        {
+            {{c1::if (button3.Text == ""Play"") // if o texto do botao for play}}
+            {
+                button3.Text = ""Pause""; // o texto vira pause e...
+                media.controls.play(); // da play na musica
+                return; // retorna para nao precisar escrever else
+            }";Taskool auto button3_Click Cloze
+O que faz este trecho: button3_Click;"if (button3.Text == ""Play"") // if o texto do botao for play";Taskool auto button3_Click SnippetLine
+Como funciona o carregamento/controle de reprodução de música?;"            // se nao, no caso se for Pause
+            button3.Text = ""Play""; // o texto vira play e... 
+            media.controls.pause(); // a musica pausa
+            return;
+        }";Taskool auto Misc
+Como funciona o carregamento/controle de reprodução de música?;"            // se nao, no caso se for Pause
+            button3.Text = ""Play""; // o texto vira play e... 
+            media.controls.pause(); // a musica pausa
+            {{c1::return;}}
+        }";Taskool auto Misc Cloze
+Como funciona o carregamento/controle de reprodução de música?;"media.controls.pause(); // a musica pausa";Taskool auto Misc SnippetLine
+O que faz este trecho de código? (mostrar código como resposta);        //--------------------------------------------------------------------------------------------------------------------;Taskool auto Misc
+Complete o trecho: Snippet94;        //--------------------------------------------------------------------------------------------------------------------;Taskool auto Misc Cloze
+O que faz este trecho: Snippet94;//--------------------------------------------------------------------------------------------------------------------;Taskool auto Misc SnippetLine
+O que faz o método `Home_Activated`? (retorne o código);"        // Metodo para quando o form for ativado... oque e quase a mesma coisa que ser carregado (load)...
+        private void Home_Activated(object sender, EventArgs e)
+        {
+            // esse metodo eu coloquei para que quando eu mudasse a cor de fundo e saisse do ConfCollors, a cor desse form mudaria...
+            Color bckColor = ColorTranslator.FromHtml(User.senha);  // converte string em cor...
+            this.BackColor = bckColor; // aplica a cor no fundo do form";Taskool auto Home_Activated
+Complete o trecho: Home_Activated;"        // Metodo para quando o form for ativado... oque e quase a mesma coisa que ser {{c1::carregado}} (load)...
+        private void Home_Activated(object sender, EventArgs e)
+        {
+            // esse metodo eu coloquei para que quando eu mudasse a cor de fundo e saisse do ConfCollors, a cor desse form mudaria...
+            Color bckColor = ColorTranslator.FromHtml(User.senha);  // converte string em cor...
+            this.BackColor = bckColor; // aplica a cor no fundo do form";Taskool auto Home_Activated Cloze
+O que faz este trecho: Home_Activated;// Metodo para quando o form for ativado... oque e quase a mesma coisa que ser carregado (load)...;Taskool auto Home_Activated SnippetLine
+Como o sistema grava logs ou arquivos no disco?;"            //  em apenas uma linha, desserializa e guarda como lista na classe frase as mensagens e autores,
+            //  de todo o texto do arquivo mensagens.json
+            var frases = new JavaScriptSerializer().Deserialize<Frase[]>(File.ReadAllText(""mensagens.json""));";Taskool auto Misc
+Como o sistema grava logs ou arquivos no disco?;"            //  em apenas uma linha, desserializa e guarda como lista na classe frase as mensagens e autores,
+            //  de todo o texto do arquivo mensagens.json
+            var frases = new {{c1::JavaScriptSerializer}}().Deserialize<Frase[]>(File.ReadAllText(""mensagens.json""));";Taskool auto Misc Cloze
+O que faz este trecho: Snippet96;//  em apenas uma linha, desserializa e guarda como lista na classe frase as mensagens e autores,;Taskool auto Misc SnippetLine
+Como o código escolhe um índice aleatório para músicas/itens?;"            if (frases.Length > 0) // if basico so para nao quebrar a aplicacao
+            {
+                var f = frases[new Random().Next(frases.Length)]; // seleciona aleatoriamente uma frase e seu autor e guarda em f...                       
+                label2.Text = $""\"" {f.Mensagem} \"""";
+                label3.Text = f.Autor;
+            }
+        }";Taskool auto Misc
+Como o código escolhe um índice aleatório para músicas/itens?;"            {{c1::if (frases.Length > 0) // if basico so para nao quebrar a aplicacao}}
+            {
+                var f = frases[new Random().Next(frases.Length)]; // seleciona aleatoriamente uma frase e seu autor e guarda em f...                       
+                label2.Text = $""\"" {f.Mensagem} \"""";
+                label3.Text = f.Autor;
+            }
+        }";Taskool auto Misc Cloze
+O que faz este trecho: Snippet97;if (frases.Length > 0) // if basico so para nao quebrar a aplicacao;Taskool auto Misc SnippetLine
+O que faz o método `button1_Click_1`? (retorne o código);"        // bt ingles
+        private void button1_Click_1(object sender, EventArgs e)
+        {
+            saudaIng();
+        }";Taskool auto button1_Click_1
+Complete o trecho: button1_Click_1;"        // bt ingles
+        private void {{c1::button1_Click_1}}(object sender, EventArgs e)
+        {
+            saudaIng();
+        }";Taskool auto button1_Click_1 Cloze
+O que faz este trecho: button1_Click_1;private void button1_Click_1(object sender, EventArgs e);Taskool auto button1_Click_1 SnippetLine
+O que faz o método `button2_Click`? (retorne o código);"        // bt portugues
+        private void button2_Click(object sender, EventArgs e)
+        {
+            saudaPt();";Taskool auto button2_Click
+Complete o trecho: button2_Click;"        // bt portugues
+        private void {{c1::button2_Click}}(object sender, EventArgs e)
+        {
+            saudaPt();";Taskool auto button2_Click Cloze
+O que faz este trecho: button2_Click;private void button2_Click(object sender, EventArgs e);Taskool auto button2_Click SnippetLine

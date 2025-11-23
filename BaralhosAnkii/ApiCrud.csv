@@ -1,0 +1,543 @@
+Comando: criar projeto Web API;dotnet new webapi -n BelleApi;API_CRUD Misc
+Comando: adicionar EF Core SQL Server;dotnet add package Microsoft.EntityFrameworkCore.SqlServer;EntityFramework API_CRUD
+Comando: adicionar EF Core Tools;dotnet add package Microsoft.EntityFrameworkCore.Tools;EntityFramework
+Program.cs: habilitar CORS simples;"builder.Services.AddCors(p=>p.AddPolicy(""corsapp"", policy=>{policy.AllowAnyOrigin().AllowAnyMethod().AllowAnyHeader();}));
+app.UseCors(""corsapp"");";API_CRUD Misc
+appsettings: conexão SQL Server (Windows Auth);"""ConnectionStrings"": {
+  ""DefaultConnection"": ""Data Source=.\\SQLEXPRESS;Initial Catalog=BelleCroissantLyonnais;Trusted_Connection=True;TrustServerCertificate=True""
+}";Database Misc
+appsettings: conexão SQL Server (SQL Auth);"""ConnectionStrings"": {
+  ""DefaultConnection"": ""Data Source=.\\SQLEXPRESS;Initial Catalog=BelleCroissantLyonnais;User Id=staff;Password=BCLyon2024;TrustServerCertificate=True""
+}";Database Misc
+Scaffold: Windows Authentication (PowerShell);"Scaffold-DbContext ""Data Source=.\\SQLEXPRESS; Initial Catalog=BelleCroissantLyonnais; Trusted_Connection=true; Integrated Security=true; TrustServerCertificate=true"" Microsoft.EntityFrameworkCore.SqlServer -OutputDir .\\Models -ContextDir Data -Context MainContext";EntityFramework Database
+Scaffold: SQL Auth (PowerShell);"Scaffold-DbContext ""Data Source=.\\SQLEXPRESS; Initial Catalog=BelleCroissantLyonnais; User Id=staff; Password=BCLyon2024; TrustServerCertificate=true"" Microsoft.EntityFrameworkCore.SqlServer -OutputDir .\\Models -ContextDir Data -Context MainContext";EntityFramework Database
+Comando: adicionar Migration;dotnet ef migrations add InitialCreate;EntityFramework Database
+Comando: atualizar o banco (Update-Database);dotnet ef database update;EntityFramework Database
+MainContext: registrar DbSet Products;"public DbSet<Product> Products { get; set; }";EntityFramework Products
+MainContext: registrar DbSet Customers;"public DbSet<Customer> Customers { get; set; }";EntityFramework Customers
+MainContext: registrar DbSet Orders;"public DbSet<Order> Orders { get; set; }";EntityFramework Orders
+Model Product: propriedades básicas;"public class Product {
+  public int Id { get; set; }
+  public string Name { get; set; }
+  public decimal Price { get; set; }
+}";Products Database
+Model Customer: propriedades básicas;"public class Customer {
+  public int Id { get; set; }
+  public string Name { get; set; }
+  public string Email { get; set; }
+}";Customers Database
+Model Order: relacionamento e status;"public class Order {
+  public int Id { get; set; }
+  public int CustomerId { get; set; }
+  public Customer Customer { get; set; }
+  public DateTime CreatedAt { get; set; }
+  public string Status { get; set; }
+}";Orders Database
+DTO ProductCreate;"public class ProductCreateDto {
+  public string Name { get; set; }
+  public decimal Price { get; set; }
+}";Products Misc
+DTO CustomerCreate;"public class CustomerCreateDto {
+  public string Name { get; set; }
+  public string Email { get; set; }
+}";Customers Misc
+DTO OrderCreate;"public class OrderCreateDto {
+  public int CustomerId { get; set; }
+  public List<int> ProductIds { get; set; }
+}";Orders Misc
+OnModelCreating: configurar relação Order->Customer;"modelBuilder.Entity<Order>().HasOne(o=>o.Customer).WithMany().HasForeignKey(o=>o.CustomerId);";EntityFramework Orders
+Connection string em Program.cs (AddDbContext);"builder.Services.AddDbContext<MainContext>(options => options.UseSqlServer(builder.Configuration.GetConnectionString(""DefaultConnection"")));";Database EntityFramework
+Registrar controllers (MapControllers);"app.MapControllers();";API_CRUD
+Program.cs: UseRouting e UseEndpoints (minimal);"app.UseRouting();
+app.UseEndpoints(endpoints => { endpoints.MapControllers(); });";API_CRUD
+Atributo ApiController e Route;"[ApiController]
+[Route(""api/[controller]"")]";API_CRUD Misc
+Anotação Key em Id;"[Key]
+public int Id { get; set; }";Database Misc
+Data annotation Required;"[Required]
+public string Name { get; set; }";Misc Database
+Model Product com DataAnnotations completas;"public class Product {
+  [Key]
+  public int Id { get; set; }
+  [Required]
+  public string Name { get; set; }
+  [Range(0.0, 10000.0)]
+  public decimal Price { get; set; }
+}";Products Database
+ProductsController: construtor;"public class ProductsController : ControllerBase {
+  private readonly MainContext _ctx;
+  public ProductsController(MainContext ctx) { _ctx = ctx; }
+}";Products API_CRUD
+GET /api/products (sync);"[HttpGet]
+public ActionResult<IEnumerable<Product>> GetAll() => Ok(_ctx.Products.ToList());";Products API_CRUD
+GET /api/products (async);"[HttpGet]
+public async Task<ActionResult<IEnumerable<Product>>> GetAll() => Ok(await _ctx.Products.ToListAsync());";Products API_CRUD
+GET /api/products/{id} (sync);"[HttpGet(""{id}"")]
+public ActionResult<Product> GetById(int id) { var p=_ctx.Products.Find(id); return p==null?NotFound():Ok(p); }";Products API_CRUD
+GET /api/products/{id} (async);"[HttpGet(""{id}"")]
+public async Task<ActionResult<Product>> GetById(int id) { var p=await _ctx.Products.FindAsync(id); return p==null?NotFound():Ok(p); }";Products API_CRUD
+POST /api/products (create);"[HttpPost]
+public IActionResult Create(Product p) { _ctx.Products.Add(p); _ctx.SaveChanges(); return Created($""api/products/{p.Id}"", p); }";Products API_CRUD
+POST /api/products (async);"[HttpPost]
+public async Task<IActionResult> Create(Product p) { _ctx.Products.Add(p); await _ctx.SaveChangesAsync(); return Created($""api/products/{p.Id}"", p); }";Products API_CRUD
+PUT /api/products/{id} (update);"[HttpPut(""{id}"")]
+public IActionResult Update(int id, Product p) { if(id!=p.Id) return BadRequest(); _ctx.Update(p); _ctx.SaveChanges(); return NoContent(); }";Products API_CRUD
+PUT /api/products/{id} (async);"[HttpPut(""{id}"")]
+public async Task<IActionResult> Update(int id, Product p) { if(id!=p.Id) return BadRequest(); _ctx.Update(p); await _ctx.SaveChangesAsync(); return NoContent(); }";Products API_CRUD
+DELETE /api/products/{id};"[HttpDelete(""{id}"")]
+public IActionResult Remove(int id) { var p=_ctx.Products.Find(id); if(p==null) return NotFound(); _ctx.Remove(p); _ctx.SaveChanges(); return NoContent(); }";Products API_CRUD
+DELETE /api/products/{id} (async);"[HttpDelete(""{id}"")]
+public async Task<IActionResult> Remove(int id) { var p=await _ctx.Products.FindAsync(id); if(p==null) return NotFound(); _ctx.Remove(p); await _ctx.SaveChangesAsync(); return NoContent(); }";Products API_CRUD
+Validation example: name required in POST;"if(string.IsNullOrWhiteSpace(p.Name)) return BadRequest(""Nome obrigatório"");";Products Misc
+Return 201 Created after POST;"return CreatedAtAction(nameof(GetById), new { id = p.Id }, p);";Products API_CRUD
+Use CreatedAtAction pattern;"[HttpPost]
+public async Task<IActionResult> Create(Product p) { _ctx.Products.Add(p); await _ctx.SaveChangesAsync(); return CreatedAtAction(nameof(GetById), new { id = p.Id }, p); }";Products API_CRUD
+Handle concurrency (simple);"try { _ctx.SaveChanges(); } catch(DbUpdateConcurrencyException) { return StatusCode(409); }";Products EntityFramework
+Query with Where example;"var cheap = _ctx.Products.Where(x=>x.Price < 10).ToList();";Products Database
+Select projection example;"var dto = _ctx.Products.Select(p=> new { p.Id, p.Name }).ToList();";Products
+Include example for navigation properties;"var orders = _ctx.Orders.Include(o=>o.Customer).ToList();";Orders EntityFramework
+Paginação simples skip/take;"var page = _ctx.Products.Skip((page-1)*size).Take(size).ToList();";Products
+Search by name (contains);"var results = _ctx.Products.Where(p=>p.Name.Contains(term)).ToList();";Products
+ModelState check in controller;"if(!ModelState.IsValid) return BadRequest(ModelState);";API_CRUD Misc
+Return NotFound when item missing;"if(p==null) return NotFound();";API_CRUD Misc
+Example JSON body Product POST;"{
+  ""name"": ""Croissant"",
+  ""price"": 3.50
+}";Products Misc
+CustomersController: construtor;"public class CustomersController : ControllerBase { private readonly MainContext _ctx; public CustomersController(MainContext ctx){_ctx=ctx;} }";Customers API_CRUD
+GET /api/customers;"[HttpGet]
+public IActionResult GetAll() => Ok(_ctx.Customers.ToList());";Customers API_CRUD
+GET /api/customers/{id};"[HttpGet(""{id}"")]
+public IActionResult GetById(int id){var c=_ctx.Customers.Find(id);return c==null?NotFound():Ok(c);}";Customers API_CRUD
+POST /api/customers;"[HttpPost]
+public IActionResult Create(Customer c){ if(string.IsNullOrWhiteSpace(c.Name)) return BadRequest(""Nome obrigatório""); _ctx.Customers.Add(c); _ctx.SaveChanges(); return Created($""api/customers/{c.Id}"", c); }";Customers API_CRUD
+PUT /api/customers/{id};"[HttpPut(""{id}"")]
+public IActionResult Update(int id, Customer c){ if(id!=c.Id) return BadRequest(); _ctx.Update(c); _ctx.SaveChanges(); return NoContent(); }";Customers API_CRUD
+Delete customer (example);"[HttpDelete(""{id}"")]
+public IActionResult Delete(int id){var c=_ctx.Customers.Find(id); if(c==null) return NotFound(); _ctx.Customers.Remove(c); _ctx.SaveChanges(); return NoContent(); }";Customers
+Customer POST JSON example;"{
+  ""name"": ""João Silva"",
+  ""email"": ""joao@example.com""
+}";Customers
+Validate email format simple;"if(!new EmailAddressAttribute().IsValid(c.Email)) return BadRequest(""Email inválido"");";Customers Misc
+Check duplicate username/email;"if(_ctx.Customers.Any(x=>x.Email==c.Email)) return Conflict(""Email já cadastrado"");";Customers Database
+Use async for Customers;"[HttpGet]
+public async Task<IActionResult> GetAll() => Ok(await _ctx.Customers.ToListAsync());";Customers API_CRUD
+Return CreatedAtAction for Customers;"return CreatedAtAction(nameof(GetById), new { id = c.Id }, c);";Customers
+Patch example (partial update) using JsonPatchDocument;"[HttpPatch(""{id}"")]
+public IActionResult Patch(int id, JsonPatchDocument<Customer> patch){var c=_ctx.Customers.Find(id); if(c==null) return NotFound(); patch.ApplyTo(c); _ctx.SaveChanges(); return Ok(c); }";Customers API_CRUD
+DTO usage: map CustomerCreateDto to Customer;"var customer = new Customer { Name = dto.Name, Email = dto.Email };";Customers Misc
+Soft delete pattern example;"c.IsDeleted = true; _ctx.SaveChanges();";Customers Misc
+Customer include orders example;"var cust = _ctx.Customers.Include(c=>c.Orders).FirstOrDefault(x=>x.Id==id);";Customers Orders
+Model binding example from route;"[HttpGet(""{id}"")]
+public IActionResult Get([FromRoute]int id){...}";API_CRUD
+OrdersController: construtor;"public class OrdersController : ControllerBase { private readonly MainContext _ctx; public OrdersController(MainContext ctx){_ctx=ctx;} }";Orders API_CRUD
+GET /api/orders;"[HttpGet]
+public IActionResult GetAll() => Ok(_ctx.Orders.ToList());";Orders API_CRUD
+GET /api/orders/{id};"[HttpGet(""{id}"")]
+public IActionResult GetById(int id){var o=_ctx.Orders.Find(id);return o==null?NotFound():Ok(o);}";Orders API_CRUD
+POST /api/orders;"[HttpPost]
+public IActionResult Create(Order o){ o.CreatedAt = DateTime.UtcNow; o.Status = ""NEW""; _ctx.Orders.Add(o); _ctx.SaveChanges(); return Created($""api/orders/{o.Id}"", o); }";Orders API_CRUD
+PUT /api/orders/{id}/complete;"[HttpPut(""{id}/complete"")]
+public IActionResult Complete(int id){ var o=_ctx.Orders.Find(id); if(o==null) return NotFound(); o.Status=""COMPLETED""; _ctx.SaveChanges(); return Ok(o); }";Orders API_CRUD
+PUT /api/orders/{id}/cancel;"[HttpPut(""{id}/cancel"")]
+public IActionResult Cancel(int id){ var o=_ctx.Orders.Find(id); if(o==null) return NotFound(); o.Status=""CANCELLED""; _ctx.SaveChanges(); return Ok(o); }";Orders API_CRUD
+Order POST JSON example;"{
+  ""customerId"": 1,
+  ""productIds"": [1,2,3]
+}";Orders
+Create order with product linking (sample);"var order = new Order { CustomerId = dto.CustomerId, CreatedAt=DateTime.UtcNow, Status=""NEW"" }; _ctx.Orders.Add(order); _ctx.SaveChanges(); // then add order items";Orders Database
+Check customer exists before order;"if(!_ctx.Customers.Any(c=>c.Id==dto.CustomerId)) return BadRequest(""Customer not found"");";Orders Database
+Transaction example for creating order;"using(var tx=_ctx.Database.BeginTransaction()) { try{ //create order and items _ctx.SaveChanges(); tx.Commit(); } catch{ tx.Rollback(); throw; } }";Orders Database
+Status enum example;public enum OrderStatus { NEW, COMPLETED, CANCELLED };Orders
+Map OrderStatus to string before save (example);"o.Status = OrderStatus.NEW.ToString();";Orders
+Return 400 for invalid order data;"if(dto.ProductIds==null || !dto.ProductIds.Any()) return BadRequest(""Nenhum produto no pedido"");";Orders
+Include products in order query;"var order = _ctx.Orders.Include(o=>o.OrderItems).ThenInclude(oi=>oi.Product).FirstOrDefault(o=>o.Id==id);";Orders Database
+Order Items model example;"public class OrderItem { public int Id {get;set;} public int OrderId {get;set;} public int ProductId {get;set;} public int Quantity {get;set;} public Product Product {get;set;} }";Orders Database
+Calculate order total example;"var total = order.OrderItems.Sum(oi=>oi.Quantity * oi.Product.Price);";Orders
+Async create order example;"[HttpPost]
+public async Task<IActionResult> Create(OrderCreateDto dto){ // validation... await _ctx.SaveChangesAsync(); return CreatedAtAction(nameof(GetById), new { id=order.Id }, order); }";Orders API_CRUD
+BasicAuthMiddleware: header check (code);"var auth = ctx.Request.Headers[""Authorization""].ToString(); if(string.IsNullOrEmpty(auth) || !auth.StartsWith(""Basic "")) { ctx.Response.StatusCode = 401; return; }";Auth
+BasicAuthMiddleware: decode header;"var raw = Encoding.UTF8.GetString(Convert.FromBase64String(auth.Replace(""Basic "",""""))); var parts = raw.Split("":""); var user=parts[0]; var pass=parts[1];";Auth
+BasicAuthMiddleware: verify credentials;"if(user!=""staff"" || pass!=""BCLyon2024"") { ctx.Response.StatusCode = 403; return; }";Auth
+Register middleware in Program.cs;"app.UseMiddleware<BasicAuthMiddleware>();";Auth API_CRUD
+Add Authentication scheme header example;Authorization: Basic c3RhZmY6QkNMeW9uMjAyNA==;Auth
+Allow anonymous on health endpoint;"[AllowAnonymous]
+[HttpGet(""/health"")]
+public IActionResult Health() => Ok(""OK"");";Misc API_CRUD
+HTTPS redirection in Program.cs;"app.UseHttpsRedirection();";Misc
+Global exception handler minimal;"app.UseExceptionHandler(errorApp => { errorApp.Run(async context => { context.Response.StatusCode = 500; await context.Response.WriteAsync(""Internal Server Error""); }); });";Misc
+Return BadRequest with model errors;"if(!ModelState.IsValid) return BadRequest(ModelState);";API_CRUD
+Example Dockerfile minimal (optional);"FROM mcr.microsoft.com/dotnet/aspnet:6.0
+WORKDIR /app
+COPY ./publish .
+ENTRYPOINT [""dotnet"",""BelleApi.dll""]";Misc
+Test GET curl example;curl -u staff:BCLyon2024 http://localhost:5000/api/products;API_CRUD Auth
+Test POST curl example;"curl -u staff:BCLyon2024 -H ""Content-Type: application/json"" -d ""{\""name\"":\""Croissant\"",\""price\"":3.5}"" http://localhost:5000/api/products";API_CRUD
+Enable logging (minimal);"builder.Logging.AddConsole();";Misc
+Avoid returning entity directly: map to DTO (example);"var dto = new ProductDto { Id = p.Id, Name = p.Name, Price = p.Price }; return Ok(dto);";Misc
+Fix: No database provider has been configured -> AddDbContext in Program.cs;"builder.Services.AddDbContext<MainContext>(options => options.UseSqlServer(builder.Configuration.GetConnectionString(""DefaultConnection"")));";Database
+Fix: connection refused -> TrustServerCertificate=true in connection string;"Data Source=.\\SQLEXPRESS;Initial Catalog=BelleCroissantLyonnais;User Id=staff;Password=BCLyon2024;TrustServerCertificate=true";Database
+Fix: scaffold context not found -> check -Context name and folder;"Scaffold-DbContext ""..."" Microsoft.EntityFrameworkCore.SqlServer -OutputDir .\\Models -ContextDir Data -Context MainContext";EntityFramework
+Reminder: use await SaveChangesAsync in async methods;"await _ctx.SaveChangesAsync();";EntityFramework API_CRUD
+Comando: criar projeto Web API (var);dotnet new webapi -n BelleApi;API_CRUD Misc
+Comando: adicionar EF Core SQL Server (var);dotnet add package Microsoft.EntityFrameworkCore.SqlServer;EntityFramework API_CRUD
+Comando: adicionar EF Core Tools (var);dotnet add package Microsoft.EntityFrameworkCore.Tools;EntityFramework
+Program.cs: habilitar CORS simples (var);"builder.Services.AddCors(p=>p.AddPolicy(""corsapp"", policy=>{policy.AllowAnyOrigin().AllowAnyMethod().AllowAnyHeader();}));
+app.UseCors(""corsapp"");";API_CRUD Misc
+appsettings: conexão SQL Server (Windows Auth) (var);"""ConnectionStrings"": {
+  ""DefaultConnection"": ""Data Source=.\\SQLEXPRESS;Initial Catalog=BelleCroissantLyonnais;Trusted_Connection=True;TrustServerCertificate=True""
+}";Database Misc
+appsettings: conexão SQL Server (SQL Auth) (var);"""ConnectionStrings"": {
+  ""DefaultConnection"": ""Data Source=.\\SQLEXPRESS;Initial Catalog=BelleCroissantLyonnais;User Id=staff;Password=BCLyon2024;TrustServerCertificate=True""
+}";Database Misc
+Scaffold: Windows Authentication (PowerShell) (var);"Scaffold-DbContext ""Data Source=.\\SQLEXPRESS; Initial Catalog=BelleCroissantLyonnais; Trusted_Connection=true; Integrated Security=true; TrustServerCertificate=true"" Microsoft.EntityFrameworkCore.SqlServer -OutputDir .\\Models -ContextDir Data -Context MainContext";EntityFramework Database
+Scaffold: SQL Auth (PowerShell) (var);"Scaffold-DbContext ""Data Source=.\\SQLEXPRESS; Initial Catalog=BelleCroissantLyonnais; User Id=staff; Password=BCLyon2024; TrustServerCertificate=true"" Microsoft.EntityFrameworkCore.SqlServer -OutputDir .\\Models -ContextDir Data -Context MainContext";EntityFramework Database
+Comando: adicionar Migration (var);dotnet ef migrations add InitialCreate;EntityFramework Database
+Comando: atualizar o banco (Update-Database) (var);dotnet ef database update;EntityFramework Database
+MainContext: registrar DbSet Products (var);"public DbSet<Product> Products { get; set; }";EntityFramework Products
+MainContext: registrar DbSet Customers (var);"public DbSet<Customer> Customers { get; set; }";EntityFramework Customers
+MainContext: registrar DbSet Orders (var);"public DbSet<Order> Orders { get; set; }";EntityFramework Orders
+Model Product: propriedades básicas (var);"public class Product {
+  public int Id { get; set; }
+  public string Name { get; set; }
+  public decimal Price { get; set; }
+}";Products Database
+Model Customer: propriedades básicas (var);"public class Customer {
+  public int Id { get; set; }
+  public string Name { get; set; }
+  public string Email { get; set; }
+}";Customers Database
+Model Order: relacionamento e status (var);"public class Order {
+  public int Id { get; set; }
+  public int CustomerId { get; set; }
+  public Customer Customer { get; set; }
+  public DateTime CreatedAt { get; set; }
+  public string Status { get; set; }
+}";Orders Database
+DTO ProductCreate (var);"public class ProductCreateDto {
+  public string Name { get; set; }
+  public decimal Price { get; set; }
+}";Products Misc
+DTO CustomerCreate (var);"public class CustomerCreateDto {
+  public string Name { get; set; }
+  public string Email { get; set; }
+}";Customers Misc
+DTO OrderCreate (var);"public class OrderCreateDto {
+  public int CustomerId { get; set; }
+  public List<int> ProductIds { get; set; }
+}";Orders Misc
+OnModelCreating: configurar relação Order->Customer (var);"modelBuilder.Entity<Order>().HasOne(o=>o.Customer).WithMany().HasForeignKey(o=>o.CustomerId);";EntityFramework Orders
+Connection string em Program.cs (AddDbContext) (var);"builder.Services.AddDbContext<MainContext>(options => options.UseSqlServer(builder.Configuration.GetConnectionString(""DefaultConnection"")));";Database EntityFramework
+Registrar controllers (MapControllers) (var);"app.MapControllers();";API_CRUD
+Program.cs: UseRouting e UseEndpoints (minimal) (var);"app.UseRouting();
+app.UseEndpoints(endpoints => { endpoints.MapControllers(); });";API_CRUD
+Atributo ApiController e Route (var);"[ApiController]
+[Route(""api/[controller]"")]";API_CRUD Misc
+Anotação Key em Id (var);"[Key]
+public int Id { get; set; }";Database Misc
+Data annotation Required (var);"[Required]
+public string Name { get; set; }";Misc Database
+Model Product com DataAnnotations completas (var);"public class Product {
+  [Key]
+  public int Id { get; set; }
+  [Required]
+  public string Name { get; set; }
+  [Range(0.0, 10000.0)]
+  public decimal Price { get; set; }
+}";Products Database
+ProductsController: construtor (var);"public class ProductsController : ControllerBase {
+  private readonly MainContext _ctx;
+  public ProductsController(MainContext ctx) { _ctx = ctx; }
+}";Products API_CRUD
+GET /api/products (sync) (var);"[HttpGet]
+public ActionResult<IEnumerable<Product>> GetAll() => Ok(_ctx.Products.ToList());";Products API_CRUD
+GET /api/products (async) (var);"[HttpGet]
+public async Task<ActionResult<IEnumerable<Product>>> GetAll() => Ok(await _ctx.Products.ToListAsync());";Products API_CRUD
+GET /api/products/{id} (sync) (var);"[HttpGet(""{id}"")]
+public ActionResult<Product> GetById(int id) { var p=_ctx.Products.Find(id); return p==null?NotFound():Ok(p); }";Products API_CRUD
+GET /api/products/{id} (async) (var);"[HttpGet(""{id}"")]
+public async Task<ActionResult<Product>> GetById(int id) { var p=await _ctx.Products.FindAsync(id); return p==null?NotFound():Ok(p); }";Products API_CRUD
+POST /api/products (create) (var);"[HttpPost]
+public IActionResult Create(Product p) { _ctx.Products.Add(p); _ctx.SaveChanges(); return Created($""api/products/{p.Id}"", p); }";Products API_CRUD
+POST /api/products (async) (var);"[HttpPost]
+public async Task<IActionResult> Create(Product p) { _ctx.Products.Add(p); await _ctx.SaveChangesAsync(); return Created($""api/products/{p.Id}"", p); }";Products API_CRUD
+PUT /api/products/{id} (update) (var);"[HttpPut(""{id}"")]
+public IActionResult Update(int id, Product p) { if(id!=p.Id) return BadRequest(); _ctx.Update(p); _ctx.SaveChanges(); return NoContent(); }";Products API_CRUD
+PUT /api/products/{id} (async) (var);"[HttpPut(""{id}"")]
+public async Task<IActionResult> Update(int id, Product p) { if(id!=p.Id) return BadRequest(); _ctx.Update(p); await _ctx.SaveChangesAsync(); return NoContent(); }";Products API_CRUD
+DELETE /api/products/{id} (var);"[HttpDelete(""{id}"")]
+public IActionResult Remove(int id) { var p=_ctx.Products.Find(id); if(p==null) return NotFound(); _ctx.Remove(p); _ctx.SaveChanges(); return NoContent(); }";Products API_CRUD
+DELETE /api/products/{id} (async) (var);"[HttpDelete(""{id}"")]
+public async Task<IActionResult> Remove(int id) { var p=await _ctx.Products.FindAsync(id); if(p==null) return NotFound(); _ctx.Remove(p); await _ctx.SaveChangesAsync(); return NoContent(); }";Products API_CRUD
+Validation example: name required in POST (var);"if(string.IsNullOrWhiteSpace(p.Name)) return BadRequest(""Nome obrigatório"");";Products Misc
+Return 201 Created after POST (var);"return CreatedAtAction(nameof(GetById), new { id = p.Id }, p);";Products API_CRUD
+Use CreatedAtAction pattern (var);"[HttpPost]
+public async Task<IActionResult> Create(Product p) { _ctx.Products.Add(p); await _ctx.SaveChangesAsync(); return CreatedAtAction(nameof(GetById), new { id = p.Id }, p); }";Products API_CRUD
+Handle concurrency (simple) (var);"try { _ctx.SaveChanges(); } catch(DbUpdateConcurrencyException) { return StatusCode(409); }";Products EntityFramework
+Query with Where example (var);"var cheap = _ctx.Products.Where(x=>x.Price < 10).ToList();";Products Database
+Select projection example (var);"var dto = _ctx.Products.Select(p=> new { p.Id, p.Name }).ToList();";Products
+Include example for navigation properties (var);"var orders = _ctx.Orders.Include(o=>o.Customer).ToList();";Orders EntityFramework
+Paginação simples skip/take (var);"var page = _ctx.Products.Skip((page-1)*size).Take(size).ToList();";Products
+Search by name (contains) (var);"var results = _ctx.Products.Where(p=>p.Name.Contains(term)).ToList();";Products
+ModelState check in controller (var);"if(!ModelState.IsValid) return BadRequest(ModelState);";API_CRUD Misc
+Return NotFound when item missing (var);"if(p==null) return NotFound();";API_CRUD Misc
+Example JSON body Product POST (var);"{
+  ""name"": ""Croissant"",
+  ""price"": 3.50
+}";Products Misc
+CustomersController: construtor (var);"public class CustomersController : ControllerBase { private readonly MainContext _ctx; public CustomersController(MainContext ctx){_ctx=ctx;} }";Customers API_CRUD
+GET /api/customers (var);"[HttpGet]
+public IActionResult GetAll() => Ok(_ctx.Customers.ToList());";Customers API_CRUD
+GET /api/customers/{id} (var);"[HttpGet(""{id}"")]
+public IActionResult GetById(int id){var c=_ctx.Customers.Find(id);return c==null?NotFound():Ok(c);}";Customers API_CRUD
+POST /api/customers (var);"[HttpPost]
+public IActionResult Create(Customer c){ if(string.IsNullOrWhiteSpace(c.Name)) return BadRequest(""Nome obrigatório""); _ctx.Customers.Add(c); _ctx.SaveChanges(); return Created($""api/customers/{c.Id}"", c); }";Customers API_CRUD
+PUT /api/customers/{id} (var);"[HttpPut(""{id}"")]
+public IActionResult Update(int id, Customer c){ if(id!=c.Id) return BadRequest(); _ctx.Update(c); _ctx.SaveChanges(); return NoContent(); }";Customers API_CRUD
+Delete customer (example) (var);"[HttpDelete(""{id}"")]
+public IActionResult Delete(int id){var c=_ctx.Customers.Find(id); if(c==null) return NotFound(); _ctx.Customers.Remove(c); _ctx.SaveChanges(); return NoContent(); }";Customers
+Customer POST JSON example (var);"{
+  ""name"": ""João Silva"",
+  ""email"": ""joao@example.com""
+}";Customers
+Validate email format simple (var);"if(!new EmailAddressAttribute().IsValid(c.Email)) return BadRequest(""Email inválido"");";Customers Misc
+Check duplicate username/email (var);"if(_ctx.Customers.Any(x=>x.Email==c.Email)) return Conflict(""Email já cadastrado"");";Customers Database
+Use async for Customers (var);"[HttpGet]
+public async Task<IActionResult> GetAll() => Ok(await _ctx.Customers.ToListAsync());";Customers API_CRUD
+Return CreatedAtAction for Customers (var);"return CreatedAtAction(nameof(GetById), new { id = c.Id }, c);";Customers
+Patch example (partial update) using JsonPatchDocument (var);"[HttpPatch(""{id}"")]
+public IActionResult Patch(int id, JsonPatchDocument<Customer> patch){var c=_ctx.Customers.Find(id); if(c==null) return NotFound(); patch.ApplyTo(c); _ctx.SaveChanges(); return Ok(c); }";Customers API_CRUD
+DTO usage: map CustomerCreateDto to Customer (var);"var customer = new Customer { Name = dto.Name, Email = dto.Email };";Customers Misc
+Soft delete pattern example (var);"c.IsDeleted = true; _ctx.SaveChanges();";Customers Misc
+Customer include orders example (var);"var cust = _ctx.Customers.Include(c=>c.Orders).FirstOrDefault(x=>x.Id==id);";Customers Orders
+Model binding example from route (var);"[HttpGet(""{id}"")]
+public IActionResult Get([FromRoute]int id){...}";API_CRUD
+OrdersController: construtor (var);"public class OrdersController : ControllerBase { private readonly MainContext _ctx; public OrdersController(MainContext ctx){_ctx=ctx;} }";Orders API_CRUD
+GET /api/orders (var);"[HttpGet]
+public IActionResult GetAll() => Ok(_ctx.Orders.ToList());";Orders API_CRUD
+GET /api/orders/{id} (var);"[HttpGet(""{id}"")]
+public IActionResult GetById(int id){var o=_ctx.Orders.Find(id);return o==null?NotFound():Ok(o);}";Orders API_CRUD
+POST /api/orders (var);"[HttpPost]
+public IActionResult Create(Order o){ o.CreatedAt = DateTime.UtcNow; o.Status = ""NEW""; _ctx.Orders.Add(o); _ctx.SaveChanges(); return Created($""api/orders/{o.Id}"", o); }";Orders API_CRUD
+PUT /api/orders/{id}/complete (var);"[HttpPut(""{id}/complete"")]
+public IActionResult Complete(int id){ var o=_ctx.Orders.Find(id); if(o==null) return NotFound(); o.Status=""COMPLETED""; _ctx.SaveChanges(); return Ok(o); }";Orders API_CRUD
+PUT /api/orders/{id}/cancel (var);"[HttpPut(""{id}/cancel"")]
+public IActionResult Cancel(int id){ var o=_ctx.Orders.Find(id); if(o==null) return NotFound(); o.Status=""CANCELLED""; _ctx.SaveChanges(); return Ok(o); }";Orders API_CRUD
+Order POST JSON example (var);"{
+  ""customerId"": 1,
+  ""productIds"": [1,2,3]
+}";Orders
+Create order with product linking (sample) (var);"var order = new Order { CustomerId = dto.CustomerId, CreatedAt=DateTime.UtcNow, Status=""NEW"" }; _ctx.Orders.Add(order); _ctx.SaveChanges(); // then add order items";Orders Database
+Check customer exists before order (var);"if(!_ctx.Customers.Any(c=>c.Id==dto.CustomerId)) return BadRequest(""Customer not found"");";Orders Database
+Transaction example for creating order (var);"using(var tx=_ctx.Database.BeginTransaction()) { try{ //create order and items _ctx.SaveChanges(); tx.Commit(); } catch{ tx.Rollback(); throw; } }";Orders Database
+Status enum example (var);public enum OrderStatus { NEW, COMPLETED, CANCELLED };Orders
+Map OrderStatus to string before save (example) (var);"o.Status = OrderStatus.NEW.ToString();";Orders
+Return 400 for invalid order data (var);"if(dto.ProductIds==null || !dto.ProductIds.Any()) return BadRequest(""Nenhum produto no pedido"");";Orders
+Include products in order query (var);"var order = _ctx.Orders.Include(o=>o.OrderItems).ThenInclude(oi=>oi.Product).FirstOrDefault(o=>o.Id==id);";Orders Database
+Order Items model example (var);"public class OrderItem { public int Id {get;set;} public int OrderId {get;set;} public int ProductId {get;set;} public int Quantity {get;set;} public Product Product {get;set;} }";Orders Database
+Calculate order total example (var);"var total = order.OrderItems.Sum(oi=>oi.Quantity * oi.Product.Price);";Orders
+Async create order example (var);"[HttpPost]
+public async Task<IActionResult> Create(OrderCreateDto dto){ // validation... await _ctx.SaveChangesAsync(); return CreatedAtAction(nameof(GetById), new { id=order.Id }, order); }";Orders API_CRUD
+BasicAuthMiddleware: header check (code) (var);"var auth = ctx.Request.Headers[""Authorization""].ToString(); if(string.IsNullOrEmpty(auth) || !auth.StartsWith(""Basic "")) { ctx.Response.StatusCode = 401; return; }";Auth
+BasicAuthMiddleware: decode header (var);"var raw = Encoding.UTF8.GetString(Convert.FromBase64String(auth.Replace(""Basic "",""""))); var parts = raw.Split("":""); var user=parts[0]; var pass=parts[1];";Auth
+BasicAuthMiddleware: verify credentials (var);"if(user!=""staff"" || pass!=""BCLyon2024"") { ctx.Response.StatusCode = 403; return; }";Auth
+Register middleware in Program.cs (var);"app.UseMiddleware<BasicAuthMiddleware>();";Auth API_CRUD
+Add Authentication scheme header example (var);Authorization: Basic c3RhZmY6QkNMeW9uMjAyNA==;Auth
+Allow anonymous on health endpoint (var);"[AllowAnonymous]
+[HttpGet(""/health"")]
+public IActionResult Health() => Ok(""OK"");";Misc API_CRUD
+HTTPS redirection in Program.cs (var);"app.UseHttpsRedirection();";Misc
+Global exception handler minimal (var);"app.UseExceptionHandler(errorApp => { errorApp.Run(async context => { context.Response.StatusCode = 500; await context.Response.WriteAsync(""Internal Server Error""); }); });";Misc
+Return BadRequest with model errors (var);"if(!ModelState.IsValid) return BadRequest(ModelState);";API_CRUD
+Example Dockerfile minimal (optional) (var);"FROM mcr.microsoft.com/dotnet/aspnet:6.0
+WORKDIR /app
+COPY ./publish .
+ENTRYPOINT [""dotnet"",""BelleApi.dll""]";Misc
+Test GET curl example (var);curl -u staff:BCLyon2024 http://localhost:5000/api/products;API_CRUD Auth
+Test POST curl example (var);"curl -u staff:BCLyon2024 -H ""Content-Type: application/json"" -d ""{\""name\"":\""Croissant\"",\""price\"":3.5}"" http://localhost:5000/api/products";API_CRUD
+Enable logging (minimal) (var);"builder.Logging.AddConsole();";Misc
+Avoid returning entity directly: map to DTO (example) (var);"var dto = new ProductDto { Id = p.Id, Name = p.Name, Price = p.Price }; return Ok(dto);";Misc
+Fix: No database provider has been configured -> AddDbContext in Program.cs (var);"builder.Services.AddDbContext<MainContext>(options => options.UseSqlServer(builder.Configuration.GetConnectionString(""DefaultConnection"")));";Database
+Fix: connection refused -> TrustServerCertificate=true in connection string (var);"Data Source=.\\SQLEXPRESS;Initial Catalog=BelleCroissantLyonnais;User Id=staff;Password=BCLyon2024;TrustServerCertificate=true";Database
+Fix: scaffold context not found -> check -Context name and folder (var);"Scaffold-DbContext ""..."" Microsoft.EntityFrameworkCore.SqlServer -OutputDir .\\Models -ContextDir Data -Context MainContext";EntityFramework
+Reminder: use await SaveChangesAsync in async methods (var);"await _ctx.SaveChangesAsync();";EntityFramework API_CRUD
+Comando: criar projeto Web API (var) (var);dotnet new webapi -n BelleApi;API_CRUD Misc
+Comando: adicionar EF Core SQL Server (var) (var);dotnet add package Microsoft.EntityFrameworkCore.SqlServer;EntityFramework API_CRUD
+Comando: adicionar EF Core Tools (var) (var);dotnet add package Microsoft.EntityFrameworkCore.Tools;EntityFramework
+Program.cs: habilitar CORS simples (var) (var);"builder.Services.AddCors(p=>p.AddPolicy(""corsapp"", policy=>{policy.AllowAnyOrigin().AllowAnyMethod().AllowAnyHeader();}));
+app.UseCors(""corsapp"");";API_CRUD Misc
+appsettings: conexão SQL Server (Windows Auth) (var) (var);"""ConnectionStrings"": {
+  ""DefaultConnection"": ""Data Source=.\\SQLEXPRESS;Initial Catalog=BelleCroissantLyonnais;Trusted_Connection=True;TrustServerCertificate=True""
+}";Database Misc
+appsettings: conexão SQL Server (SQL Auth) (var) (var);"""ConnectionStrings"": {
+  ""DefaultConnection"": ""Data Source=.\\SQLEXPRESS;Initial Catalog=BelleCroissantLyonnais;User Id=staff;Password=BCLyon2024;TrustServerCertificate=True""
+}";Database Misc
+Scaffold: Windows Authentication (PowerShell) (var) (var);"Scaffold-DbContext ""Data Source=.\\SQLEXPRESS; Initial Catalog=BelleCroissantLyonnais; Trusted_Connection=true; Integrated Security=true; TrustServerCertificate=true"" Microsoft.EntityFrameworkCore.SqlServer -OutputDir .\\Models -ContextDir Data -Context MainContext";EntityFramework Database
+Scaffold: SQL Auth (PowerShell) (var) (var);"Scaffold-DbContext ""Data Source=.\\SQLEXPRESS; Initial Catalog=BelleCroissantLyonnais; User Id=staff; Password=BCLyon2024; TrustServerCertificate=true"" Microsoft.EntityFrameworkCore.SqlServer -OutputDir .\\Models -ContextDir Data -Context MainContext";EntityFramework Database
+Comando: adicionar Migration (var) (var);dotnet ef migrations add InitialCreate;EntityFramework Database
+Comando: atualizar o banco (Update-Database) (var) (var);dotnet ef database update;EntityFramework Database
+MainContext: registrar DbSet Products (var) (var);"public DbSet<Product> Products { get; set; }";EntityFramework Products
+MainContext: registrar DbSet Customers (var) (var);"public DbSet<Customer> Customers { get; set; }";EntityFramework Customers
+MainContext: registrar DbSet Orders (var) (var);"public DbSet<Order> Orders { get; set; }";EntityFramework Orders
+Model Product: propriedades básicas (var) (var);"public class Product {
+  public int Id { get; set; }
+  public string Name { get; set; }
+  public decimal Price { get; set; }
+}";Products Database
+Model Customer: propriedades básicas (var) (var);"public class Customer {
+  public int Id { get; set; }
+  public string Name { get; set; }
+  public string Email { get; set; }
+}";Customers Database
+Model Order: relacionamento e status (var) (var);"public class Order {
+  public int Id { get; set; }
+  public int CustomerId { get; set; }
+  public Customer Customer { get; set; }
+  public DateTime CreatedAt { get; set; }
+  public string Status { get; set; }
+}";Orders Database
+DTO ProductCreate (var) (var);"public class ProductCreateDto {
+  public string Name { get; set; }
+  public decimal Price { get; set; }
+}";Products Misc
+DTO CustomerCreate (var) (var);"public class CustomerCreateDto {
+  public string Name { get; set; }
+  public string Email { get; set; }
+}";Customers Misc
+DTO OrderCreate (var) (var);"public class OrderCreateDto {
+  public int CustomerId { get; set; }
+  public List<int> ProductIds { get; set; }
+}";Orders Misc
+OnModelCreating: configurar relação Order->Customer (var) (var);"modelBuilder.Entity<Order>().HasOne(o=>o.Customer).WithMany().HasForeignKey(o=>o.CustomerId);";EntityFramework Orders
+Connection string em Program.cs (AddDbContext) (var) (var);"builder.Services.AddDbContext<MainContext>(options => options.UseSqlServer(builder.Configuration.GetConnectionString(""DefaultConnection"")));";Database EntityFramework
+Registrar controllers (MapControllers) (var) (var);"app.MapControllers();";API_CRUD
+Program.cs: UseRouting e UseEndpoints (minimal) (var) (var);"app.UseRouting();
+app.UseEndpoints(endpoints => { endpoints.MapControllers(); });";API_CRUD
+Atributo ApiController e Route (var) (var);"[ApiController]
+[Route(""api/[controller]"")]";API_CRUD Misc
+Anotação Key em Id (var) (var);"[Key]
+public int Id { get; set; }";Database Misc
+Data annotation Required (var) (var);"[Required]
+public string Name { get; set; }";Misc Database
+Model Product com DataAnnotations completas (var) (var);"public class Product {
+  [Key]
+  public int Id { get; set; }
+  [Required]
+  public string Name { get; set; }
+  [Range(0.0, 10000.0)]
+  public decimal Price { get; set; }
+}";Products Database
+ProductsController: construtor (var) (var);"public class ProductsController : ControllerBase {
+  private readonly MainContext _ctx;
+  public ProductsController(MainContext ctx) { _ctx = ctx; }
+}";Products API_CRUD
+GET /api/products (sync) (var) (var);"[HttpGet]
+public ActionResult<IEnumerable<Product>> GetAll() => Ok(_ctx.Products.ToList());";Products API_CRUD
+GET /api/products (async) (var) (var);"[HttpGet]
+public async Task<ActionResult<IEnumerable<Product>>> GetAll() => Ok(await _ctx.Products.ToListAsync());";Products API_CRUD
+GET /api/products/{id} (sync) (var) (var);"[HttpGet(""{id}"")]
+public ActionResult<Product> GetById(int id) { var p=_ctx.Products.Find(id); return p==null?NotFound():Ok(p); }";Products API_CRUD
+GET /api/products/{id} (async) (var) (var);"[HttpGet(""{id}"")]
+public async Task<ActionResult<Product>> GetById(int id) { var p=await _ctx.Products.FindAsync(id); return p==null?NotFound():Ok(p); }";Products API_CRUD
+POST /api/products (create) (var) (var);"[HttpPost]
+public IActionResult Create(Product p) { _ctx.Products.Add(p); _ctx.SaveChanges(); return Created($""api/products/{p.Id}"", p); }";Products API_CRUD
+POST /api/products (async) (var) (var);"[HttpPost]
+public async Task<IActionResult> Create(Product p) { _ctx.Products.Add(p); await _ctx.SaveChangesAsync(); return Created($""api/products/{p.Id}"", p); }";Products API_CRUD
+PUT /api/products/{id} (update) (var) (var);"[HttpPut(""{id}"")]
+public IActionResult Update(int id, Product p) { if(id!=p.Id) return BadRequest(); _ctx.Update(p); _ctx.SaveChanges(); return NoContent(); }";Products API_CRUD
+PUT /api/products/{id} (async) (var) (var);"[HttpPut(""{id}"")]
+public async Task<IActionResult> Update(int id, Product p) { if(id!=p.Id) return BadRequest(); _ctx.Update(p); await _ctx.SaveChangesAsync(); return NoContent(); }";Products API_CRUD
+DELETE /api/products/{id} (var) (var);"[HttpDelete(""{id}"")]
+public IActionResult Remove(int id) { var p=_ctx.Products.Find(id); if(p==null) return NotFound(); _ctx.Remove(p); _ctx.SaveChanges(); return NoContent(); }";Products API_CRUD
+DELETE /api/products/{id} (async) (var) (var);"[HttpDelete(""{id}"")]
+public async Task<IActionResult> Remove(int id) { var p=await _ctx.Products.FindAsync(id); if(p==null) return NotFound(); _ctx.Remove(p); await _ctx.SaveChangesAsync(); return NoContent(); }";Products API_CRUD
+Validation example: name required in POST (var) (var);"if(string.IsNullOrWhiteSpace(p.Name)) return BadRequest(""Nome obrigatório"");";Products Misc
+Return 201 Created after POST (var) (var);"return CreatedAtAction(nameof(GetById), new { id = p.Id }, p);";Products API_CRUD
+Use CreatedAtAction pattern (var) (var);"[HttpPost]
+public async Task<IActionResult> Create(Product p) { _ctx.Products.Add(p); await _ctx.SaveChangesAsync(); return CreatedAtAction(nameof(GetById), new { id = p.Id }, p); }";Products API_CRUD
+Handle concurrency (simple) (var) (var);"try { _ctx.SaveChanges(); } catch(DbUpdateConcurrencyException) { return StatusCode(409); }";Products EntityFramework
+Query with Where example (var) (var);"var cheap = _ctx.Products.Where(x=>x.Price < 10).ToList();";Products Database
+Select projection example (var) (var);"var dto = _ctx.Products.Select(p=> new { p.Id, p.Name }).ToList();";Products
+Include example for navigation properties (var) (var);"var orders = _ctx.Orders.Include(o=>o.Customer).ToList();";Orders EntityFramework
+Paginação simples skip/take (var) (var);"var page = _ctx.Products.Skip((page-1)*size).Take(size).ToList();";Products
+Search by name (contains) (var) (var);"var results = _ctx.Products.Where(p=>p.Name.Contains(term)).ToList();";Products
+ModelState check in controller (var) (var);"if(!ModelState.IsValid) return BadRequest(ModelState);";API_CRUD Misc
+Return NotFound when item missing (var) (var);"if(p==null) return NotFound();";API_CRUD Misc
+Example JSON body Product POST (var) (var);"{
+  ""name"": ""Croissant"",
+  ""price"": 3.50
+}";Products Misc
+CustomersController: construtor (var) (var);"public class CustomersController : ControllerBase { private readonly MainContext _ctx; public CustomersController(MainContext ctx){_ctx=ctx;} }";Customers API_CRUD
+GET /api/customers (var) (var);"[HttpGet]
+public IActionResult GetAll() => Ok(_ctx.Customers.ToList());";Customers API_CRUD
+GET /api/customers/{id} (var) (var);"[HttpGet(""{id}"")]
+public IActionResult GetById(int id){var c=_ctx.Customers.Find(id);return c==null?NotFound():Ok(c);}";Customers API_CRUD
+POST /api/customers (var) (var);"[HttpPost]
+public IActionResult Create(Customer c){ if(string.IsNullOrWhiteSpace(c.Name)) return BadRequest(""Nome obrigatório""); _ctx.Customers.Add(c); _ctx.SaveChanges(); return Created($""api/customers/{c.Id}"", c); }";Customers API_CRUD
+PUT /api/customers/{id} (var) (var);"[HttpPut(""{id}"")]
+public IActionResult Update(int id, Customer c){ if(id!=c.Id) return BadRequest(); _ctx.Update(c); _ctx.SaveChanges(); return NoContent(); }";Customers API_CRUD
+Delete customer (example) (var) (var);"[HttpDelete(""{id}"")]
+public IActionResult Delete(int id){var c=_ctx.Customers.Find(id); if(c==null) return NotFound(); _ctx.Customers.Remove(c); _ctx.SaveChanges(); return NoContent(); }";Customers
+Customer POST JSON example (var) (var);"{
+  ""name"": ""João Silva"",
+  ""email"": ""joao@example.com""
+}";Customers
+Validate email format simple (var) (var);"if(!new EmailAddressAttribute().IsValid(c.Email)) return BadRequest(""Email inválido"");";Customers Misc
+Check duplicate username/email (var) (var);"if(_ctx.Customers.Any(x=>x.Email==c.Email)) return Conflict(""Email já cadastrado"");";Customers Database
+Use async for Customers (var) (var);"[HttpGet]
+public async Task<IActionResult> GetAll() => Ok(await _ctx.Customers.ToListAsync());";Customers API_CRUD
+Return CreatedAtAction for Customers (var) (var);"return CreatedAtAction(nameof(GetById), new { id = c.Id }, c);";Customers
+Patch example (partial update) using JsonPatchDocument (var) (var);"[HttpPatch(""{id}"")]
+public IActionResult Patch(int id, JsonPatchDocument<Customer> patch){var c=_ctx.Customers.Find(id); if(c==null) return NotFound(); patch.ApplyTo(c); _ctx.SaveChanges(); return Ok(c); }";Customers API_CRUD
+DTO usage: map CustomerCreateDto to Customer (var) (var);"var customer = new Customer { Name = dto.Name, Email = dto.Email };";Customers Misc
+Soft delete pattern example (var) (var);"c.IsDeleted = true; _ctx.SaveChanges();";Customers Misc
+Customer include orders example (var) (var);"var cust = _ctx.Customers.Include(c=>c.Orders).FirstOrDefault(x=>x.Id==id);";Customers Orders
+Model binding example from route (var) (var);"[HttpGet(""{id}"")]
+public IActionResult Get([FromRoute]int id){...}";API_CRUD
+OrdersController: construtor (var) (var);"public class OrdersController : ControllerBase { private readonly MainContext _ctx; public OrdersController(MainContext ctx){_ctx=ctx;} }";Orders API_CRUD
+GET /api/orders (var) (var);"[HttpGet]
+public IActionResult GetAll() => Ok(_ctx.Orders.ToList());";Orders API_CRUD
+GET /api/orders/{id} (var) (var);"[HttpGet(""{id}"")]
+public IActionResult GetById(int id){var o=_ctx.Orders.Find(id);return o==null?NotFound():Ok(o);}";Orders API_CRUD
+POST /api/orders (var) (var);"[HttpPost]
+public IActionResult Create(Order o){ o.CreatedAt = DateTime.UtcNow; o.Status = ""NEW""; _ctx.Orders.Add(o); _ctx.SaveChanges(); return Created($""api/orders/{o.Id}"", o); }";Orders API_CRUD
+PUT /api/orders/{id}/complete (var) (var);"[HttpPut(""{id}/complete"")]
+public IActionResult Complete(int id){ var o=_ctx.Orders.Find(id); if(o==null) return NotFound(); o.Status=""COMPLETED""; _ctx.SaveChanges(); return Ok(o); }";Orders API_CRUD
+PUT /api/orders/{id}/cancel (var) (var);"[HttpPut(""{id}/cancel"")]
+public IActionResult Cancel(int id){ var o=_ctx.Orders.Find(id); if(o==null) return NotFound(); o.Status=""CANCELLED""; _ctx.SaveChanges(); return Ok(o); }";Orders API_CRUD
+Order POST JSON example (var) (var);"{
+  ""customerId"": 1,
+  ""productIds"": [1,2,3]
+}";Orders
+Create order with product linking (sample) (var) (var);"var order = new Order { CustomerId = dto.CustomerId, CreatedAt=DateTime.UtcNow, Status=""NEW"" }; _ctx.Orders.Add(order); _ctx.SaveChanges(); // then add order items";Orders Database
+Check customer exists before order (var) (var);"if(!_ctx.Customers.Any(c=>c.Id==dto.CustomerId)) return BadRequest(""Customer not found"");";Orders Database
+Transaction example for creating order (var) (var);"using(var tx=_ctx.Database.BeginTransaction()) { try{ //create order and items _ctx.SaveChanges(); tx.Commit(); } catch{ tx.Rollback(); throw; } }";Orders Database
+Status enum example (var) (var);public enum OrderStatus { NEW, COMPLETED, CANCELLED };Orders
+Map OrderStatus to string before save (example) (var) (var);"o.Status = OrderStatus.NEW.ToString();";Orders
+Return 400 for invalid order data (var) (var);"if(dto.ProductIds==null || !dto.ProductIds.Any()) return BadRequest(""Nenhum produto no pedido"");";Orders
+Include products in order query (var) (var);"var order = _ctx.Orders.Include(o=>o.OrderItems).ThenInclude(oi=>oi.Product).FirstOrDefault(o=>o.Id==id);";Orders Database
+Order Items model example (var) (var);"public class OrderItem { public int Id {get;set;} public int OrderId {get;set;} public int ProductId {get;set;} public int Quantity {get;set;} public Product Product {get;set;} }";Orders Database
+Calculate order total example (var) (var);"var total = order.OrderItems.Sum(oi=>oi.Quantity * oi.Product.Price);";Orders
+Async create order example (var) (var);"[HttpPost]
+public async Task<IActionResult> Create(OrderCreateDto dto){ // validation... await _ctx.SaveChangesAsync(); return CreatedAtAction(nameof(GetById), new { id=order.Id }, order); }";Orders API_CRUD
+BasicAuthMiddleware: header check (code) (var) (var);"var auth = ctx.Request.Headers[""Authorization""].ToString(); if(string.IsNullOrEmpty(auth) || !auth.StartsWith(""Basic "")) { ctx.Response.StatusCode = 401; return; }";Auth
+BasicAuthMiddleware: decode header (var) (var);"var raw = Encoding.UTF8.GetString(Convert.FromBase64String(auth.Replace(""Basic "",""""))); var parts = raw.Split("":""); var user=parts[0]; var pass=parts[1];";Auth
+BasicAuthMiddleware: verify credentials (var) (var);"if(user!=""staff"" || pass!=""BCLyon2024"") { ctx.Response.StatusCode = 403; return; }";Auth
+Register middleware in Program.cs (var) (var);"app.UseMiddleware<BasicAuthMiddleware>();";Auth API_CRUD
+Add Authentication scheme header example (var) (var);Authorization: Basic c3RhZmY6QkNMeW9uMjAyNA==;Auth
+Allow anonymous on health endpoint (var) (var);"[AllowAnonymous]
+[HttpGet(""/health"")]
+public IActionResult Health() => Ok(""OK"");";Misc API_CRUD
+HTTPS redirection in Program.cs (var) (var);"app.UseHttpsRedirection();";Misc
+Global exception handler minimal (var) (var);"app.UseExceptionHandler(errorApp => { errorApp.Run(async context => { context.Response.StatusCode = 500; await context.Response.WriteAsync(""Internal Server Error""); }); });";Misc
+Return BadRequest with model errors (var) (var);"if(!ModelState.IsValid) return BadRequest(ModelState);";API_CRUD
+Example Dockerfile minimal (optional) (var) (var);"FROM mcr.microsoft.com/dotnet/aspnet:6.0
+WORKDIR /app
+COPY ./publish .
+ENTRYPOINT [""dotnet"",""BelleApi.dll""]";Misc
+Test GET curl example (var) (var);curl -u staff:BCLyon2024 http://localhost:5000/api/products;API_CRUD Auth
+Test POST curl example (var) (var);"curl -u staff:BCLyon2024 -H ""Content-Type: application/json"" -d ""{\""name\"":\""Croissant\"",\""price\"":3.5}"" http://localhost:5000/api/products";API_CRUD
+Enable logging (minimal) (var) (var);"builder.Logging.AddConsole();";Misc
+Avoid returning entity directly: map to DTO (example) (var) (var);"var dto = new ProductDto { Id = p.Id, Name = p.Name, Price = p.Price }; return Ok(dto);";Misc
+Fix: No database provider has been configured -> AddDbContext in Program.cs (var) (var);"builder.Services.AddDbContext<MainContext>(options => options.UseSqlServer(builder.Configuration.GetConnectionString(""DefaultConnection"")));";Database

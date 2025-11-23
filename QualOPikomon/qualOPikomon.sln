@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.14.36408.4 d17.14
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ComparadorImagemDb", "ComparadorImagemDb\ComparadorImagemDb.csproj", "{116C99F6-5ED1-40B7-961B-05821215420C}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{116C99F6-5ED1-40B7-961B-05821215420C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{116C99F6-5ED1-40B7-961B-05821215420C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{116C99F6-5ED1-40B7-961B-05821215420C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{116C99F6-5ED1-40B7-961B-05821215420C}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {7938D65C-484B-4ABB-BD4E-4CCBDC3DD5FA}
+	EndGlobalSection
+EndGlobal

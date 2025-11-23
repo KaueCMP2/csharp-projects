@@ -1,0 +1,12 @@
+* Comanfo Scaffold
+- Autenticação Windows
+
+Scaffold-DbContext "Data Source=.\SQLEXPRESS; Initial Catalog=BelleCroissantLyonnais; Trusted_Connection=true; Integrated Security=true; TrustServerCertificate=true" Microsoft.EntityFrameworkCore.SqlServer -OutputDir .\Models -ContextDir Context -Context MainContext
+
+
+- Com usuário
+
+Scaffold-DbConstext "Data Source=.\SQLEXPRESS; initial catalog=Session1; User id=nomeUsuario; password=senhaUsuario; " Microsoft.EntityFrameworkCore.SqlServer 
+-OutputDir .\Models -OutputDir .\Models -ContextDir Contexts -Context MainContext
+
+

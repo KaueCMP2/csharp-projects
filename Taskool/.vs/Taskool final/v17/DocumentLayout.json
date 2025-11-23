@@ -3,36 +3,44 @@
   "WorkspaceRootPath": "C:\\Users\\KaueCMP2\\Documents\\Projetos-CSharp\\Taskool\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{C3498C15-3F7A-4D1D-9892-66655DC2FBC5}|Taskool final\\Taskool final.csproj|C:\\Users\\KaueCMP2\\Documents\\Projetos-CSharp\\Taskool\\taskool final\\cadastro.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{C3498C15-3F7A-4D1D-9892-66655DC2FBC5}|Taskool final\\Taskool final.csproj|solutionrelative:taskool final\\cadastro.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{C3498C15-3F7A-4D1D-9892-66655DC2FBC5}|Taskool final\\Taskool final.csproj|C:\\Users\\KaueCMP2\\Documents\\Projetos-CSharp\\Taskool\\taskool final\\formconfgcolor.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C3498C15-3F7A-4D1D-9892-66655DC2FBC5}|Taskool final\\Taskool final.csproj|solutionrelative:taskool final\\formconfgcolor.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{C3498C15-3F7A-4D1D-9892-66655DC2FBC5}|Taskool final\\Taskool final.csproj|C:\\Users\\KaueCMP2\\Documents\\Projetos-CSharp\\Taskool\\taskool final\\formautentica.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{C3498C15-3F7A-4D1D-9892-66655DC2FBC5}|Taskool final\\Taskool final.csproj|solutionrelative:taskool final\\formautentica.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{C3498C15-3F7A-4D1D-9892-66655DC2FBC5}|Taskool final\\Taskool final.csproj|C:\\Users\\KaueCMP2\\Documents\\Projetos-CSharp\\Taskool\\taskool final\\cadastro.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{C3498C15-3F7A-4D1D-9892-66655DC2FBC5}|Taskool final\\Taskool final.csproj|solutionrelative:taskool final\\cadastro.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{C3498C15-3F7A-4D1D-9892-66655DC2FBC5}|Taskool final\\Taskool final.csproj|C:\\Users\\KaueCMP2\\Documents\\Projetos-CSharp\\Taskool\\taskool final\\home.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{C3498C15-3F7A-4D1D-9892-66655DC2FBC5}|Taskool final\\Taskool final.csproj|solutionrelative:taskool final\\home.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+      "AbsoluteMoniker": "D:0:0:{C3498C15-3F7A-4D1D-9892-66655DC2FBC5}|Taskool final\\Taskool final.csproj|C:\\Users\\KaueCMP2\\Documents\\Projetos-CSharp\\Taskool\\taskool final\\home.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C3498C15-3F7A-4D1D-9892-66655DC2FBC5}|Taskool final\\Taskool final.csproj|solutionrelative:taskool final\\home.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{C3498C15-3F7A-4D1D-9892-66655DC2FBC5}|Taskool final\\Taskool final.csproj|C:\\Users\\KaueCMP2\\Documents\\Projetos-CSharp\\Taskool\\taskool final\\formconfgcolor.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
       "RelativeMoniker": "D:0:0:{C3498C15-3F7A-4D1D-9892-66655DC2FBC5}|Taskool final\\Taskool final.csproj|solutionrelative:taskool final\\formconfgcolor.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{C3498C15-3F7A-4D1D-9892-66655DC2FBC5}|Taskool final\\Taskool final.csproj|c:\\users\\kauecmp2\\documents\\projetos-csharp\\taskool\\taskool final\\home.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{C3498C15-3F7A-4D1D-9892-66655DC2FBC5}|Taskool final\\Taskool final.csproj|solutionrelative:taskool final\\home.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{C3498C15-3F7A-4D1D-9892-66655DC2FBC5}|Taskool final\\Taskool final.csproj|C:\\Users\\KaueCMP2\\Documents\\Projetos-CSharp\\Taskool\\taskool final\\home.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{C3498C15-3F7A-4D1D-9892-66655DC2FBC5}|Taskool final\\Taskool final.csproj|solutionrelative:taskool final\\home.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{C3498C15-3F7A-4D1D-9892-66655DC2FBC5}|Taskool final\\Taskool final.csproj|c:\\users\\kauecmp2\\documents\\projetos-csharp\\taskool\\taskool final\\formconfgcolor.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{C3498C15-3F7A-4D1D-9892-66655DC2FBC5}|Taskool final\\Taskool final.csproj|solutionrelative:taskool final\\formconfgcolor.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{C3498C15-3F7A-4D1D-9892-66655DC2FBC5}|Taskool final\\Taskool final.csproj|C:\\Users\\KaueCMP2\\Documents\\Projetos-CSharp\\Taskool\\taskool final\\cadastro.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{C3498C15-3F7A-4D1D-9892-66655DC2FBC5}|Taskool final\\Taskool final.csproj|solutionrelative:taskool final\\cadastro.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{C3498C15-3F7A-4D1D-9892-66655DC2FBC5}|Taskool final\\Taskool final.csproj|C:\\Users\\KaueCMP2\\Documents\\Projetos-CSharp\\Taskool\\taskool final\\formautentica.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{C3498C15-3F7A-4D1D-9892-66655DC2FBC5}|Taskool final\\Taskool final.csproj|C:\\Users\\KaueCMP2\\Documents\\Projetos-CSharp\\Taskool\\taskool final\\formautentica.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{C3498C15-3F7A-4D1D-9892-66655DC2FBC5}|Taskool final\\Taskool final.csproj|solutionrelative:taskool final\\formautentica.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C3498C15-3F7A-4D1D-9892-66655DC2FBC5}|Taskool final\\Taskool final.csproj|c:\\users\\kauecmp2\\documents\\projetos-csharp\\taskool\\taskool final\\formautentica.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{C3498C15-3F7A-4D1D-9892-66655DC2FBC5}|Taskool final\\Taskool final.csproj|solutionrelative:taskool final\\formautentica.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C3498C15-3F7A-4D1D-9892-66655DC2FBC5}|Taskool final\\Taskool final.csproj|C:\\Users\\KaueCMP2\\Documents\\Projetos-CSharp\\Taskool\\taskool final\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C3498C15-3F7A-4D1D-9892-66655DC2FBC5}|Taskool final\\Taskool final.csproj|solutionrelative:taskool final\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C3498C15-3F7A-4D1D-9892-66655DC2FBC5}|Taskool final\\Taskool final.csproj|C:\\Users\\KaueCMP2\\Documents\\Projetos-CSharp\\Taskool\\taskool final\\cadastro.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C3498C15-3F7A-4D1D-9892-66655DC2FBC5}|Taskool final\\Taskool final.csproj|solutionrelative:taskool final\\cadastro.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C3498C15-3F7A-4D1D-9892-66655DC2FBC5}|Taskool final\\Taskool final.csproj|C:\\Users\\KaueCMP2\\Documents\\Projetos-CSharp\\Taskool\\taskool final\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C3498C15-3F7A-4D1D-9892-66655DC2FBC5}|Taskool final\\Taskool final.csproj|solutionrelative:taskool final\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{C3498C15-3F7A-4D1D-9892-66655DC2FBC5}|Taskool final\\Taskool final.csproj|C:\\Users\\KaueCMP2\\Documents\\Projetos-CSharp\\Taskool\\taskool final\\resources\\mensagens.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
@@ -50,7 +58,7 @@
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 5,
               "Title": "FormAutentica.cs [Design]",
               "DocumentMoniker": "C:\\Users\\KaueCMP2\\Documents\\Projetos-CSharp\\Taskool\\Taskool final\\FormAutentica.cs",
               "RelativeDocumentMoniker": "Taskool final\\FormAutentica.cs",
@@ -63,7 +71,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 4,
               "Title": "Cadastro.cs [Design]",
               "DocumentMoniker": "C:\\Users\\KaueCMP2\\Documents\\Projetos-CSharp\\Taskool\\Taskool final\\Cadastro.cs",
               "RelativeDocumentMoniker": "Taskool final\\Cadastro.cs",
@@ -89,7 +97,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 2,
               "Title": "FormConfgColor.cs [Design]",
               "DocumentMoniker": "C:\\Users\\KaueCMP2\\Documents\\Projetos-CSharp\\Taskool\\Taskool final\\FormConfgColor.cs",
               "RelativeDocumentMoniker": "Taskool final\\FormConfgColor.cs",
@@ -102,13 +110,13 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 1,
               "Title": "Home.cs",
               "DocumentMoniker": "C:\\Users\\KaueCMP2\\Documents\\Projetos-CSharp\\Taskool\\Taskool final\\Home.cs",
               "RelativeDocumentMoniker": "Taskool final\\Home.cs",
               "ToolTip": "C:\\Users\\KaueCMP2\\Documents\\Projetos-CSharp\\Taskool\\Taskool final\\Home.cs",
               "RelativeToolTip": "Taskool final\\Home.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAALwAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAJoAAAAAAAAAAAAtwPIAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-11-21T13:58:13.95Z",
               "IsPinned": true,
@@ -125,45 +133,69 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "Cadastro.cs",
-              "DocumentMoniker": "C:\\Users\\KaueCMP2\\Documents\\Projetos-CSharp\\Taskool\\Taskool final\\Cadastro.cs",
-              "RelativeDocumentMoniker": "Taskool final\\Cadastro.cs",
-              "ToolTip": "C:\\Users\\KaueCMP2\\Documents\\Projetos-CSharp\\Taskool\\Taskool final\\Cadastro.cs",
-              "RelativeToolTip": "Taskool final\\Cadastro.cs",
-              "ViewState": "AgIAAD4AAAAAAAAAAADwv0EAAABaAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-21T13:41:46.043Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
               "Title": "FormConfgColor.cs",
               "DocumentMoniker": "C:\\Users\\KaueCMP2\\Documents\\Projetos-CSharp\\Taskool\\Taskool final\\FormConfgColor.cs",
               "RelativeDocumentMoniker": "Taskool final\\FormConfgColor.cs",
               "ToolTip": "C:\\Users\\KaueCMP2\\Documents\\Projetos-CSharp\\Taskool\\Taskool final\\FormConfgColor.cs",
               "RelativeToolTip": "Taskool final\\FormConfgColor.cs",
-              "ViewState": "AgIAAFUAAAAAAAAAAAAUwFkAAABAAAAAAAAAAA==",
+              "ViewState": "AgIAADAAAAAAAAAAAAAowEMAAAAaAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-11-23T00:45:26.942Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 6,
               "Title": "FormAutentica.cs",
               "DocumentMoniker": "C:\\Users\\KaueCMP2\\Documents\\Projetos-CSharp\\Taskool\\Taskool final\\FormAutentica.cs",
               "RelativeDocumentMoniker": "Taskool final\\FormAutentica.cs",
               "ToolTip": "C:\\Users\\KaueCMP2\\Documents\\Projetos-CSharp\\Taskool\\Taskool final\\FormAutentica.cs",
               "RelativeToolTip": "Taskool final\\FormAutentica.cs",
-              "ViewState": "AgIAADgAAAAAAAAAAAAcwEgAAAAcAAAAAAAAAA==",
+              "ViewState": "AgIAADEAAAAAAAAAAAAowI8AAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-11-21T13:43:28.419Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\KaueCMP2\\Documents\\Projetos-CSharp\\Taskool\\Taskool final\\Program.cs",
+              "RelativeDocumentMoniker": "Taskool final\\Program.cs",
+              "ToolTip": "C:\\Users\\KaueCMP2\\Documents\\Projetos-CSharp\\Taskool\\Taskool final\\Program.cs",
+              "RelativeToolTip": "Taskool final\\Program.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAACAAAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-23T13:54:30.001Z"
+            },
+            {
+              "$type": "Document",
               "DocumentIndex": 8,
+              "Title": "Cadastro.cs",
+              "DocumentMoniker": "C:\\Users\\KaueCMP2\\Documents\\Projetos-CSharp\\Taskool\\Taskool final\\Cadastro.cs",
+              "RelativeDocumentMoniker": "Taskool final\\Cadastro.cs",
+              "ToolTip": "C:\\Users\\KaueCMP2\\Documents\\Projetos-CSharp\\Taskool\\Taskool final\\Cadastro.cs",
+              "RelativeToolTip": "Taskool final\\Cadastro.cs",
+              "ViewState": "AgIAADgAAAAAAAAAAAAIwGEAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-21T13:41:46.043Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "User.cs",
+              "DocumentMoniker": "C:\\Users\\KaueCMP2\\Documents\\Projetos-CSharp\\Taskool\\Taskool final\\User.cs",
+              "RelativeDocumentMoniker": "Taskool final\\User.cs",
+              "ToolTip": "C:\\Users\\KaueCMP2\\Documents\\Projetos-CSharp\\Taskool\\Taskool final\\User.cs",
+              "RelativeToolTip": "Taskool final\\User.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-23T13:14:15.877Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
               "Title": "mensagens.json",
               "DocumentMoniker": "C:\\Users\\KaueCMP2\\Documents\\Projetos-CSharp\\Taskool\\Taskool final\\Resources\\mensagens.json",
               "RelativeDocumentMoniker": "Taskool final\\Resources\\mensagens.json",
