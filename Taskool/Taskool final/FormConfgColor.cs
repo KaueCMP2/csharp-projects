@@ -49,44 +49,59 @@ namespace Taskool_final
 
         private void maskedTextBox1_TextChanged(object sender, EventArgs e)
         {
-            try
+            try // tenta
             {
+                // guardar em p, o texto da makedTextBox1 sem RGB() e dividido apartir dos (.)
                 string[] p = maskedTextBox1.Text.Replace("RGB(", "").Replace(")", "").Trim().Split('.');
 
+                // guarda em r se o for > 0 e p[0] sem espaco for igual a 3 caracteres... se for verdadeiro guarda o p[0] se nao retorna 0
                 int r = p.Length > 0 && p[0].Trim().Length == 3 ? int.Parse(p[0]) : 0;
+
+                // guarda em g se o for > 0 e p[1] sem espaco for igual a 3 caracteres... se for verdadeiro guarda o p[1] se nao retorna 0
                 int g = p.Length > 1 && p[1].Trim().Length == 3 ? int.Parse(p[1]) : 0;
+
+                // guarda em b se o for > 0 e p[2] sem espaco for igual a 3 caracteres... se for verdadeiro guarda o p[2] se nao retorna 0
                 int b = p.Length > 2 && p[2].Trim().Length == 3 ? int.Parse(p[2]) : 0;
 
-                Color cor = Color.FromArgb(r, g, b);
-                this.BackColor = cor;
-
-                textBox1.Text = ColorTranslator.ToHtml(cor);
+                this.BackColor = Color.FromArgb(r, g, b); // muda a cor do fundo para a cor escrita na maskedTextBox1
+                textBox1.Text = ColorTranslator.ToHtml(BackColor); // escreve em Hex, a cor que esta no fundo
             }
-            catch { }
+            catch { } // execao nao faz nada.
         }
 
+        // botao de salvar
         private void button1_Click(object sender, EventArgs e)
         {
+            // carrega o usuario do banco pelo id
             var usas = ctx.Usuario.FirstOrDefault(u => u.Codigo == User.id);
 
+            // se usuario for null
             if (usas == null)
             {
                 "Erro ao encontrar usuario".Alert();
                 return;
             }
 
-            if (!string.IsNullOrEmpty(textBox1.Text) && textBox1.Text.Length <= 7)
+            // se nao verifica se tem algo na textbox1 e se e menor ou igual a 7, maximo de caracteres para um hex de cor
+            else if (!string.IsNullOrEmpty(textBox1.Text) && textBox1.Text.Length <= 7)
             {
-                User.senha = textBox1.Text.ToString();
                 string cor = textBox1.Text.ToString();
-                usas.Senha = $"{cor}";           
-                ctx.SaveChanges();
+                User.senha = cor; // Atualiza a senha da classe User
+                usas.Senha = $"{cor}"; // defini a senha do usuario cadastrada no banco como o conteudo da text box em string (cor)
 
+                // Confirma as alteracoes
+                var pergunta = $"{usas.Nome} quer mesmo salvar essa cor?".Conf();
+                if (pergunta == DialogResult.Yes)
+                {
+                    ctx.SaveChanges(); // salva no banco
+                    Close(); // fecha o form;
+                    return;
+                }
 
-                Close();
                 return;
-            } 
+            }
 
+            // se algo der errado:
             else
             {
                 "nao foi possivel salvar a cor".Alert();

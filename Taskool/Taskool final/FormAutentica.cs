@@ -51,6 +51,21 @@ namespace Taskool_final
 
             else if (usas.Usuario1 == textBox1.Text)
             {
+                if (imagemBytes == null)
+                {
+                    "Imagem invalida".Alert();
+                    return;
+
+                   
+                  
+                }
+                else if (!usas.Foto.SequenceEqual(imagemBytes))
+                {
+                    "Dados Incorretos".Alert();
+
+                    return;
+                }
+
                 byte[] imagemBanco = usas.Foto;
                 if (imagemBanco.SequenceEqual(imagemBytes))
                 {

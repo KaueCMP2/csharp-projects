@@ -52,3 +52,11 @@ C:\Users\KaueCMP2\Documents\Projetos-CSharp\Taskool\Taskool final\bin\x64\Debug\
 C:\Users\KaueCMP2\Documents\Projetos-CSharp\Taskool\Taskool final\bin\x64\Debug\Newtonsoft.Json.xml
 C:\Users\KaueCMP2\Documents\Projetos-CSharp\Taskool\Taskool final\obj\x64\Debug\Taskool .ADA74905.Up2Date
 C:\Users\KaueCMP2\Documents\Projetos-CSharp\Taskool\Taskool final\obj\x64\Debug\Taskool_final.FormConfgColor.resources
+C:\Users\KaueCMP2\Documents\Projetos-CSharp\Taskool\Taskool final\bin\x64\Debug\Interop.WMPLib.dll
+C:\Users\KaueCMP2\Documents\Projetos-CSharp\Taskool\Taskool final\bin\x64\Debug\AxInterop.WMPLib.dll
+C:\Users\KaueCMP2\Documents\Projetos-CSharp\Taskool\Taskool final\obj\x64\Debug\Interop.MediaPlayer.dll
+C:\Users\KaueCMP2\Documents\Projetos-CSharp\Taskool\Taskool final\obj\x64\Debug\Interop.WMPDXMLib.dll
+C:\Users\KaueCMP2\Documents\Projetos-CSharp\Taskool\Taskool final\obj\x64\Debug\Interop.WMPLauncher.dll
+C:\Users\KaueCMP2\Documents\Projetos-CSharp\Taskool\Taskool final\obj\x64\Debug\Interop.WMPLib.dll
+C:\Users\KaueCMP2\Documents\Projetos-CSharp\Taskool\Taskool final\obj\x64\Debug\AxInterop.WMPLib.dll
+C:\Users\KaueCMP2\Documents\Projetos-CSharp\Taskool\Taskool final\obj\x64\Debug\Taskool final.csproj.ResolveComReference.cache

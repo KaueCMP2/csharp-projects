@@ -65,7 +65,7 @@ namespace Taskool_final
         {
             if (string.IsNullOrEmpty(textBox1.Text) || string.IsNullOrEmpty(textBox2.Text)
                || string.IsNullOrEmpty(textBox2.Text) || string.IsNullOrEmpty(textBox3.Text)
-               || string.IsNullOrEmpty(textBox4.Text)) return;
+               || string.IsNullOrEmpty(textBox4.Text) || imagemBytes == null) return;
 
             else if (ctx.Usuario.Any(n => n.Usuario1 == textBox4.Text))
                 return;
