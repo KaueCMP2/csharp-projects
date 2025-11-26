@@ -1,0 +1,143 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\KaueCMP2\\Documents\\Projetos-CSharp\\Listagem\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{EAEE9B88-AB15-4AB2-9EC3-970799AC572D}|Listagem\\Listagem.csproj|c:\\users\\kauecmp2\\documents\\projetos-csharp\\listagem\\listagem\\notificacaocontrol.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{EAEE9B88-AB15-4AB2-9EC3-970799AC572D}|Listagem\\Listagem.csproj|solutionrelative:listagem\\notificacaocontrol.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{EAEE9B88-AB15-4AB2-9EC3-970799AC572D}|Listagem\\Listagem.csproj|c:\\users\\kauecmp2\\documents\\projetos-csharp\\listagem\\listagem\\notificacaocontrol.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{EAEE9B88-AB15-4AB2-9EC3-970799AC572D}|Listagem\\Listagem.csproj|solutionrelative:listagem\\notificacaocontrol.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{EAEE9B88-AB15-4AB2-9EC3-970799AC572D}|Listagem\\Listagem.csproj|c:\\users\\kauecmp2\\documents\\projetos-csharp\\listagem\\listagem\\formnotificacao.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{EAEE9B88-AB15-4AB2-9EC3-970799AC572D}|Listagem\\Listagem.csproj|solutionrelative:listagem\\formnotificacao.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{EAEE9B88-AB15-4AB2-9EC3-970799AC572D}|Listagem\\Listagem.csproj|c:\\users\\kauecmp2\\documents\\projetos-csharp\\listagem\\listagem\\formnotificacao.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{EAEE9B88-AB15-4AB2-9EC3-970799AC572D}|Listagem\\Listagem.csproj|solutionrelative:listagem\\formnotificacao.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{EAEE9B88-AB15-4AB2-9EC3-970799AC572D}|Listagem\\Listagem.csproj|c:\\users\\kauecmp2\\documents\\projetos-csharp\\listagem\\listagem\\parent.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{EAEE9B88-AB15-4AB2-9EC3-970799AC572D}|Listagem\\Listagem.csproj|solutionrelative:listagem\\parent.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{EAEE9B88-AB15-4AB2-9EC3-970799AC572D}|Listagem\\Listagem.csproj|c:\\users\\kauecmp2\\documents\\projetos-csharp\\listagem\\listagem\\model\\model1.edmx||{C99AEA30-8E36-4515-B76F-496F5A48A6AA}|",
+      "RelativeMoniker": "D:0:0:{EAEE9B88-AB15-4AB2-9EC3-970799AC572D}|Listagem\\Listagem.csproj|solutionrelative:listagem\\model\\model1.edmx||{C99AEA30-8E36-4515-B76F-496F5A48A6AA}|"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{EAEE9B88-AB15-4AB2-9EC3-970799AC572D}|Listagem\\Listagem.csproj|c:\\users\\kauecmp2\\documents\\projetos-csharp\\listagem\\listagem\\parent.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{EAEE9B88-AB15-4AB2-9EC3-970799AC572D}|Listagem\\Listagem.csproj|solutionrelative:listagem\\parent.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 4,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{aa2115a1-9712-457b-9047-dbb71ca2cdd2}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{b1e99781-ab81-11d0-b683-00aa00a3ee26}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "parent.cs [Design]",
+              "DocumentMoniker": "C:\\Users\\KaueCMP2\\Documents\\Projetos-CSharp\\Listagem\\Listagem\\parent.cs",
+              "RelativeDocumentMoniker": "Listagem\\parent.cs",
+              "ToolTip": "C:\\Users\\KaueCMP2\\Documents\\Projetos-CSharp\\Listagem\\Listagem\\parent.cs [Design]",
+              "RelativeToolTip": "Listagem\\parent.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-26T00:05:49.641Z",
+              "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "FormNotificacao.cs",
+              "DocumentMoniker": "C:\\Users\\KaueCMP2\\Documents\\Projetos-CSharp\\Listagem\\Listagem\\FormNotificacao.cs",
+              "RelativeDocumentMoniker": "Listagem\\FormNotificacao.cs",
+              "ToolTip": "C:\\Users\\KaueCMP2\\Documents\\Projetos-CSharp\\Listagem\\Listagem\\FormNotificacao.cs",
+              "RelativeToolTip": "Listagem\\FormNotificacao.cs",
+              "ViewState": "AgIAABMAAAAAAAAAAAAgwB0AAABMAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-25T23:54:24.85Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "NotificacaoControl.cs",
+              "DocumentMoniker": "C:\\Users\\KaueCMP2\\Documents\\Projetos-CSharp\\Listagem\\Listagem\\NotificacaoControl.cs",
+              "RelativeDocumentMoniker": "Listagem\\NotificacaoControl.cs",
+              "ToolTip": "C:\\Users\\KaueCMP2\\Documents\\Projetos-CSharp\\Listagem\\Listagem\\NotificacaoControl.cs*",
+              "RelativeToolTip": "Listagem\\NotificacaoControl.cs*",
+              "ViewState": "AgIAAA4AAAAAAAAAAAA4wCkAAAAfAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-26T00:12:18.581Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "NotificacaoControl.cs [Design]",
+              "DocumentMoniker": "C:\\Users\\KaueCMP2\\Documents\\Projetos-CSharp\\Listagem\\Listagem\\NotificacaoControl.cs",
+              "RelativeDocumentMoniker": "Listagem\\NotificacaoControl.cs",
+              "ToolTip": "C:\\Users\\KaueCMP2\\Documents\\Projetos-CSharp\\Listagem\\Listagem\\NotificacaoControl.cs [Design]*",
+              "RelativeToolTip": "Listagem\\NotificacaoControl.cs [Design]*",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-26T00:12:09.219Z",
+              "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "FormNotificacao.cs [Design]",
+              "DocumentMoniker": "C:\\Users\\KaueCMP2\\Documents\\Projetos-CSharp\\Listagem\\Listagem\\FormNotificacao.cs",
+              "RelativeDocumentMoniker": "Listagem\\FormNotificacao.cs",
+              "ToolTip": "C:\\Users\\KaueCMP2\\Documents\\Projetos-CSharp\\Listagem\\Listagem\\FormNotificacao.cs [Design]",
+              "RelativeToolTip": "Listagem\\FormNotificacao.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-25T23:46:37.707Z",
+              "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "Model1.edmx [Diagram1]",
+              "DocumentMoniker": "C:\\Users\\KaueCMP2\\Documents\\Projetos-CSharp\\Listagem\\Listagem\\Model\\Model1.edmx",
+              "RelativeDocumentMoniker": "Listagem\\Model\\Model1.edmx",
+              "ToolTip": "C:\\Users\\KaueCMP2\\Documents\\Projetos-CSharp\\Listagem\\Listagem\\Model\\Model1.edmx [Diagram1]",
+              "RelativeToolTip": "Listagem\\Model\\Model1.edmx [Diagram1]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001116|",
+              "WhenOpened": "2025-11-26T00:05:02.156Z",
+              "EditorCaption": " [Diagram1]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "parent.cs",
+              "DocumentMoniker": "C:\\Users\\KaueCMP2\\Documents\\Projetos-CSharp\\Listagem\\Listagem\\parent.cs",
+              "RelativeDocumentMoniker": "Listagem\\parent.cs",
+              "ToolTip": "C:\\Users\\KaueCMP2\\Documents\\Projetos-CSharp\\Listagem\\Listagem\\parent.cs",
+              "RelativeToolTip": "Listagem\\parent.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABQAAAA+AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-26T00:05:54.355Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

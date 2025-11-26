@@ -1,0 +1,257 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="Sessao5Model" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="Comentario">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Comentario1" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="DataHoraComentario" Type="DateTime" Precision="3" />
+    <Property Name="IdJogo" Type="Int32" />
+    <Property Name="IdUsuario" Type="Int32" />
+    <NavigationProperty Name="Jogos" Relationship="Self.FK_Comentario_Jogos" FromRole="Comentario" ToRole="Jogos" />
+    <NavigationProperty Name="Usuarios" Relationship="Self.FK_Comentario_Usuarios" FromRole="Comentario" ToRole="Usuarios" />
+  </EntityType>
+  <EntityType Name="Jogadores">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Nome" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="NumeroCamisa" Type="Int32" Nullable="false" />
+    <Property Name="SelecaoId" Type="Int32" />
+    <Property Name="PosicaoId" Type="Int32" />
+    <NavigationProperty Name="Posicoes" Relationship="Self.FK_Jogadores_Posicoes" FromRole="Jogadores" ToRole="Posicoes" />
+    <NavigationProperty Name="Selecoes" Relationship="Self.FK_Jogadores_Selecoes" FromRole="Jogadores" ToRole="Selecoes" />
+  </EntityType>
+  <EntityType Name="Jogos">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" />
+    <Property Name="SelecaoCasaId" Type="Int32" />
+    <Property Name="PlacarCasa" Type="Int32" />
+    <Property Name="SelecaoVisitanteId" Type="Int32" />
+    <Property Name="PlacarVisitante" Type="Int32" />
+    <Property Name="Data" Type="DateTime" Precision="3" />
+    <Property Name="RodadaId" Type="Int32" />
+    <NavigationProperty Name="Comentario" Relationship="Self.FK_Comentario_Jogos" FromRole="Jogos" ToRole="Comentario" />
+    <NavigationProperty Name="Rodadas" Relationship="Self.FK_Jogos_Rodadas" FromRole="Jogos" ToRole="Rodadas" />
+  </EntityType>
+  <EntityType Name="Notificacoes">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Titulo" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Descricao" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="DataHoraCadastro" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="DataHoraEnvio" Type="DateTime" Precision="3" />
+    <Property Name="Importancia" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="SelecaoId" Type="Int32" />
+    <NavigationProperty Name="Selecoes" Relationship="Self.FK_Notificacoes_Selecoes" FromRole="Notificacoes" ToRole="Selecoes" />
+    <NavigationProperty Name="NotificacoesUsuarios" Relationship="Self.FK_NotificacoesUsuarios_Notificacoes" FromRole="Notificacoes" ToRole="NotificacoesUsuarios" />
+  </EntityType>
+  <EntityType Name="NotificacoesUsuarios">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Status" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="UsuarioId" Type="Int32" />
+    <Property Name="NotificacaoId" Type="Int32" />
+    <NavigationProperty Name="Notificacoes" Relationship="Self.FK_NotificacoesUsuarios_Notificacoes" FromRole="NotificacoesUsuarios" ToRole="Notificacoes" />
+    <NavigationProperty Name="Usuarios" Relationship="Self.FK_NotificacoesUsuarios_Usuarios" FromRole="NotificacoesUsuarios" ToRole="Usuarios" />
+  </EntityType>
+  <EntityType Name="Posicoes">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Nome" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <NavigationProperty Name="Jogadores" Relationship="Self.FK_Jogadores_Posicoes" FromRole="Posicoes" ToRole="Jogadores" />
+  </EntityType>
+  <EntityType Name="Rodadas">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="DataInicio" Type="DateTime" Nullable="false" Precision="3" />
+    <NavigationProperty Name="Jogos" Relationship="Self.FK_Jogos_Rodadas" FromRole="Rodadas" ToRole="Jogos" />
+  </EntityType>
+  <EntityType Name="Selecoes">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Nome" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+    <NavigationProperty Name="Jogadores" Relationship="Self.FK_Jogadores_Selecoes" FromRole="Selecoes" ToRole="Jogadores" />
+    <NavigationProperty Name="Notificacoes" Relationship="Self.FK_Notificacoes_Selecoes" FromRole="Selecoes" ToRole="Notificacoes" />
+  </EntityType>
+  <EntityType Name="sysdiagrams">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="principal_id" Type="Int32" Nullable="false" />
+    <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="version" Type="Int32" />
+    <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="Usuarios">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Nome" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Email" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Senha" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Nascimento" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="Foto" Type="Binary" MaxLength="Max" FixedLength="false" />
+    <Property Name="Sexo" Type="String" MaxLength="1" FixedLength="true" Unicode="false" Nullable="false" />
+    <Property Name="TimeFavoritoId" Type="Int32" />
+    <Property Name="perfil" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <NavigationProperty Name="Comentario" Relationship="Self.FK_Comentario_Usuarios" FromRole="Usuarios" ToRole="Comentario" />
+    <NavigationProperty Name="NotificacoesUsuarios" Relationship="Self.FK_NotificacoesUsuarios_Usuarios" FromRole="Usuarios" ToRole="NotificacoesUsuarios" />
+  </EntityType>
+  <Association Name="FK_Comentario_Jogos">
+    <End Role="Jogos" Type="Self.Jogos" Multiplicity="1" />
+    <End Role="Comentario" Type="Self.Comentario" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="Jogos">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Comentario">
+        <PropertyRef Name="Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Comentario_Usuarios">
+    <End Role="Usuarios" Type="Self.Usuarios" Multiplicity="0..1" />
+    <End Role="Comentario" Type="Self.Comentario" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Usuarios">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Comentario">
+        <PropertyRef Name="IdUsuario" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Jogadores_Posicoes">
+    <End Role="Posicoes" Type="Self.Posicoes" Multiplicity="0..1" />
+    <End Role="Jogadores" Type="Self.Jogadores" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Posicoes">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Jogadores">
+        <PropertyRef Name="PosicaoId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Jogadores_Selecoes">
+    <End Role="Selecoes" Type="Self.Selecoes" Multiplicity="0..1" />
+    <End Role="Jogadores" Type="Self.Jogadores" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Selecoes">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Jogadores">
+        <PropertyRef Name="SelecaoId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Jogos_Rodadas">
+    <End Role="Rodadas" Type="Self.Rodadas" Multiplicity="0..1" />
+    <End Role="Jogos" Type="Self.Jogos" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Rodadas">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Jogos">
+        <PropertyRef Name="RodadaId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Notificacoes_Selecoes">
+    <End Role="Selecoes" Type="Self.Selecoes" Multiplicity="0..1" />
+    <End Role="Notificacoes" Type="Self.Notificacoes" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Selecoes">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Notificacoes">
+        <PropertyRef Name="SelecaoId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_NotificacoesUsuarios_Notificacoes">
+    <End Role="Notificacoes" Type="Self.Notificacoes" Multiplicity="0..1" />
+    <End Role="NotificacoesUsuarios" Type="Self.NotificacoesUsuarios" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Notificacoes">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="NotificacoesUsuarios">
+        <PropertyRef Name="NotificacaoId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_NotificacoesUsuarios_Usuarios">
+    <End Role="Usuarios" Type="Self.Usuarios" Multiplicity="0..1" />
+    <End Role="NotificacoesUsuarios" Type="Self.NotificacoesUsuarios" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Usuarios">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="NotificacoesUsuarios">
+        <PropertyRef Name="UsuarioId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="Sessao5Entities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Comentario" EntityType="Self.Comentario" />
+    <EntitySet Name="Jogadores" EntityType="Self.Jogadores" />
+    <EntitySet Name="Jogos" EntityType="Self.Jogos" />
+    <EntitySet Name="Notificacoes" EntityType="Self.Notificacoes" />
+    <EntitySet Name="NotificacoesUsuarios" EntityType="Self.NotificacoesUsuarios" />
+    <EntitySet Name="Posicoes" EntityType="Self.Posicoes" />
+    <EntitySet Name="Rodadas" EntityType="Self.Rodadas" />
+    <EntitySet Name="Selecoes" EntityType="Self.Selecoes" />
+    <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" />
+    <EntitySet Name="Usuarios" EntityType="Self.Usuarios" />
+    <AssociationSet Name="FK_Comentario_Jogos" Association="Self.FK_Comentario_Jogos">
+      <End Role="Jogos" EntitySet="Jogos" />
+      <End Role="Comentario" EntitySet="Comentario" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Comentario_Usuarios" Association="Self.FK_Comentario_Usuarios">
+      <End Role="Usuarios" EntitySet="Usuarios" />
+      <End Role="Comentario" EntitySet="Comentario" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Jogadores_Posicoes" Association="Self.FK_Jogadores_Posicoes">
+      <End Role="Posicoes" EntitySet="Posicoes" />
+      <End Role="Jogadores" EntitySet="Jogadores" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Jogadores_Selecoes" Association="Self.FK_Jogadores_Selecoes">
+      <End Role="Selecoes" EntitySet="Selecoes" />
+      <End Role="Jogadores" EntitySet="Jogadores" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Jogos_Rodadas" Association="Self.FK_Jogos_Rodadas">
+      <End Role="Rodadas" EntitySet="Rodadas" />
+      <End Role="Jogos" EntitySet="Jogos" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Notificacoes_Selecoes" Association="Self.FK_Notificacoes_Selecoes">
+      <End Role="Selecoes" EntitySet="Selecoes" />
+      <End Role="Notificacoes" EntitySet="Notificacoes" />
+    </AssociationSet>
+    <AssociationSet Name="FK_NotificacoesUsuarios_Notificacoes" Association="Self.FK_NotificacoesUsuarios_Notificacoes">
+      <End Role="Notificacoes" EntitySet="Notificacoes" />
+      <End Role="NotificacoesUsuarios" EntitySet="NotificacoesUsuarios" />
+    </AssociationSet>
+    <AssociationSet Name="FK_NotificacoesUsuarios_Usuarios" Association="Self.FK_NotificacoesUsuarios_Usuarios">
+      <End Role="Usuarios" EntitySet="Usuarios" />
+      <End Role="NotificacoesUsuarios" EntitySet="NotificacoesUsuarios" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>
