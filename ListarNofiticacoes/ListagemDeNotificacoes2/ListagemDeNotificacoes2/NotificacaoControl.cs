@@ -28,6 +28,7 @@ namespace ListagemDeNotificacoes2
             label2.Text = item.Descricao;
             label2.Text = item.DataHoraCadastro.ToString("dd/MM/yyyy HH:mm");
         }
+
         public Notificacoes Item { get; }
 
         private void linkLabel2_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
