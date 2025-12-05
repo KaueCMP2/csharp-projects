@@ -20,10 +20,10 @@ namespace EsqueceuSenha.Services
             {
                 Port = 587,
                 EnableSsl = true,
-                Credentials = new NetworkCredential("cinemantica3@gmail.com", "abc123@@")
+                Credentials = new NetworkCredential("", "")
             };
             
-            var mail = new MailMessage("cinemantica3@gmail.com", _emailDestino)
+            var mail = new MailMessage("", _emailDestino)
             {
                 Subject = "Código para alterar senha",
                 Body = $"Seu código para redefinir a senha é: {CodigoGerado}",
