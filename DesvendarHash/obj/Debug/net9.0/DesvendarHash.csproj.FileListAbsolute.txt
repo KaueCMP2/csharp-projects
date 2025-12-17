@@ -1,0 +1,15 @@
+C:\Users\23969368839\Documents\Projetos-CSharp\DesvendarHash\bin\Debug\net9.0\DesvendarHash.exe
+C:\Users\23969368839\Documents\Projetos-CSharp\DesvendarHash\bin\Debug\net9.0\DesvendarHash.deps.json
+C:\Users\23969368839\Documents\Projetos-CSharp\DesvendarHash\bin\Debug\net9.0\DesvendarHash.runtimeconfig.json
+C:\Users\23969368839\Documents\Projetos-CSharp\DesvendarHash\bin\Debug\net9.0\DesvendarHash.dll
+C:\Users\23969368839\Documents\Projetos-CSharp\DesvendarHash\bin\Debug\net9.0\DesvendarHash.pdb
+C:\Users\23969368839\Documents\Projetos-CSharp\DesvendarHash\obj\Debug\net9.0\DesvendarHash.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\23969368839\Documents\Projetos-CSharp\DesvendarHash\obj\Debug\net9.0\DesvendarHash.AssemblyInfoInputs.cache
+C:\Users\23969368839\Documents\Projetos-CSharp\DesvendarHash\obj\Debug\net9.0\DesvendarHash.AssemblyInfo.cs
+C:\Users\23969368839\Documents\Projetos-CSharp\DesvendarHash\obj\Debug\net9.0\DesvendarHash.csproj.CoreCompileInputs.cache
+C:\Users\23969368839\Documents\Projetos-CSharp\DesvendarHash\obj\Debug\net9.0\DesvendarHash.sourcelink.json
+C:\Users\23969368839\Documents\Projetos-CSharp\DesvendarHash\obj\Debug\net9.0\DesvendarHash.dll
+C:\Users\23969368839\Documents\Projetos-CSharp\DesvendarHash\obj\Debug\net9.0\refint\DesvendarHash.dll
+C:\Users\23969368839\Documents\Projetos-CSharp\DesvendarHash\obj\Debug\net9.0\DesvendarHash.pdb
+C:\Users\23969368839\Documents\Projetos-CSharp\DesvendarHash\obj\Debug\net9.0\DesvendarHash.genruntimeconfig.cache
+C:\Users\23969368839\Documents\Projetos-CSharp\DesvendarHash\obj\Debug\net9.0\ref\DesvendarHash.dll
